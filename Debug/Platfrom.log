@@ -1,0 +1,138 @@
+﻿Build started 10-7-2014 21:45:13.
+     1>Project "C:\Users\Johnny\Documents\Arduino\Platfrom\Platfrom.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files\Arduino\hardware\arduino\cores\arduino" /I"C:\Program Files\Arduino\hardware\arduino\variants\mega" /I"C:\Program Files\Arduino\libraries" /I"C:\Program Files\Arduino\hardware\arduino\libraries" /I"C:\Program Files\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers" /IC:\Users\Johnny\Documents\Arduino\libraries /I"c:\program files\arduino\hardware\tools\avr\avr\include\\" /I"c:\program files\arduino\hardware\tools\avr\avr\include\avr\\" /I"c:\program files\arduino\hardware\tools\avr\avr\\" /I"c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D __AVR_ATmega2560__ /D ARDUINO=105 /D ARDUINO_MAIN /D __AVR__ /D __avr__ /D F_CPU=16000000L /D __cplusplus /D _MBCS /X /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /FI"C:\Users\Johnny\Documents\Arduino\Platfrom\Visual Micro\.Platfrom.vsarduino.h" /analyze- /errorReport:prompt LimitSwitch.cpp WaterSensorOneSensor.cpp WaterSensorTwoSensors.cpp
+         WaterSensorTwoSensors.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 c:\users\johnny\documents\arduino\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\johnny\documents\arduino\platfrom\limitswitch.cpp(10): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.cpp(9): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.cpp(4): error C2084: function 'WaterSensorTwoSensors::WaterSensorTwoSensors(int,int)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.h(11) : see previous definition of '{ctor}'
+     1>c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.cpp(10): error C2084: function 'bool WaterSensorTwoSensors::is_water_rising(void)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.h(12) : see previous definition of 'is_water_rising'
+     1>c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.cpp(14): error C2084: function 'bool WaterSensorTwoSensors::is_water_dropping(void)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.h(13) : see previous definition of 'is_water_dropping'
+     1>c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.cpp(18): error C2084: function 'bool WaterSensorTwoSensors::is_water_steady(void)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensortwosensors.h(14) : see previous definition of 'is_water_steady'
+         WaterSensorOneSensor.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 c:\users\johnny\documents\arduino\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\johnny\documents\arduino\platfrom\limitswitch.cpp(10): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.cpp(9): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.cpp(4): error C2084: function 'WaterSensorOneSensor::WaterSensorOneSensor(int)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.h(11) : see previous definition of '{ctor}'
+     1>c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.cpp(8): error C2084: function 'bool WaterSensorOneSensor::is_water_rising(void)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.h(12) : see previous definition of 'is_water_rising'
+     1>c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.cpp(12): error C2084: function 'bool WaterSensorOneSensor::is_water_dropping(void)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.h(13) : see previous definition of 'is_water_dropping'
+     1>c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.cpp(16): error C2084: function 'bool WaterSensorOneSensor::is_water_steady(void)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.h(14) : see previous definition of 'is_water_steady'
+         LimitSwitch.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 c:\users\johnny\documents\arduino\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 c:\users\johnny\documents\arduino\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\johnny\documents\arduino\platfrom\limitswitch.cpp(10): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\johnny\documents\arduino\platfrom\watersensoronesensor.cpp(9): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\johnny\documents\arduino\platfrom\limitswitch.cpp(4): error C2084: function 'LimitSwitch::LimitSwitch(int)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\limitswitch.h(10) : see previous definition of '{ctor}'
+     1>c:\users\johnny\documents\arduino\platfrom\limitswitch.cpp(8): error C2084: function 'bool LimitSwitch::has_reached_limit(void)' already has a body
+                 c:\users\johnny\documents\arduino\platfrom\limitswitch.h(11) : see previous definition of 'has_reached_limit'
+         Generating Code...
+     1>Done Building Project "C:\Users\Johnny\Documents\Arduino\Platfrom\Platfrom.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.23
