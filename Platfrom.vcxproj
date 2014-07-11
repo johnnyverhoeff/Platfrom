@@ -76,6 +76,11 @@
     <ClInclude Include="HighBoatWaterSensor.h" />
     <ClInclude Include="LimitSwitch.h" />
     <ClInclude Include="LowBoatWaterSensor.h" />
+    <ClInclude Include="MCP4921.h" />
+    <ClInclude Include="Motor.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="MotorWithBrake.h" />
     <ClInclude Include="UnderWaterSensor.h" />
     <ClInclude Include="WaterSensorOneSensor.h" />
     <ClInclude Include="Visual Micro\.Platfrom.vsarduino.h" />
@@ -83,7 +88,10 @@
     <ClInclude Include="WaterSensorTwoSensors.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MCP4921.cpp" />
+    <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
+    <ClCompile Include="MotorWithBrake.cpp" />
     <ClCompile Include="WaterSensorOneSensor.cpp" />
     <ClCompile Include="WaterSensorTwoSensors.cpp" />
   </ItemGroup>
