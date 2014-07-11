@@ -19,6 +19,9 @@
     <Filter Include="WaterSensor">
       <UniqueIdentifier>{f55e8668-4c2f-4786-833d-b6557517d342}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Motor">
+      <UniqueIdentifier>{33cbcebb-4471-4c0e-ab0d-2a8fede2dc3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Platfrom.ino" />
@@ -47,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="LowBoatWaterSensor.h">
       <Filter>WaterSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="Motor.h">
+      <Filter>Motor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
