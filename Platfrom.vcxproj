@@ -80,6 +80,7 @@
     <ClInclude Include="Motor.h">
       <FileType>CppCode</FileType>
     </ClInclude>
+    <ClInclude Include="MotorWithBrake.h" />
     <ClInclude Include="UnderWaterSensor.h" />
     <ClInclude Include="WaterSensorOneSensor.h" />
     <ClInclude Include="Visual Micro\.Platfrom.vsarduino.h" />
@@ -90,6 +91,7 @@
     <ClCompile Include="MCP4921.cpp" />
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
+    <ClCompile Include="MotorWithBrake.cpp" />
     <ClCompile Include="WaterSensorOneSensor.cpp" />
     <ClCompile Include="WaterSensorTwoSensors.cpp" />
   </ItemGroup>

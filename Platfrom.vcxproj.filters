@@ -60,6 +60,9 @@
     <ClInclude Include="MCP4921.h">
       <Filter>MCP4921</Filter>
     </ClInclude>
+    <ClInclude Include="MotorWithBrake.h">
+      <Filter>Motor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LimitSwitch.cpp">
@@ -76,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="MCP4921.cpp">
       <Filter>MCP4921</Filter>
+    </ClCompile>
+    <ClCompile Include="MotorWithBrake.cpp">
+      <Filter>Motor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
