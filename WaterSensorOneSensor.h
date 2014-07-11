@@ -8,7 +8,7 @@ protected:
 	int _pin;
 
 public:
-	WaterSensorOneSensor(int);
+	WaterSensorOneSensor(int pin);
 	bool is_water_rising();
 	bool is_water_dropping();
 	bool is_water_steady();

@@ -7,7 +7,7 @@ private:
 	int _pin;
 
 public:
-	LimitSwitch(int);
+	LimitSwitch(int pin);
 	bool has_reached_limit();
 };
 
