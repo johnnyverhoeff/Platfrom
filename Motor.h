@@ -2,9 +2,15 @@
 #define Motor_h
 
 class Motor {
+private:
+	int _move_down_pin;
+	int _move_up_pin;
+
 public:
-	virtual void up() = 0;
-	virtual void down() = 0;
+	Motor(int, int);
+	void up();
+	void down();
+	void stop();
 };
 
 #endif

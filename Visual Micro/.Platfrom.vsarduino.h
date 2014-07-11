@@ -48,6 +48,7 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "Z:\Documenten\Arduino\Platfrom\LimitSwitch.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\LimitSwitch.h"
 #include "Z:\Documenten\Arduino\Platfrom\LowBoatWaterSensor.h"
+#include "Z:\Documenten\Arduino\Platfrom\Motor.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\Motor.h"
 #include "Z:\Documenten\Arduino\Platfrom\UnderWaterSensor.h"
 #include "Z:\Documenten\Arduino\Platfrom\WaterSensor.h"

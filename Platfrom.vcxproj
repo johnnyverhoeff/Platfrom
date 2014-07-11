@@ -86,6 +86,7 @@
     <ClInclude Include="WaterSensorTwoSensors.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
     <ClCompile Include="WaterSensorOneSensor.cpp" />
     <ClCompile Include="WaterSensorTwoSensors.cpp" />

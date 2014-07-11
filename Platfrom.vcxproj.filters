@@ -65,5 +65,8 @@
     <ClCompile Include="WaterSensorTwoSensors.cpp">
       <Filter>WaterSensor</Filter>
     </ClCompile>
+    <ClCompile Include="Motor.cpp">
+      <Filter>Motor</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
