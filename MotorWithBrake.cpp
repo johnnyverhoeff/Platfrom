@@ -19,30 +19,36 @@ void MotorWithBrake::_release_brake() {
 }
 
 void MotorWithBrake::up() {
+	Motor::up(half_speed);
 	_release_brake();
 	Motor::up();
 }
 void MotorWithBrake::up(motor_speed speed) {
+	Motor::up(half_speed);
 	_release_brake();
 	Motor::up(speed);
 }
 
 void MotorWithBrake::up(int speed) {
+	Motor::up(half_speed);
 	_release_brake();
 	Motor::up(speed);
 }
 
 void MotorWithBrake::down() {
+	Motor::down(half_speed);
 	_release_brake();
 	Motor::down();
 }
 
 void MotorWithBrake::down(motor_speed speed) {
+	Motor::down(half_speed);
 	_release_brake();
 	Motor::down(speed);
 }
 
 void MotorWithBrake::down(int speed) {
+	Motor::down(half_speed);
 	_release_brake();
 	Motor::down(speed);
 }
