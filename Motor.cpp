@@ -1,7 +1,7 @@
 #include "Motor.h"
 #include "Arduino.h"
 
-Motor::Motor(int down_pin, int up_pin) {
+Motor::Motor(int down_pin, int up_pin, int SDI, int SCK, int CS) {
 	_move_down_pin = down_pin;
 	_move_up_pin = up_pin;
 
@@ -10,20 +10,31 @@ Motor::Motor(int down_pin, int up_pin) {
 
 	digitalWrite(_move_up_pin, LOW);
 	digitalWrite(_move_down_pin, LOW);
+
+	speed_regulator = new MCP4921(SDI, SCK, CS);
+	speed_regulator->setValue(zero_speed);
 }
 
 void Motor::down() {
+	down(full_speed);
+}
+
+void Motor::down(motor_speed speed) {
 	digitalWrite(_move_down_pin, HIGH);
-	// other stuff with spi 
+	speed_regulator->setValue(speed);
 }
 
 void Motor::up() {
+	up(full_speed);
+}
+
+void Motor::up(motor_speed speed) {
 	digitalWrite(_move_up_pin, HIGH);
-	// other stuff with spi 
+	speed_regulator->setValue(speed);
 }
 
 void Motor::stop() {
 	digitalWrite(_move_down_pin, LOW);
 	digitalWrite(_move_up_pin, LOW);
-	// other stuff with spi 
+	speed_regulator->setValue(zero_speed);
 }

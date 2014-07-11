@@ -76,6 +76,7 @@
     <ClInclude Include="HighBoatWaterSensor.h" />
     <ClInclude Include="LimitSwitch.h" />
     <ClInclude Include="LowBoatWaterSensor.h" />
+    <ClInclude Include="MCP4921.h" />
     <ClInclude Include="Motor.h">
       <FileType>CppCode</FileType>
     </ClInclude>
@@ -86,6 +87,7 @@
     <ClInclude Include="WaterSensorTwoSensors.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MCP4921.cpp" />
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
     <ClCompile Include="WaterSensorOneSensor.cpp" />

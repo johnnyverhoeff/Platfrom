@@ -22,6 +22,9 @@
     <Filter Include="Motor">
       <UniqueIdentifier>{33cbcebb-4471-4c0e-ab0d-2a8fede2dc3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MCP4921">
+      <UniqueIdentifier>{1a7890b1-cf1b-4e21-ad0c-010521a9c6e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Platfrom.ino" />
@@ -54,6 +57,9 @@
     <ClInclude Include="Motor.h">
       <Filter>Motor</Filter>
     </ClInclude>
+    <ClInclude Include="MCP4921.h">
+      <Filter>MCP4921</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LimitSwitch.cpp">
@@ -67,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="Motor.cpp">
       <Filter>Motor</Filter>
+    </ClCompile>
+    <ClCompile Include="MCP4921.cpp">
+      <Filter>MCP4921</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
