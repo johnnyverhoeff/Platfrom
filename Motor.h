@@ -1,5 +1,5 @@
-#ifndef LimitSwitch_h
-#define LimitSwitch_h
+#ifndef Motor_h
+#define Motor_h
 
 class Motor {
 public:
