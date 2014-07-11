@@ -24,11 +24,21 @@ void Motor::down(motor_speed speed) {
 	speed_regulator->setValue(speed);
 }
 
+void Motor::down(int speed) {
+	digitalWrite(_move_down_pin, HIGH);
+	speed_regulator->setValue(speed);
+}
+
 void Motor::up() {
 	up(full_speed);
 }
 
 void Motor::up(motor_speed speed) {
+	digitalWrite(_move_up_pin, HIGH);
+	speed_regulator->setValue(speed);
+}
+
+void Motor::up(int speed) {
 	digitalWrite(_move_up_pin, HIGH);
 	speed_regulator->setValue(speed);
 }

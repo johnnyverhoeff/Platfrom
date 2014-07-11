@@ -20,9 +20,11 @@ public:
 
 	void up();
 	void up(motor_speed speed);
+	void up(int speed);
 
 	void down();
 	void down(motor_speed speed);
+	void down(int speed);
 
 	void stop();
 };
