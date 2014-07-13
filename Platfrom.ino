@@ -13,9 +13,8 @@ LowBoatWaterSensor low_sensor;
 
 Vlonder vlonder;
 
-
-
 enum program_states {
+	none,
 	should_reach_a_water_sensor,
 };
 
@@ -23,7 +22,7 @@ program_states program_state;
 
 void setup() {
 	/* add setup code here */
-
+	program_state = none;
 }
 
 void loop() {
