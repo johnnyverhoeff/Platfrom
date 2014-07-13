@@ -55,6 +55,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "Z:\Documenten\Arduino\Platfrom\MotorWithBrake.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\MotorWithBrake.h"
 #include "Z:\Documenten\Arduino\Platfrom\UnderWaterSensor.h"
+#include "Z:\Documenten\Arduino\Platfrom\Vlonder.cpp"
+#include "Z:\Documenten\Arduino\Platfrom\Vlonder.h"
 #include "Z:\Documenten\Arduino\Platfrom\WaterSensor.h"
 #include "Z:\Documenten\Arduino\Platfrom\WaterSensorOneSensor.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\WaterSensorOneSensor.h"
