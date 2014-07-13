@@ -40,6 +40,7 @@ extern "C" void __cxa_pure_virtual() {;}
 
 //
 //
+void reach_active_water_sensor();
 
 #include "C:\Program Files\Arduino\hardware\arduino\cores\arduino\arduino.h"
 #include "C:\Program Files\Arduino\hardware\arduino\variants\mega\pins_arduino.h" 
