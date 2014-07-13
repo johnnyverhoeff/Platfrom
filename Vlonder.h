@@ -36,8 +36,6 @@ private:
 
 	Motor *_left_motor;
 	Motor *_right_motor;
-
 };
-
 
 #endif
