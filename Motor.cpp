@@ -15,6 +15,23 @@ Motor::Motor(int down_pin, int up_pin, int SDI, int SCK, int CS) {
 	speed_regulator->setValue(zero_speed);
 }
 
+void Motor::move(movement movement, int speed) {
+	switch (movement) {
+		case Motor::move_up:
+			digitalWrite(_move_up_pin, HIGH);
+			digitalWrite(_move_down_pin, LOW);
+			break;
+		case Motor::move_down:
+			digitalWrite(_move_up_pin, LOW);
+			digitalWrite(_move_down_pin, HIGH);
+			break;
+		default:
+			stop();
+	}
+
+	speed_regulator->setValue(speed);
+}
+
 void Motor::down() {
 	down(full_speed);
 }
@@ -24,8 +41,7 @@ void Motor::down(speed speed) {
 }
 
 void Motor::down(int speed) {
-	digitalWrite(_move_down_pin, HIGH);
-	speed_regulator->setValue(speed);
+	move(Motor::move_down, speed);
 }
 
 void Motor::up() {
@@ -37,8 +53,7 @@ void Motor::up(speed speed) {
 }
 
 void Motor::up(int speed) {
-	digitalWrite(_move_up_pin, HIGH);
-	speed_regulator->setValue(speed);
+	move(Motor::move_up, speed);
 }
 
 void Motor::stop() {
