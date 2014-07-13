@@ -16,6 +16,7 @@ public:
 	enum movement {
 		move_up,
 		move_down,
+		stop_moving,
 	};
 
 private:
