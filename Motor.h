@@ -3,11 +3,7 @@
 
 #include "MCP4921.h"
 
-enum motor_speed {
-	full_speed = 4096,
-	half_speed = 2048,
-	zero_speed = 0,
-};
+//moet kijken naar de spi lib van arduino gebruiken
 
 class Motor {
 private:
@@ -18,15 +14,23 @@ private:
 public:
 	Motor(int down_pin, int up_pin, int SDI, int SCK, int CS);
 
-	void up();
-	void up(motor_speed speed);
-	void up(int speed);
+	enum speed {
+		full_speed = 4096,
+		half_speed = 2048,
+		zero_speed = 0,
+	};
 
-	void down();
-	void down(motor_speed speed);
-	void down(int speed);
+	virtual void up();
+	virtual void up(speed speed);
+	virtual void up(int speed);
 
-	void stop();
+	virtual void down();
+	virtual void down(speed speed);
+	virtual void down(int speed);
+
+	virtual void stop();
+
+	
 };
 
 #endif

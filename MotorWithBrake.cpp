@@ -23,7 +23,7 @@ void MotorWithBrake::up() {
 	_release_brake();
 	Motor::up();
 }
-void MotorWithBrake::up(motor_speed speed) {
+void MotorWithBrake::up(speed speed) {
 	Motor::up(half_speed);
 	_release_brake();
 	Motor::up(speed);
@@ -41,7 +41,7 @@ void MotorWithBrake::down() {
 	Motor::down();
 }
 
-void MotorWithBrake::down(motor_speed speed) {
+void MotorWithBrake::down(speed speed) {
 	Motor::down(half_speed);
 	_release_brake();
 	Motor::down(speed);

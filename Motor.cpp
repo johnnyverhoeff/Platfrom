@@ -19,9 +19,8 @@ void Motor::down() {
 	down(full_speed);
 }
 
-void Motor::down(motor_speed speed) {
-	digitalWrite(_move_down_pin, HIGH);
-	speed_regulator->setValue(speed);
+void Motor::down(speed speed) {
+	down((int)speed);
 }
 
 void Motor::down(int speed) {
@@ -33,9 +32,8 @@ void Motor::up() {
 	up(full_speed);
 }
 
-void Motor::up(motor_speed speed) {
-	digitalWrite(_move_up_pin, HIGH);
-	speed_regulator->setValue(speed);
+void Motor::up(speed speed) {
+	up((int)speed);
 }
 
 void Motor::up(int speed) {
