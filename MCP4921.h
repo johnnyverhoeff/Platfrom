@@ -3,6 +3,8 @@
 
 #include "Arduino.h"
 
+//moet kijken naar de spi lib van arduino gebruiken
+
 class MCP4921
 {
   public:
