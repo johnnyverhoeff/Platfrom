@@ -9,9 +9,12 @@ protected:
 
 public:
 	WaterSensorOneSensor(int pin);
+
 	bool is_water_rising();
 	bool is_water_dropping();
 	bool is_water_steady();
+
+	bool has_reached_position(Vlonder::moving_state moving_state);
 };
 
 #endif

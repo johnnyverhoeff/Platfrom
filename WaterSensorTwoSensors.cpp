@@ -18,3 +18,7 @@ bool WaterSensorTwoSensors::is_water_dropping() {
 bool WaterSensorTwoSensors::is_water_steady() {
 	return digitalRead(_pin) && !digitalRead(_upper_pin);
 }
+
+bool WaterSensorTwoSensors::has_reached_position(Vlonder::moving_state moving_state) {
+	return is_water_steady();
+}
