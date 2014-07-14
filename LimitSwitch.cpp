@@ -3,9 +3,19 @@
 
 LimitSwitch::LimitSwitch(int pin) : _pin(pin) {
 	pinMode(_pin, INPUT);
+
+	#ifdef DEBUG_VIA_SERIAL
+		Serial.print("\"LimitSwitch\" Constructor called with pin: ");
+		Serial.println(_pin);
+	#endif
 }
 
 bool LimitSwitch::has_reached_limit() {
 	// maybe negative depending on pos or neg logic
-	return digitalRead(_pin);
+	bool result =  digitalRead(_pin);
+	#ifdef DEBUG_VIA_SERIAL
+		Serial.print("\"LimitSwitch::has_reached_limit\" called with outcome: ");
+		Serial.println(result);
+	#endif
+	return result;
 }
