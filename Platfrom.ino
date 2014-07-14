@@ -1,15 +1,11 @@
 #include "LimitSwitch.h"
 #include "WaterSensor.h"
-#include "LowBoatWaterSensor.h"
-#include "HighBoatWaterSensor.h"
-#include "UnderWaterSensor.h"
+
 #include "Vlonder.h"
 
-WaterSensor *active_water_sensor;
+#define DEBUG_VIA_SERIAL
 
-UnderWaterSensor under_water_sensor;
-HighBoatWaterSensor high_sensor;
-LowBoatWaterSensor low_sensor;
+WaterSensor *active_water_sensor;
 
 Vlonder vlonder;
 
@@ -22,6 +18,8 @@ program_states program_state;
 
 void setup() {
 	/* add setup code here */
+
+	Serial.begin(9600);
 	program_state = none;
 }
 
@@ -30,7 +28,7 @@ void loop() {
 
 
 	// selecteren via afstandbediening ISR
-	active_water_sensor = &under_water_sensor;
+	//active_water_sensor = &under_water_sensor;
 
 	switch (program_state) {
 		case should_reach_a_water_sensor:
