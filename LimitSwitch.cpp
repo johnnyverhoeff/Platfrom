@@ -1,9 +1,9 @@
 #include "LimitSwitch.h"
 #include "Arduino.h"
 
-LimitSwitch::LimitSwitch(int pin) : _pin(pin) {
+LimitSwitch::LimitSwitch(int pin, const char *name) : _pin(pin), _name(name) {
 	pinMode(_pin, INPUT);
-
+	
 	#ifdef DEBUG_VIA_SERIAL
 		Serial.print("\"LimitSwitch\" Constructor called with pin: ");
 		Serial.println(_pin);
@@ -18,4 +18,8 @@ bool LimitSwitch::has_reached_limit() {
 		Serial.println(result);
 	#endif
 	return result;
+}
+
+const char* LimitSwitch::get_name() {
+	return _name;
 }
