@@ -21,7 +21,9 @@ Vlonder vlonder;
 
 enum program_states {
 	none,
-	should_reach_a_water_sensor,
+	reach_active_water_sensor,
+	reach_and_control_vlonder_on_active_water_sensor,
+	control_vlonder_on_active_water_sensor,
 };
 
 program_states program_state;
@@ -47,9 +49,20 @@ void loop() {
 	//active_water_sensor = &under_water_sensor;
 
 	switch (program_state) {
-		case should_reach_a_water_sensor:
+
+		case reach_active_water_sensor:
 			vlonder.reach_water_sensor(active_water_sensor);
 			break;
+
+		case reach_and_control_vlonder_on_active_water_sensor:
+			if (vlonder.reach_water_sensor(active_water_sensor))
+				program_state = control_vlonder_on_active_water_sensor;
+			break;
+
+		case control_vlonder_on_active_water_sensor:
+
+			break;
+
 		default:
 			break;
 	}
@@ -58,6 +71,8 @@ void loop() {
 void handle_remote_control(void) {
 
 }
+
+
 
 void setup_ISRs(void) {
 	/*
