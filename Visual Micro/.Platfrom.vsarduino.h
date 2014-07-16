@@ -41,6 +41,10 @@ extern "C" void __cxa_pure_virtual() {;}
 //
 //
 void reach_active_water_sensor();
+void handle_remote_control(void);
+void setup_ISRs(void);
+void ISR_limit_switch_reached(void);
+void ISR_remote_control(void);
 
 #include "C:\Program Files\Arduino\hardware\arduino\cores\arduino\arduino.h"
 #include "C:\Program Files\Arduino\hardware\arduino\variants\mega\pins_arduino.h" 
