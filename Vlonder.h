@@ -3,17 +3,19 @@
 
 #include "LimitSwitch.h"
 #include "Motor.h"
-#include "WaterSensor.h"
-#include "Vlonder_enums.h"
 
 class Vlonder {
 
 public:
+	enum moving_state {
+		moving_up,
+		moving_down,
+		stopped,
+	};
+
 	Vlonder();
 
-	vlonder_moving_states get_moving_state();
-
-	void reach_water_sensor(WaterSensor *active_water_sensor);
+	moving_state get_moving_state();
 	
 	void up();
 	void up(Motor::speed speed);
@@ -26,7 +28,7 @@ public:
 	void stop();
 
 private:
-	vlonder_moving_states _moving_state;
+	moving_state _moving_state;
 
 	LimitSwitch *_upper_limit_switch;
 	LimitSwitch *_lower_limit_switch;
