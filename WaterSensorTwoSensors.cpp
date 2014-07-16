@@ -39,7 +39,7 @@ bool WaterSensorTwoSensors::is_water_steady() {
 	return result;
 }
 
-bool WaterSensorTwoSensors::has_reached_position(Vlonder::moving_state moving_state) {
+bool WaterSensorTwoSensors::has_reached_position(vlonder_moving_states moving_state) {
 	bool result = is_water_steady();
 	#ifdef DEBUG_VIA_SERIAL
 		Serial.print("\"WaterSensorTwoSensor::has_reached_position\" called with param: ");
