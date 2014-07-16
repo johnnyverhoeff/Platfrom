@@ -1,8 +1,8 @@
 #include "WaterSensorTwoSensors.h"
 #include "Arduino.h"
 
-WaterSensorTwoSensors::WaterSensorTwoSensors(int lower_pin, int upper_pin) : 
-	WaterSensorOneSensor(lower_pin), _upper_pin(upper_pin) {
+WaterSensorTwoSensors::WaterSensorTwoSensors(int lower_pin, int upper_pin, const char* name) : 
+	WaterSensorOneSensor(lower_pin, name), _upper_pin(upper_pin) {
 	pinMode(_pin, INPUT);
 	pinMode(_upper_pin, INPUT);
 

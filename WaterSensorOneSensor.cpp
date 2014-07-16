@@ -1,7 +1,7 @@
 #include "WaterSensorOneSensor.h"
 #include "Arduino.h"
 
-WaterSensorOneSensor::WaterSensorOneSensor(int pin) : _pin(pin) {
+WaterSensorOneSensor::WaterSensorOneSensor(int pin, const char* name) : _pin(pin), _name(name) {
 	pinMode(_pin, INPUT);
 
 	#ifdef DEBUG_VIA_SERIAL

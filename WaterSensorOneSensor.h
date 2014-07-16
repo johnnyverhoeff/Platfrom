@@ -6,9 +6,10 @@
 class WaterSensorOneSensor : public WaterSensor {
 protected:
 	int _pin;
+	const char* _name;
 
 public:
-	WaterSensorOneSensor(int pin);
+	WaterSensorOneSensor(int pin, const char* name = "A WaterSensor with one sensor");
 
 	bool is_water_rising();
 	bool is_water_dropping();
