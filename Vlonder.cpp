@@ -24,16 +24,22 @@ vlonder_moving_states Vlonder::get_moving_state() {
 	return _moving_state;
 }
 
-void Vlonder::reach_water_sensor(WaterSensor *active_water_sensor) {
+bool Vlonder::reach_water_sensor(WaterSensor *active_water_sensor) {
 	if (!active_water_sensor->has_reached_position(_moving_state))
 	{
 		if (active_water_sensor->must_move_up_to_reach_position())
 			up();
 		else
 			down();
+
+		return false;
 	}
 	else
+	{
 		stop();
+		return true;
+	}
+		
 }
 
 
