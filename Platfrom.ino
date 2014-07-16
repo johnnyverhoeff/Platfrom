@@ -1,19 +1,20 @@
-
-//#include "WaterSensor.h"
-
 #include "Vlonder.h"
 
 
-/* defines */
+#pragma region Defines
+
 #define DEBUG_VIA_SERIAL
 
 #define LIMIT_SWITCH_INTERRUPT_NUMBER 4 // dont know which interrupt number yet
 #define REMOTE_CONTROL_INTERRUPT_NUMBER 5 // dont know which interrupt number yet 
 
-/* global flags for interrupt handling */
+#pragma endregion All defines are declared here
+
+#pragma region Flags
 
 volatile bool flag_remote_control_button_pressed = false;
 
+#pragma endregion All flags for interrupt handling are declared here
 
 WaterSensor *active_water_sensor;
 
@@ -46,7 +47,7 @@ void loop() {
 
 
 	// selecteren via afstandbediening ISR
-	//active_water_sensor = &under_water_sensor;
+	//active_water_sensor = &een sensor....;
 
 	switch (program_state) {
 
@@ -63,7 +64,8 @@ void loop() {
 
 			break;
 
-		default:
+		case none: default:
+			vlonder.stop();
 			break;
 	}
 }
