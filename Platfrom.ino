@@ -1,4 +1,5 @@
 #include "Vlonder.h"
+#include "WaterSensorTwoSensors.h"
 
 
 #pragma region Defines
@@ -8,13 +9,15 @@
 #define LIMIT_SWITCH_INTERRUPT_NUMBER 4 // dont know which interrupt number yet
 #define REMOTE_CONTROL_INTERRUPT_NUMBER 5 // dont know which interrupt number yet 
 
+#define HIGH_BOAT_UPPER_PIN 10 // dont know
+#define HIGH_BOAT_LOWER_PIN 11 // dont know
+#define HIGH_BOAT_NAME "High boat water sensor"
+				
 #pragma endregion All defines are declared here
 
 #pragma region Flags
 
 volatile bool flag_remote_control_button_pressed = false;
-
-
 
 #ifdef DEBUG_VIA_SERIAL
 	volatile bool flag_interrupt = false;
@@ -23,9 +26,17 @@ volatile bool flag_remote_control_button_pressed = false;
 
 #pragma endregion All flags for interrupt handling are declared here
 
-WaterSensor *active_water_sensor;
+#pragma region WaterSensors
+
+WaterSensorTwoSensors high_boat_sensor(HIGH_BOAT_LOWER_PIN, HIGH_BOAT_UPPER_PIN, HIGH_BOAT_NAME);
+
+
+
+#pragma endregion All available water sensors are declared here
+
 
 Vlonder vlonder;
+
 
 enum program_states {
 	none,
@@ -43,6 +54,8 @@ void setup() {
 	program_state = none;
 
 	setup_ISRs();
+
+	vlonder.active_water_sensor = &high_boat_sensor;
 
 	
 }
@@ -66,12 +79,12 @@ void loop() {
 	switch (program_state) {
 
 		case reach_active_water_sensor:
-			if (vlonder.reach_water_sensor(active_water_sensor))
+			if (vlonder.reach_active_water_sensor())
 				program_state = none;
 			break;
 
 		case reach_and_control_vlonder_on_active_water_sensor:
-			if (vlonder.reach_water_sensor(active_water_sensor))
+			if (vlonder.reach_active_water_sensor())
 				program_state = control_vlonder_on_active_water_sensor;
 			break;
 
@@ -86,7 +99,7 @@ void loop() {
 }
 
 void handle_remote_control(void) {
-
+	
 }
 
 
