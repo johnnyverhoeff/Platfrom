@@ -14,6 +14,13 @@
 
 volatile bool flag_remote_control_button_pressed = false;
 
+
+
+#ifdef DEBUG_VIA_SERIAL
+	volatile bool flag_interrupt = false;
+	String interrupt_msg;
+#endif
+
 #pragma endregion All flags for interrupt handling are declared here
 
 WaterSensor *active_water_sensor;
@@ -41,7 +48,14 @@ void setup() {
 }
 
 void loop() {
-	
+	#ifdef DEBUG_VIA_SERIAL
+		if (flag_interrupt) {
+			Serial.println(interrupt_msg);
+			flag_interrupt = false;
+		}
+	#endif
+
+
 	if (flag_remote_control_button_pressed)
 		handle_remote_control();
 
@@ -52,7 +66,8 @@ void loop() {
 	switch (program_state) {
 
 		case reach_active_water_sensor:
-			vlonder.reach_water_sensor(active_water_sensor);
+			if (vlonder.reach_water_sensor(active_water_sensor))
+				program_state = none;
 			break;
 
 		case reach_and_control_vlonder_on_active_water_sensor:
@@ -95,11 +110,21 @@ void setup_ISRs(void) {
 
 
 void ISR_limit_switch_reached(void) {
+	#ifdef DEBUG_VIA_SERIAL
+		flag_interrupt = true;
+		interrupt_msg = String("ISR_limit_switch_reached");
+	#endif
+
 	// dont know yet to do this or global variable and in loop call stop....
 	vlonder.stop();
 }
 
 void ISR_remote_control(void) {
+	#ifdef DEBUG_VIA_SERIAL
+		flag_interrupt = true;
+		interrupt_msg = String("ISR_remote_control");
+	#endif
+
 	// inverses state of this flag.
 	flag_remote_control_button_pressed = !flag_remote_control_button_pressed;
 }
