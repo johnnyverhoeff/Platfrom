@@ -1,5 +1,5 @@
-#include "LimitSwitch.h"
-#include "WaterSensor.h"
+
+//#include "WaterSensor.h"
 
 #include "Vlonder.h"
 
@@ -48,23 +48,11 @@ void loop() {
 
 	switch (program_state) {
 		case should_reach_a_water_sensor:
-			reach_active_water_sensor();
+			vlonder.reach_water_sensor(active_water_sensor);
 			break;
 		default:
 			break;
 	}
-}
-
-void reach_active_water_sensor() {
-	if (!active_water_sensor->has_reached_position(vlonder.get_moving_state()))
-	{
-		if (active_water_sensor->must_move_up_to_reach_position())
-			vlonder.up();
-		else
-			vlonder.down();
-	}
-	else
-		vlonder.stop();
 }
 
 void handle_remote_control(void) {

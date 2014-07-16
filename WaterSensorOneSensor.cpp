@@ -36,13 +36,13 @@ bool WaterSensorOneSensor::is_water_steady() {
 	return false;
 }
 
-bool WaterSensorOneSensor::has_reached_position(Vlonder::moving_state moving_state) {
+bool WaterSensorOneSensor::has_reached_position(vlonder_moving_states moving_state) {
 	bool result = false;
 	switch (moving_state) {
-		case Vlonder::moving_up:
+		case vlonder_moving_up:
 			result = is_water_dropping();
 			break;
-		case Vlonder::moving_down:
+		case vlonder_moving_down:
 			result = is_water_rising();
 			break;
 		default:

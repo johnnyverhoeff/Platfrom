@@ -14,7 +14,7 @@ public:
 	bool is_water_dropping();
 	bool is_water_steady();
 
-	bool has_reached_position(Vlonder::moving_state moving_state);
+	bool has_reached_position(vlonder_moving_states moving_state);
 };
 
 #endif
