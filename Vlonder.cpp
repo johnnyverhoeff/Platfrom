@@ -24,7 +24,7 @@ vlonder_moving_states Vlonder::get_moving_state() {
 	return _moving_state;
 }
 
-bool Vlonder::reach_water_sensor(WaterSensor *active_water_sensor) {
+bool Vlonder::reach_active_water_sensor() {
 	#ifdef DEBUG_VIA_SERIAL
 		Serial.print("Vlonder::reach_water_sensor called with sensor: ");
 		Serial.println(active_water_sensor->get_name());

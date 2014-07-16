@@ -13,7 +13,9 @@ public:
 
 	vlonder_moving_states get_moving_state();
 
-	bool reach_water_sensor(WaterSensor *active_water_sensor);
+	WaterSensor *active_water_sensor;
+
+	bool reach_active_water_sensor();
 	
 	void up();
 	void up(Motor::speed speed);
