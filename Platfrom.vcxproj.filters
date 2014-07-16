@@ -25,6 +25,9 @@
     <Filter Include="MCP4921">
       <UniqueIdentifier>{1a7890b1-cf1b-4e21-ad0c-010521a9c6e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Vlonder">
+      <UniqueIdentifier>{3d8683f6-e649-4af1-a708-57b60561c6de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Platfrom.ino" />
@@ -45,15 +48,6 @@
     <ClInclude Include="WaterSensorTwoSensors.h">
       <Filter>WaterSensor</Filter>
     </ClInclude>
-    <ClInclude Include="UnderWaterSensor.h">
-      <Filter>WaterSensor</Filter>
-    </ClInclude>
-    <ClInclude Include="HighBoatWaterSensor.h">
-      <Filter>WaterSensor</Filter>
-    </ClInclude>
-    <ClInclude Include="LowBoatWaterSensor.h">
-      <Filter>WaterSensor</Filter>
-    </ClInclude>
     <ClInclude Include="Motor.h">
       <Filter>Motor</Filter>
     </ClInclude>
@@ -62,6 +56,9 @@
     </ClInclude>
     <ClInclude Include="MotorWithBrake.h">
       <Filter>Motor</Filter>
+    </ClInclude>
+    <ClInclude Include="Vlonder.h">
+      <Filter>Vlonder</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="MotorWithBrake.cpp">
       <Filter>Motor</Filter>
+    </ClCompile>
+    <ClCompile Include="Vlonder.cpp">
+      <Filter>Vlonder</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
