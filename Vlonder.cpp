@@ -26,7 +26,7 @@ vlonder_moving_states Vlonder::get_moving_state() {
 
 bool Vlonder::reach_active_water_sensor() {
 	#ifdef DEBUG_VIA_SERIAL
-		Serial.print("Vlonder::reach_water_sensor called with sensor: ");
+		Serial.print("Vlonder::reach_active_water_sensor called with active sensor: ");
 		Serial.println(active_water_sensor->get_name());
 	#endif
 
@@ -45,6 +45,36 @@ bool Vlonder::reach_active_water_sensor() {
 		return true;
 	}
 		
+}
+
+void Vlonder::set_active_water_sensor(WaterSensor *sensor) {
+	active_water_sensor = sensor;
+	water_measurer.active_water_sensor = sensor;
+}
+
+void Vlonder::control_at_active_water_sensor() {
+	#ifdef DEBUG_VIA_SERIAL
+		Serial.print("Vlonder::control_at_active_water_sensor called with active sensor: ");
+		Serial.println(active_water_sensor->get_name());
+	#endif
+
+	switch (water_measurer.get_measure_results()) {
+		case WaterMeasurer::move_down:
+			// send vlonder up for motor_on_time
+			break;
+
+		case WaterMeasurer::move_up:
+			// send vlonder down for motor_on_time
+
+			break;
+
+		case WaterMeasurer::stay_at_position: 
+		case WaterMeasurer::undetermined: 
+		default:
+			break;
+
+	}
+	
 }
 
 

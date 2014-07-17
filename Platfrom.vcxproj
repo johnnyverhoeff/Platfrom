@@ -80,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="MotorWithBrake.h" />
     <ClInclude Include="Vlonder.h" />
+    <ClInclude Include="Vlonder_enums.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
     <ClInclude Include="WaterSensorOneSensor.h" />
     <ClInclude Include="Visual Micro\.Platfrom.vsarduino.h" />
     <ClInclude Include="WaterSensor.h" />

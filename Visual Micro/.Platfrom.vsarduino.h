@@ -59,6 +59,8 @@ void ISR_remote_control(void);
 #include "Z:\Documenten\Arduino\Platfrom\Vlonder.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\Vlonder.h"
 #include "Z:\Documenten\Arduino\Platfrom\Vlonder_enums.h"
+#include "Z:\Documenten\Arduino\Platfrom\WaterMeasurer.cpp"
+#include "Z:\Documenten\Arduino\Platfrom\WaterMeasurer.h"
 #include "Z:\Documenten\Arduino\Platfrom\WaterSensor.h"
 #include "Z:\Documenten\Arduino\Platfrom\WaterSensorOneSensor.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\WaterSensorOneSensor.h"

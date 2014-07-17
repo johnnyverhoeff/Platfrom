@@ -60,6 +60,9 @@
     <ClInclude Include="Vlonder.h">
       <Filter>Vlonder</Filter>
     </ClInclude>
+    <ClInclude Include="Vlonder_enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LimitSwitch.cpp">

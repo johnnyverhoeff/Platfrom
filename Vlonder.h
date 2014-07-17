@@ -4,6 +4,7 @@
 #include "LimitSwitch.h"
 #include "Motor.h"
 #include "WaterSensor.h"
+#include "WaterMeasurer.h"
 #include "Vlonder_enums.h"
 
 class Vlonder {
@@ -13,9 +14,11 @@ public:
 
 	vlonder_moving_states get_moving_state();
 
-	WaterSensor *active_water_sensor;
+	void set_active_water_sensor(WaterSensor *sensor);
+	WaterMeasurer water_measurer;
 
 	bool reach_active_water_sensor();
+	void control_at_active_water_sensor();
 	
 	void up();
 	void up(Motor::speed speed);
@@ -32,10 +35,13 @@ private:
 
 	LimitSwitch *_upper_limit_switch;
 	LimitSwitch *_lower_limit_switch;
-	bool reached_either_limit_switch();
 
 	Motor *_left_motor;
 	Motor *_right_motor;
+
+	WaterSensor *active_water_sensor;
+
+
 };
 
 #endif

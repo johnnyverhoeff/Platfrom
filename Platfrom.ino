@@ -55,9 +55,8 @@ void setup() {
 
 	setup_ISRs();
 
-	vlonder.active_water_sensor = &high_boat_sensor;
+	vlonder.set_active_water_sensor(&high_boat_sensor);
 
-	
 }
 
 void loop() {
@@ -89,7 +88,7 @@ void loop() {
 			break;
 
 		case control_vlonder_on_active_water_sensor:
-
+			vlonder.control_at_active_water_sensor();
 			break;
 
 		case none: default:
