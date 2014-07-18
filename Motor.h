@@ -24,6 +24,9 @@ private:
 	int _move_up_pin;
 	MCP4921 *speed_regulator;
 
+	unsigned long _start_time;
+	bool _is_moving;
+
 	void move(movement movement, int speed);
 
 public:
@@ -33,9 +36,17 @@ public:
 	virtual void up(speed speed);
 	virtual void up(int speed);
 
+	virtual bool up_with_time(int on_time);
+	virtual bool up_with_time(int on_time, speed speed);
+	virtual bool up_with_time(int on_time, int speed);
+
 	virtual void down();
 	virtual void down(speed speed);
 	virtual void down(int speed);
+
+	virtual bool down_with_time(int on_time);
+	virtual bool down_with_time(int on_time, speed speed);
+	virtual bool down_with_time(int on_time, int speed);
 
 	virtual void stop();
 

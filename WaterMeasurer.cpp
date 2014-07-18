@@ -85,3 +85,7 @@ WaterMeasurer::measure_results WaterMeasurer::get_measure_results() {
 			return stay_at_position;
 	}
 }
+
+int WaterMeasurer::get_motor_on_time() {
+	return _motor_on_time;
+}

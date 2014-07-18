@@ -24,9 +24,17 @@ public:
 	void up(Motor::speed speed);
 	void up(int speed);
 
+	void up_with_time(int on_time);
+	void up_with_time(int on_time, Motor::speed speed);
+	void up_with_time(int on_time, int speed);
+
 	void down();
 	void down(Motor::speed speed);
 	void down(int speed);
+
+	void down_with_time(int on_time);
+	void down_with_time(int on_time, Motor::speed speed);
+	void down_with_time(int on_time, int speed);
 	
 	void stop();
 

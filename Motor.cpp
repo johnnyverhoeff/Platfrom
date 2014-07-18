@@ -18,6 +18,8 @@ Motor::Motor(int down_pin, int up_pin, int SDI, int SCK, int CS) {
 
 	speed_regulator = new MCP4921(SDI, SCK, CS);
 	speed_regulator->setValue(zero_speed);
+
+	_is_moving = false;
 }
 
 void Motor::move(movement movement, int speed) {
@@ -30,14 +32,17 @@ void Motor::move(movement movement, int speed) {
 		case move_up:
 			digitalWrite(_move_up_pin, HIGH);
 			digitalWrite(_move_down_pin, LOW);
+			_is_moving = true;
 			break;
 		case move_down:
 			digitalWrite(_move_up_pin, LOW);
 			digitalWrite(_move_down_pin, HIGH);
+			_is_moving = false;
 			break;
 		case stop_moving: default:
 			digitalWrite(_move_up_pin, LOW);
 			digitalWrite(_move_down_pin, LOW);	
+			_is_moving = false;
 	}
 
 	speed_regulator->setValue(speed);
@@ -69,6 +74,26 @@ void Motor::down(int speed) {
 	move(move_down, speed);
 }
 
+bool Motor::down_with_time(int on_time) {
+	return down_with_time(on_time, full_speed);
+}
+
+bool Motor::down_with_time(int on_time, speed speed) {
+	return down_with_time(on_time, (int)speed);
+}
+
+bool Motor::down_with_time(int on_time, int speed) {
+	if (!_is_moving) {
+		_is_moving = true;
+		_start_time = millis();
+		move(move_down, speed);
+	}
+	else if (millis() - _start_time >= on_time * 100)
+		move(stop_moving, zero_speed);
+
+	return _is_moving;
+}
+
 void Motor::up() {
 	#ifdef DEBUG_VIA_SERIAL
 		Serial.println("\"Motor::up called");
@@ -94,6 +119,27 @@ void Motor::up(int speed) {
 
 	move(move_up, speed);
 }
+
+bool Motor::up_with_time(int on_time) {
+	return up_with_time(on_time, full_speed);
+}
+
+bool Motor::up_with_time(int on_time, speed speed) {
+	return up_with_time(on_time, (int)speed);
+}
+
+bool Motor::up_with_time(int on_time, int speed) {
+	if (!_is_moving) {
+		_is_moving = true;
+		_start_time = millis();
+		move(move_up, speed);
+	}
+	else if (millis() - _start_time >= on_time * 100)
+		move(stop_moving, zero_speed);
+
+	return _is_moving;
+}
+
 
 void Motor::stop() {
 	#ifdef DEBUG_VIA_SERIAL

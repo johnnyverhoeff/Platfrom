@@ -58,14 +58,27 @@ void Vlonder::control_at_active_water_sensor() {
 		Serial.println(active_water_sensor->get_name());
 	#endif
 
+	switch (_moving_state) {
+		case vlonder_moving_up:
+			up_with_time(water_measurer.get_motor_on_time());
+			return;
+
+		case vlonder_moving_down:
+			down_with_time(water_measurer.get_motor_on_time());
+			return;
+
+		case vlonder_stopped:
+		default:
+			break;
+	}
+
 	switch (water_measurer.get_measure_results()) {
-		case WaterMeasurer::move_down:
-			// send vlonder up for motor_on_time
+		case WaterMeasurer::move_up:
+			up_with_time(water_measurer.get_motor_on_time());
 			break;
 
-		case WaterMeasurer::move_up:
-			// send vlonder down for motor_on_time
-
+		case WaterMeasurer::move_down:
+			down_with_time(water_measurer.get_measure_results());
 			break;
 
 		case WaterMeasurer::stay_at_position: 
@@ -74,7 +87,6 @@ void Vlonder::control_at_active_water_sensor() {
 			break;
 
 	}
-	
 }
 
 
@@ -101,10 +113,34 @@ void Vlonder::up(int speed) {
 		Serial.println(speed);
 	#endif
 
-	if (!_upper_limit_switch->has_reached_limit()) return;
+	if (!_upper_limit_switch->has_reached_limit()) {
+		stop();
+		return;
+	}
 	_moving_state = vlonder_moving_up;
 	_left_motor->up(speed);
 	_right_motor->up(speed);
+}
+
+void Vlonder::up_with_time(int on_time) {
+	up_with_time(on_time, Motor::full_speed);
+}
+
+void Vlonder::up_with_time(int on_time, Motor::speed speed) {
+	up_with_time(on_time, (int)speed);
+}
+
+void Vlonder::up_with_time(int on_time, int speed) {
+	if (!_upper_limit_switch->has_reached_limit()) {
+		stop();
+		return;
+	}
+
+	_moving_state = vlonder_moving_up;
+
+	if (!_left_motor->up_with_time(on_time, speed) &
+		!_right_motor->up_with_time(on_time, speed))
+		stop();
 }
 
 void Vlonder::down() {
@@ -130,10 +166,34 @@ void Vlonder::down(int speed) {
 		Serial.println(speed);
 	#endif
 
-	if (!_lower_limit_switch->has_reached_limit()) return;
+	if (!_lower_limit_switch->has_reached_limit()) {
+		stop();
+		return;
+	}
 	_moving_state = vlonder_moving_down;
 	_left_motor->down(speed);
 	_right_motor->down(speed);
+}
+
+void Vlonder::down_with_time(int on_time) {
+	down_with_time(on_time, Motor::full_speed);
+}
+
+void Vlonder::down_with_time(int on_time, Motor::speed speed) {
+	down_with_time(on_time, (int)speed);
+}
+
+void Vlonder::down_with_time(int on_time, int speed) {
+	if (!_lower_limit_switch->has_reached_limit()) {
+		stop();
+		return;
+	}
+
+	_moving_state = vlonder_moving_down;
+
+	if (!_left_motor->down_with_time(on_time, speed) &
+		!_right_motor->down_with_time(on_time, speed))
+		stop();
 }
 
 void Vlonder::stop() {

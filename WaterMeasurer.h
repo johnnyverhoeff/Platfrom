@@ -42,6 +42,8 @@ public:
 	measure_results get_measure_results();
 
 	WaterSensor *active_water_sensor;
+
+	int get_motor_on_time();
 };
 
 #endif
