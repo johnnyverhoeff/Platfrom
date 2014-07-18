@@ -83,6 +83,9 @@
     <ClInclude Include="Vlonder_enums.h">
       <FileType>CppCode</FileType>
     </ClInclude>
+    <ClInclude Include="WaterMeasurer.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
     <ClInclude Include="WaterSensorOneSensor.h" />
     <ClInclude Include="Visual Micro\.Platfrom.vsarduino.h" />
     <ClInclude Include="WaterSensor.h" />
@@ -94,6 +97,7 @@
     <ClCompile Include="LimitSwitch.cpp" />
     <ClCompile Include="MotorWithBrake.cpp" />
     <ClCompile Include="Vlonder.cpp" />
+    <ClCompile Include="WaterMeasurer.cpp" />
     <ClCompile Include="WaterSensorOneSensor.cpp" />
     <ClCompile Include="WaterSensorTwoSensors.cpp" />
   </ItemGroup>

@@ -63,6 +63,9 @@
     <ClInclude Include="Vlonder_enums.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WaterMeasurer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LimitSwitch.cpp">
@@ -85,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="Vlonder.cpp">
       <Filter>Vlonder</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterMeasurer.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
