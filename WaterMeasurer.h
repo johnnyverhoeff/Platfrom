@@ -40,7 +40,6 @@ public:
 	WaterMeasurer();
 
 	measure_results get_measure_results();
-	
 
 	WaterSensor *active_water_sensor;
 };
