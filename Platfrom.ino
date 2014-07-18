@@ -1,7 +1,6 @@
 #include "Vlonder.h"
 #include "WaterSensorTwoSensors.h"
 
-
 #pragma region Defines
 
 #define DEBUG_VIA_SERIAL
@@ -21,7 +20,7 @@ volatile bool flag_remote_control_button_pressed = false;
 
 #ifdef DEBUG_VIA_SERIAL
 	volatile bool flag_interrupt = false;
-	String interrupt_msg;
+	char* interrupt_msg;
 #endif
 
 #pragma endregion All flags for interrupt handling are declared here
@@ -124,7 +123,7 @@ void setup_ISRs(void) {
 void ISR_limit_switch_reached(void) {
 	#ifdef DEBUG_VIA_SERIAL
 		flag_interrupt = true;
-		interrupt_msg = String("ISR_limit_switch_reached");
+		interrupt_msg = "ISR_limit_switch_reached";
 	#endif
 
 	// dont know yet to do this or global variable and in loop call stop....
@@ -134,7 +133,7 @@ void ISR_limit_switch_reached(void) {
 void ISR_remote_control(void) {
 	#ifdef DEBUG_VIA_SERIAL
 		flag_interrupt = true;
-		interrupt_msg = String("ISR_remote_control");
+		interrupt_msg = "ISR_remote_control";
 	#endif
 
 	// inverses state of this flag.
