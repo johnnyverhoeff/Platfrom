@@ -59,6 +59,8 @@ WaterMeasurer::measure_results WaterMeasurer::get_measure_results() {
 		float water_rising_percentage = _water_rising_hits * 100.0 / _total_samples_needed;
 		float water_dropping_percentage = _water_dropping_hits * 100.0 / _total_samples_needed;
 
+		_reset();
+
 		if (water_dropping_percentage < _lower_threshold && water_rising_percentage < _lower_threshold)
 			return move_down;
 		else if (water_dropping_percentage > _upper_threshold && water_rising_percentage > _upper_threshold)
