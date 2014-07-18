@@ -61,8 +61,10 @@ WaterMeasurer::measure_results WaterMeasurer::get_measure_results() {
 
 		if (water_dropping_percentage < _lower_threshold && water_rising_percentage < _lower_threshold)
 			return move_down;
+
 		else if (water_dropping_percentage > _upper_threshold && water_rising_percentage > _upper_threshold)
 			return move_up;
+
 		else
 			return stay_at_position;
 	}
