@@ -28,6 +28,9 @@
     <Filter Include="Vlonder">
       <UniqueIdentifier>{3d8683f6-e649-4af1-a708-57b60561c6de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="WaterMeasurer">
+      <UniqueIdentifier>{6cfa5289-20f0-4c82-9bfa-945b4ab474db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Platfrom.ino" />
@@ -61,10 +64,10 @@
       <Filter>Vlonder</Filter>
     </ClInclude>
     <ClInclude Include="Vlonder_enums.h">
-      <Filter>Header Files</Filter>
+      <Filter>Vlonder</Filter>
     </ClInclude>
     <ClInclude Include="WaterMeasurer.h">
-      <Filter>Header Files</Filter>
+      <Filter>WaterMeasurer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +93,7 @@
       <Filter>Vlonder</Filter>
     </ClCompile>
     <ClCompile Include="WaterMeasurer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>WaterMeasurer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
