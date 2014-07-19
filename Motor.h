@@ -3,8 +3,6 @@
 
 #include "MCP4921.h"
 
-//moet kijken naar de spi lib van arduino gebruiken
-
 class Motor {
 public:
 	enum speed {
@@ -30,7 +28,7 @@ private:
 	void move(movement movement, int speed);
 
 public:
-	Motor(int down_pin, int up_pin, int SDI, int SCK, int CS);
+	Motor(int down_pin, int up_pin, int SS);
 
 	virtual void up();
 	virtual void up(speed speed);

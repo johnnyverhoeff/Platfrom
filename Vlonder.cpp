@@ -9,8 +9,8 @@ Vlonder::Vlonder() {
 	_lower_limit_switch = new LimitSwitch(1);
 	_upper_limit_switch = new LimitSwitch(2);
 
-	_left_motor = new Motor(1, 2, 3, 4, 5);
-	_right_motor = new Motor(1, 2, 3, 4, 5);
+	_left_motor = new Motor(1, 2, 3);
+	_right_motor = new Motor(1, 2, 3);
 
 	_moving_state = vlonder_stopped;
 }

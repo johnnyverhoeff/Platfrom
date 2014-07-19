@@ -1,7 +1,7 @@
 #include "Motor.h"
 #include "Arduino.h"
 
-Motor::Motor(int down_pin, int up_pin, int SDI, int SCK, int CS) {
+Motor::Motor(int down_pin, int up_pin, int SS) {
 	#ifdef DEBUG_VIA_SERIAL
 		Serial.print("\"Motor::Motor called with params: down_pin: ");
 		Serial.print(down_pin); Serial.print(", up_pin: "); Serial.println(up_pin);
@@ -16,7 +16,7 @@ Motor::Motor(int down_pin, int up_pin, int SDI, int SCK, int CS) {
 	digitalWrite(_move_up_pin, LOW);
 	digitalWrite(_move_down_pin, LOW);
 
-	speed_regulator = new MCP4921(SDI, SCK, CS);
+	speed_regulator = new MCP4921(SS);
 	speed_regulator->setValue(zero_speed);
 
 	_is_moving = false;

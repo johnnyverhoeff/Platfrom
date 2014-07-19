@@ -1,5 +1,6 @@
 #include "Vlonder.h"
 #include "WaterSensorTwoSensors.h"
+#include "SPI\SPI.h"
 
 #pragma region Defines
 
@@ -48,6 +49,9 @@ program_states program_state;
 
 void setup() {
 	/* add setup code here */
+
+	SPI.begin();
+	SPI.setBitOrder(MSBFIRST);
 
 	Serial.begin(9600);
 	program_state = none;

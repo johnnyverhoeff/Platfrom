@@ -3,8 +3,6 @@
 
 #include "Motor.h"
 
-//moet kijken naar de spi lib van arduino gebruiken
-
 class MotorWithBrake : public Motor {
 private:
 	int _brake_pin;
@@ -12,7 +10,7 @@ private:
 	void _attach_brake();
 
 public:
-	MotorWithBrake(int down_pin, int up_pin, int brake_pin, int SDI, int SCK, int CS);
+	MotorWithBrake(int down_pin, int up_pin, int brake_pin, int SS);
 
 	void up();
 	void up(speed speed);

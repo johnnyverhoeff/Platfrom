@@ -1,8 +1,8 @@
 #include "MotorWithBrake.h"
 #include "Arduino.h"
 
-MotorWithBrake::MotorWithBrake(int down_pin, int up_pin, int brake_pin, int SDI, int SCK, int CS) :
-	Motor(down_pin, up_pin, SDI, SCK, CS) {
+MotorWithBrake::MotorWithBrake(int down_pin, int up_pin, int brake_pin, int SS) :
+	Motor(down_pin, up_pin, SS) {
 	_brake_pin = brake_pin;
 	pinMode(_brake_pin, OUTPUT);
 	_attach_brake();
