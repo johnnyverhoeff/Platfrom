@@ -48,6 +48,8 @@ void ISR_remote_control(void);
 #include "C:\Program Files\Arduino\hardware\arduino\cores\arduino\arduino.h"
 #include "C:\Program Files\Arduino\hardware\arduino\variants\mega\pins_arduino.h" 
 #include "Z:\Documenten\Arduino\Platfrom\Platfrom.ino"
+#include "Z:\Documenten\Arduino\Platfrom\ClickButton.cpp"
+#include "Z:\Documenten\Arduino\Platfrom\ClickButton.h"
 #include "Z:\Documenten\Arduino\Platfrom\LimitSwitch.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\LimitSwitch.h"
 #include "Z:\Documenten\Arduino\Platfrom\MCP4921.cpp"
