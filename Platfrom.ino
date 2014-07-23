@@ -29,12 +29,7 @@ volatile bool flag_remote_control_button_pressed = false;
 
 WaterSensorTwoSensors high_boat_sensor(HIGH_BOAT_LOWER_PIN, HIGH_BOAT_UPPER_PIN, "High boat water sensor");
 
-
-
 #pragma endregion All available water sensors are declared here
-
-
-//Vlonder vlonder;
 
 
 enum program_states {
@@ -51,8 +46,6 @@ bool state = 0;
 void setup() {
 	/* add setup code here */
 
-	//vlonder = new Vlonder();
-
 	pinMode(13, OUTPUT);
 	digitalWrite(13, state);
 
@@ -62,17 +55,16 @@ void setup() {
 	Serial.begin(9600);
 
 	Serial.println("Serial has begun");
-	//Serial.print("hbs: "); Serial.println(high_boat_sensor.get_name());
 
-	LimitSwitch ls(1, "TEST LS");
-	Serial.println(ls.get_name());
 
 	program_state = none;
 
 
 	setup_ISRs();
 
-	//vlonder.set_active_water_sensor(&high_boat_sensor);
+	Vlonder v(1);
+
+	v.set_active_water_sensor(&high_boat_sensor);
 
 }
 

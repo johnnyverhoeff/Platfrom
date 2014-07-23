@@ -6,11 +6,11 @@ Vlonder::Vlonder() {
 		Serial.println("Vlonder::Vlonder called");
 	#endif
 	// both limit switches on interrupt pins, dont know which ones yet
-	_lower_limit_switch = new LimitSwitch(1);
-	_upper_limit_switch = new LimitSwitch(2);
+	_lower_limit_switch = new LimitSwitch(30);
+	_upper_limit_switch = new LimitSwitch(31);
 
-	_left_motor = new Motor(1, 2, 3);
-	_right_motor = new Motor(1, 2, 3);
+	_left_motor = new Motor(40, 41, 42);
+	_right_motor = new Motor(43, 44, 45);
 
 	_moving_state = vlonder_stopped;
 }
