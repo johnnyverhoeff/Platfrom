@@ -75,9 +75,6 @@
     <ClInclude Include="Vlonder.h">
       <Filter>Vlonder</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LimitSwitch.cpp">
@@ -103,9 +100,6 @@
     </ClCompile>
     <ClCompile Include="ClickButton.cpp">
       <Filter>ClickButton</Filter>
-    </ClCompile>
-    <ClCompile Include="Vlonder.cpp">
-      <Filter>Vlonder</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

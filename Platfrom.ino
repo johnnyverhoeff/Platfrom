@@ -41,13 +41,8 @@ enum program_states {
 
 program_states program_state;
 
-bool state = 0;
-
 void setup() {
 	/* add setup code here */
-
-	pinMode(13, OUTPUT);
-	digitalWrite(13, state);
 
 	SPI.begin();
 	SPI.setBitOrder(MSBFIRST);
@@ -56,17 +51,14 @@ void setup() {
 
 	Serial.println("Serial has begun");
 
-
 	program_state = none;
+	Vlonder::Begin();
 
 
 	setup_ISRs();
 }
 
 void loop() {
-	state = !state;
-	digitalWrite(13, state);
-	delay(1000);
 
 	#ifdef DEBUG_VIA_SERIAL
 		if (flag_interrupt) {
@@ -82,27 +74,27 @@ void loop() {
 
 	// selecteren via afstandbediening ISR
 	//active_water_sensor = &een sensor....;
-	/*
+	
 	switch (program_state) {
 
 		case reach_active_water_sensor:
-			if (vlonder.reach_active_water_sensor())
+			if (Vlonder::reach_active_water_sensor())
 				program_state = none;
 			break;
 
 		case reach_and_control_vlonder_on_active_water_sensor:
-			if (vlonder.reach_active_water_sensor())
+			if (Vlonder::reach_active_water_sensor())
 				program_state = control_vlonder_on_active_water_sensor;
 			break;
 
 		case control_vlonder_on_active_water_sensor:
-			vlonder.control_at_active_water_sensor();
+			Vlonder::control_at_active_water_sensor();
 			break;
 
 		case none: default:
-			vlonder.stop();
+			Vlonder::stop();
 			break;
-	}*/
+	}
 }
 
 void handle_remote_control(void) {

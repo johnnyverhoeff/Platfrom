@@ -76,7 +76,6 @@
     <ClInclude Include="ClickButton.h">
       <FileType>CppCode</FileType>
     </ClInclude>
-    <ClInclude Include="Header.h" />
     <ClInclude Include="Vlonder.h" />
     <ClInclude Include="LimitSwitch.h" />
     <ClInclude Include="MCP4921.h" />
@@ -101,7 +100,6 @@
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
     <ClCompile Include="MotorWithBrake.cpp" />
-    <ClCompile Include="Vlonder.cpp" />
     <ClCompile Include="WaterMeasurer.cpp" />
     <ClCompile Include="WaterSensorOneSensor.cpp" />
     <ClCompile Include="WaterSensorTwoSensors.cpp" />
