@@ -1,6 +1,9 @@
 #include "WaterMeasurer.h"
 #include "Arduino.h"
+//#include "HardwareSerial.h"
+
 //#define DEBUG_VIA_SERIAL
+
 WaterMeasurer::WaterMeasurer() {
 	#ifdef DEBUG_VIA_SERIAL
 		Serial.println("WaterMeasurer::WaterMeasurer called");
@@ -10,16 +13,16 @@ WaterMeasurer::WaterMeasurer() {
 
 	_sample_period = 6;
 	_sample_time = 1;
-	_motor_on_time = 10;
+	_motor_on_time = 50;
 
 	_lower_threshold = 10;
 	_upper_threshold = 90;
 }
 
 void WaterMeasurer::_reset_hits() {
-	#ifdef DEBUG_VIA_SERIAL
-		Serial.println("WaterMeasurer::_reset_hits called");
-	#endif
+	//#ifdef DEBUG_VIA_SERIAL
+		//Serial.println("WaterMeasurer::_reset_hits called");
+	//#endif
 	_water_dropping_hits = 0;
 	_water_rising_hits = 0;
 }
@@ -41,7 +44,7 @@ bool WaterMeasurer::measure_sample(unsigned long start_time) {
 		//Serial.print("millis(): "); Serial.println(millis());
 	//#endif
 
-	if ((millis() - start_time) < (_sample_time * 100)) {
+	if (millis() - start_time < _sample_time * 100) {
 		_sample_in_progress = true;
 		return false;
 	}
@@ -55,8 +58,8 @@ bool WaterMeasurer::measure_sample(unsigned long start_time) {
 		_water_rising_hits++;
 
 	//#ifdef DEBUG_VIA_SERIAL
-		Serial.print("_water_dropping_hits: "); Serial.println(_water_dropping_hits);
-		Serial.print("_water_rising_hits: "); Serial.println(_water_rising_hits);
+		//Serial.print("_water_dropping_hits: "); Serial.println(_water_dropping_hits);
+		//Serial.print("_water_rising_hits: "); Serial.println(_water_rising_hits);
 	//#endif
 
 	_sample_in_progress = false;
@@ -82,12 +85,16 @@ WaterMeasurer::measure_results WaterMeasurer::get_measure_results() {
 
 		_reset();
 
-		if (water_dropping_percentage < _lower_threshold && water_rising_percentage < _lower_threshold)
-			return move_down;
-
-		else if (water_dropping_percentage > _upper_threshold && water_rising_percentage > _upper_threshold)
+		if (water_dropping_percentage <= _lower_threshold && water_rising_percentage >= _upper_threshold) {
+			//Serial.println("RESULT MOVING UP");
 			return move_up;
-
+		}
+			
+		else if (water_dropping_percentage >= _upper_threshold && water_rising_percentage <= _lower_threshold) {
+			//Serial.println("RESULT MOVING DOWN");
+			return move_down;
+		}
+			
 		else
 			return stay_at_position;
 	}
