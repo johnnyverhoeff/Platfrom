@@ -42,8 +42,6 @@ enum program_states {
 program_states program_state;
 
 void setup() {
-	/* add setup code here */
-
 	SPI.begin();
 	SPI.setBitOrder(MSBFIRST);
 
@@ -54,12 +52,10 @@ void setup() {
 	program_state = none;
 	Vlonder::Begin();
 
-
 	setup_ISRs();
 }
 
 void loop() {
-
 	#ifdef DEBUG_VIA_SERIAL
 		if (flag_interrupt) {
 			Serial.println(interrupt_msg);
@@ -67,13 +63,8 @@ void loop() {
 		}
 	#endif
 
-
 	if (flag_remote_control_button_pressed)
 		handle_remote_control();
-
-
-	// selecteren via afstandbediening ISR
-	//active_water_sensor = &een sensor....;
 	
 	switch (program_state) {
 
@@ -91,7 +82,8 @@ void loop() {
 			Vlonder::control_at_active_water_sensor();
 			break;
 
-		case none: default:
+		case none: 
+		default:
 			Vlonder::stop();
 			break;
 	}
@@ -128,7 +120,7 @@ void ISR_limit_switch_reached(void) {
 	#endif
 
 	// dont know yet to do this or global variable and in loop call stop....
-	//vlonder.stop();
+	Vlonder::stop();
 }
 
 void ISR_remote_control(void) {
