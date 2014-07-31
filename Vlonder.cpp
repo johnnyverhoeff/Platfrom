@@ -11,7 +11,7 @@ Vlonder::Vlonder() {
 
 	_left_motor = new Motor(40, 41, 42);
 	_right_motor = new Motor(43, 44, 45);
-
+	
 	_moving_state = vlonder_stopped;
 }
 
@@ -113,7 +113,7 @@ void Vlonder::up(int speed) {
 		Serial.println(speed);
 	#endif
 
-	if (!_upper_limit_switch->has_reached_limit()) {
+	if (_upper_limit_switch->has_reached_limit()) {
 		stop();
 		return;
 	}
@@ -131,7 +131,7 @@ void Vlonder::up_with_time(int on_time, Motor::speed speed) {
 }
 
 void Vlonder::up_with_time(int on_time, int speed) {
-	if (!_upper_limit_switch->has_reached_limit()) {
+	if (_upper_limit_switch->has_reached_limit()) {
 		stop();
 		return;
 	}
@@ -166,7 +166,7 @@ void Vlonder::down(int speed) {
 		Serial.println(speed);
 	#endif
 
-	if (!_lower_limit_switch->has_reached_limit()) {
+	if (_lower_limit_switch->has_reached_limit()) {
 		stop();
 		return;
 	}
@@ -184,7 +184,7 @@ void Vlonder::down_with_time(int on_time, Motor::speed speed) {
 }
 
 void Vlonder::down_with_time(int on_time, int speed) {
-	if (!_lower_limit_switch->has_reached_limit()) {
+	if (_lower_limit_switch->has_reached_limit()) {
 		stop();
 		return;
 	}
