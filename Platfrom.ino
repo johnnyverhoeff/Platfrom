@@ -49,10 +49,12 @@ void setup() {
 
 	Serial.println("Serial has begun");
 
-	program_state = none;
+	program_state = control_vlonder_on_active_water_sensor;
 	Vlonder::Begin();
 
 	setup_ISRs();
+
+	Vlonder::set_active_water_sensor(&high_boat_sensor);
 }
 
 void loop() {
