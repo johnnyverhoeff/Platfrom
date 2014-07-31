@@ -37,12 +37,13 @@ void Motor::move(movement movement, int speed) {
 		case move_down:
 			digitalWrite(_move_up_pin, LOW);
 			digitalWrite(_move_down_pin, HIGH);
-			_is_moving = false;
+			_is_moving = true;
 			break;
 		case stop_moving: default:
 			digitalWrite(_move_up_pin, LOW);
 			digitalWrite(_move_down_pin, LOW);	
 			_is_moving = false;
+			//Serial.print("a motor stopped after: "); Serial.println((millis() - _start_time));
 	}
 
 	speed_regulator->setValue(speed);
@@ -88,7 +89,7 @@ bool Motor::down_with_time(int on_time, int speed) {
 		_start_time = millis();
 		move(move_down, speed);
 	}
-	else if (millis() - _start_time >= on_time * 100)
+	else if (millis() - _start_time >= on_time * 100) 
 		move(stop_moving, zero_speed);
 
 	return _is_moving;
