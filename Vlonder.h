@@ -4,10 +4,11 @@
 #include "WaterMeasurer.h"
 #include "Vlonder_enums.h"
 #include "HardwareSerial.h"
+#include "Arduino.h"
 
 namespace Vlonder {
 
-	#define DEBUG_VIA_SERIAL
+	//#define DEBUG_VIA_SERIAL
 
 	vlonder_moving_states _moving_state;
 
@@ -38,13 +39,14 @@ namespace Vlonder {
 	}
 
 	void stop() {
-		#ifdef DEBUG_VIA_SERIAL
+		//#ifdef DEBUG_VIA_SERIAL
 			Serial.println("Vlonder::stop called");
-		#endif
+		//#endif
 
 		_moving_state = vlonder_stopped;
 		_left_motor->stop();
 		_right_motor->stop();
+
 	}
 
 	void up(int speed) {
@@ -91,13 +93,13 @@ namespace Vlonder {
 		if (!_left_motor->up_with_time(on_time, speed) &
 			!_right_motor->up_with_time(on_time, speed))
 			stop();
+
+		delay(10);
 	}
 
 	void up_with_time(int on_time, Motor::speed speed) {
 		up_with_time(on_time, (int)speed);
 	}
-
-
 
 	void up_with_time(int on_time) {
 		up_with_time(on_time, Motor::full_speed);
@@ -145,7 +147,9 @@ namespace Vlonder {
 
 		if (!_left_motor->down_with_time(on_time, speed) &
 			!_right_motor->down_with_time(on_time, speed))
-			stop();
+			stop();		
+
+		delay(10);
 	}
 
 
@@ -201,6 +205,7 @@ namespace Vlonder {
 			//Serial.println(active_water_sensor->get_name());
 		#endif
 
+
 		switch (_moving_state) {
 			case vlonder_moving_up:
 				up_with_time(water_measurer.get_motor_on_time());
@@ -212,23 +217,24 @@ namespace Vlonder {
 
 			case vlonder_stopped:
 			default:
+				//Serial.println("switch(_moving_state) -> stopped");
 				break;
 		}
 
 		switch (water_measurer.get_measure_results()) {
 			case WaterMeasurer::move_up:
-				Serial.println("RESULT MOVING UP");
 				up_with_time(water_measurer.get_motor_on_time());
 				break;
 
 			case WaterMeasurer::move_down:
-				Serial.println("RESULT MOVING DOWN");
-				down_with_time(water_measurer.get_measure_results());
+				down_with_time(water_measurer.get_motor_on_time());
 				break;
 
 			case WaterMeasurer::stay_at_position:
 			case WaterMeasurer::undetermined:
 			default:
+				//Serial.println("switch(water meter) -> un/stay");
+
 				break;
 		}
 	}
