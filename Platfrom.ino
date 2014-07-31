@@ -61,11 +61,6 @@ void setup() {
 
 
 	setup_ISRs();
-
-	Vlonder v(1);
-
-	v.set_active_water_sensor(&high_boat_sensor);
-
 }
 
 void loop() {

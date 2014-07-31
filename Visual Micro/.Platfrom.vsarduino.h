@@ -50,6 +50,7 @@ void ISR_remote_control(void);
 #include "Z:\Documenten\Arduino\Platfrom\Platfrom.ino"
 #include "Z:\Documenten\Arduino\Platfrom\ClickButton.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\ClickButton.h"
+#include "Z:\Documenten\Arduino\Platfrom\Header.h"
 #include "Z:\Documenten\Arduino\Platfrom\LimitSwitch.cpp"
 #include "Z:\Documenten\Arduino\Platfrom\LimitSwitch.h"
 #include "Z:\Documenten\Arduino\Platfrom\MCP4921.cpp"

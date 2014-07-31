@@ -44,7 +44,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Program Files\Arduino\hardware\arduino\cores\arduino;C:\Program Files\Arduino\hardware\arduino\variants\mega;C:\Program Files\Arduino\libraries;C:\Program Files\Arduino\hardware\arduino\libraries;C:\Program Files\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers;C:\Users\Johnny\Documents\Arduino\libraries;c:\program files\arduino\hardware\tools\avr\avr\include\;c:\program files\arduino\hardware\tools\avr\avr\include\avr\;c:\program files\arduino\hardware\tools\avr\avr\;c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\Arduino\hardware\arduino\cores\arduino;C:\Program Files\Arduino\hardware\arduino\variants\mega;C:\Program Files\Arduino\libraries\SPI;C:\Program Files\Arduino\libraries\SPI\utility;C:\Program Files\Arduino\libraries;C:\Program Files\Arduino\hardware\arduino\libraries;C:\Program Files\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers;C:\Users\Johnny\Documents\Arduino\libraries;c:\program files\arduino\hardware\tools\avr\avr\include\;c:\program files\arduino\hardware\tools\avr\avr\include\avr\;c:\program files\arduino\hardware\tools\avr\avr\;c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>Z:\Documenten\Arduino\Platfrom\Visual Micro\.Platfrom.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega2560__;ARDUINO=105;ARDUINO_MAIN;__AVR__;__avr__;F_CPU=16000000L;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -73,13 +73,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClickButton.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="Vlonder.h" />
     <ClInclude Include="LimitSwitch.h" />
     <ClInclude Include="MCP4921.h" />
     <ClInclude Include="Motor.h">
       <FileType>CppCode</FileType>
     </ClInclude>
     <ClInclude Include="MotorWithBrake.h" />
-    <ClInclude Include="Vlonder.h" />
     <ClInclude Include="Vlonder_enums.h">
       <FileType>CppCode</FileType>
     </ClInclude>
@@ -92,6 +96,7 @@
     <ClInclude Include="WaterSensorTwoSensors.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClickButton.cpp" />
     <ClCompile Include="MCP4921.cpp" />
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
