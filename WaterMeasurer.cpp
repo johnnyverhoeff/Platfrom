@@ -1,6 +1,6 @@
 #include "WaterMeasurer.h"
 #include "Arduino.h"
-
+//#define DEBUG_VIA_SERIAL
 WaterMeasurer::WaterMeasurer() {
 	#ifdef DEBUG_VIA_SERIAL
 		Serial.println("WaterMeasurer::WaterMeasurer called");
@@ -8,9 +8,9 @@ WaterMeasurer::WaterMeasurer() {
 
 	_reset();
 
-	_sample_period = 60;
+	_sample_period = 6;
 	_sample_time = 1;
-	_motor_on_time = 7;
+	_motor_on_time = 10;
 
 	_lower_threshold = 10;
 	_upper_threshold = 90;
@@ -35,11 +35,13 @@ void WaterMeasurer::_reset() {
 }
 
 bool WaterMeasurer::measure_sample(unsigned long start_time) {
-	#ifdef DEBUG_VIA_SERIAL
-		Serial.println("WaterMeasurer::measure_sample called");
-	#endif
+	//#ifdef DEBUG_VIA_SERIAL
+		//Serial.println("WaterMeasurer::measure_sample called");
+		//Serial.print("start_time: "); Serial.println(start_time);
+		//Serial.print("millis(): "); Serial.println(millis());
+	//#endif
 
-	if (millis() - start_time < _sample_time * 100) {
+	if ((millis() - start_time) < (_sample_time * 100)) {
 		_sample_in_progress = true;
 		return false;
 	}
@@ -52,14 +54,19 @@ bool WaterMeasurer::measure_sample(unsigned long start_time) {
 	if (active_water_sensor->is_water_rising())
 		_water_rising_hits++;
 
+	//#ifdef DEBUG_VIA_SERIAL
+		Serial.print("_water_dropping_hits: "); Serial.println(_water_dropping_hits);
+		Serial.print("_water_rising_hits: "); Serial.println(_water_rising_hits);
+	//#endif
+
 	_sample_in_progress = false;
 	return true;
 }
 
 WaterMeasurer::measure_results WaterMeasurer::get_measure_results() {
-	#ifdef DEBUG_VIA_SERIAL
-		Serial.println("WaterMeasurer::get_measure_results called");
-	#endif
+	//#ifdef DEBUG_VIA_SERIAL
+		//Serial.println("WaterMeasurer::get_measure_results called");
+	//#endif
 	if (_sample_counter < _total_samples_needed) { // if not done collecting all samples
 
 		if (!_sample_in_progress) // if no sample is in progress, set the start time and call the measure method
