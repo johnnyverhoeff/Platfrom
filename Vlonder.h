@@ -40,7 +40,7 @@ namespace Vlonder {
 
 	void stop() {
 		//#ifdef DEBUG_VIA_SERIAL
-			Serial.println("Vlonder::stop called");
+			//Serial.println("Vlonder::stop called");
 		//#endif
 
 		_moving_state = vlonder_stopped;
@@ -169,6 +169,16 @@ namespace Vlonder {
 		#endif
 
 		return _moving_state;
+	}
+
+	bool reach_upper_limit_switch() {
+		up();
+		return _upper_limit_switch->has_reached_limit();
+	}
+
+	bool reach_lower_limit_switch() {
+		down();
+		return _lower_limit_switch->has_reached_limit();
 	}
 
 	bool reach_active_water_sensor() {
