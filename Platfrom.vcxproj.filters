@@ -34,6 +34,12 @@
     <Filter Include="ClickButton">
       <UniqueIdentifier>{a4b17b84-1e61-41ed-ba73-2bceff0a2098}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ArduinoJson">
+      <UniqueIdentifier>{88fd8601-a541-4c50-81a5-d57b42161a17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WebServer">
+      <UniqueIdentifier>{60ff2bf0-1554-4ab7-a5bb-e9d3a12d3b0e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Platfrom.ino" />
@@ -75,6 +81,75 @@
     <ClInclude Include="Vlonder.h">
       <Filter>Vlonder</Filter>
     </ClInclude>
+    <ClInclude Include="JsonGenerator.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="WebServer.h">
+      <Filter>WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="EscapedString.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\jsmn.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonArray.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonArray.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonArrayBase.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonArrayIterator.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonObject.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonObject.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonObjectBase.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonObjectIterator.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonPair.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonParser.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonParserBase.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonPrintable.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonToken.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonValue.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonParser\JsonValue.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="Print.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="Printable.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
+    <ClInclude Include="StringBuilder.h">
+      <Filter>ArduinoJson</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LimitSwitch.cpp">
@@ -100,6 +175,48 @@
     </ClCompile>
     <ClCompile Include="ClickButton.cpp">
       <Filter>ClickButton</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonParser.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonGenerator.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="EscapedString.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonParser\jsmn.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonParser\JsonArray.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonArrayBase.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonParser\JsonObject.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonObjectBase.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonParser\JsonParserBase.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonParser\JsonToken.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonValue.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonParser\JsonValue.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="Print.cpp">
+      <Filter>ArduinoJson</Filter>
+    </ClCompile>
+    <ClCompile Include="StringBuilder.cpp">
+      <Filter>ArduinoJson</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
