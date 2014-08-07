@@ -41,6 +41,7 @@ extern "C" void __cxa_pure_virtual() {;}
 //
 //
 void handle_remote_control(void);
+void setup_WebServer_Commands();
 void setup_ISRs(void);
 void ISR_limit_switch_reached(void);
 void ISR_remote_control(void);
@@ -50,6 +51,21 @@ void ISR_remote_control(void);
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\Platfrom.ino"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\ClickButton.cpp"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\ClickButton.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\EscapedString.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\EscapedString.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonArray.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonArrayBase.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonArrayBase.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonGenerator.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonGenerator.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonObject.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonObjectBase.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonObjectBase.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonParser.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonParser.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonPrintable.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonValue.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\JsonValue.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\LimitSwitch.cpp"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\LimitSwitch.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\MCP4921.cpp"
@@ -58,6 +74,11 @@ void ISR_remote_control(void);
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\Motor.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\MotorWithBrake.cpp"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\MotorWithBrake.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\Print.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\Print.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\Printable.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\StringBuilder.cpp"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\StringBuilder.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\Vlonder.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\Vlonder_enums.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\WaterMeasurer.cpp"

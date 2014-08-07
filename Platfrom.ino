@@ -2,6 +2,10 @@
 #include "WaterSensorTwoSensors.h"
 #include "SPI\SPI.h"
 #include "ClickButton.h"
+#include "Ethernet\Ethernet.h"
+#include "WebServer.h"
+#include "JsonGenerator.h"
+
 
 #pragma region Defines
 
@@ -29,8 +33,21 @@ volatile bool flag_remote_control_button_pressed = false;
 #pragma region WaterSensors
 
 WaterSensorTwoSensors high_boat_sensor(HIGH_BOAT_LOWER_PIN, HIGH_BOAT_UPPER_PIN, "High boat water sensor");
+WaterSensorOneSensor under_water_sensor(HIGH_BOAT_LOWER_PIN, "Under water sensor");
 
 #pragma endregion All available water sensors are declared here
+
+#pragma region WebServer
+
+static uint8_t mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+
+static uint8_t ip[] = { 192, 168, 215, 177 };
+
+#define PREFIX ""
+WebServer webserver(PREFIX, 80);
+
+#pragma endregion All webserver related things are declared here
+
 
 
 enum program_states {
@@ -64,6 +81,9 @@ void setup() {
 		Serial.println("DEBUG_VIA_SERIAL");
 	#endif
 
+	Ethernet.begin(mac, ip);
+	setup_WebServer_Commands();
+
 	program_state = none;// reach_and_control_vlonder_on_active_water_sensor;
 	Vlonder::Begin();
 
@@ -80,8 +100,12 @@ void loop() {
 		}
 	#endif
 
-	//if (flag_remote_control_button_pressed)
-		handle_remote_control();
+
+	char buff[64];
+	int len = 64;
+	webserver.processConnection(buff, &len);
+
+	handle_remote_control();
 	
 	switch (program_state) {
 
@@ -148,9 +172,64 @@ void handle_remote_control(void) {
 	if (buttons[1].clicks == -2)
 		program_state = reach_lower_limit_switch;
 
+
+	if (buttons[0].clicks == 3)
+		Vlonder::set_active_water_sensor(&under_water_sensor);
+
 }
 
 
+void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool) {
+
+	server.httpSuccess();
+
+	if (type != WebServer::HEAD) {
+		P(helloMsg) = "<h1>Arduino platform controller</h1>";
+		server.printP(helloMsg);
+
+		server.print(F("<p>Current program state is : ")); server.print(program_state); server.println(F("</p>"));
+
+		server.print(F("<p>Upper Limit Switch: ")); server.print(Vlonder::_upper_limit_switch->has_reached_limit()); server.print(F("</p>"));
+		server.print(F("<p>Lower Limit Switch: ")); server.print(Vlonder::_lower_limit_switch->has_reached_limit()); server.print(F("</p>"));
+	}
+
+}
+
+void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, bool tail_complete) {
+	if (type == WebServer::POST) {
+		server.httpFail();
+		return;
+	}
+
+	server.httpSuccess("application/json");
+
+	if (type == WebServer::HEAD)
+		return;
+
+	
+	using namespace ArduinoJson::Generator;
+
+	JsonObject<2> button_states;
+
+	button_states["Button0"] = (bool)buttons[0].depressed;
+	button_states["Button1"] = (bool)buttons[1].depressed;
+
+	
+	JsonObject<3> root;
+
+	root["program_state"] = program_state;
+	root["buttons"] = button_states;
+	root["vlonder"] = Vlonder::get_json_status();
+
+	root.printTo(server);
+}
+
+void setup_WebServer_Commands() {
+	webserver.setDefaultCommand(&welcomePage);
+	webserver.addCommand("index.html", &welcomePage);
+	webserver.addCommand("json", &jsonCmd);
+
+}
 
 void setup_ISRs(void) {
 	/*
