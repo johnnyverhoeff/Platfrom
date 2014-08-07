@@ -1,138 +1,978 @@
-﻿Build started 11-7-2014 16:13:27.
-     1>Project "Z:\Documenten\Arduino\Platfrom\Platfrom.vcxproj" on node 2 (Build target(s)).
+﻿Build started 7-8-2014 17:05:10.
+     1>Project "D:\Documents\GitHub\Arduino Projects\Platfrom\Platfrom.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files\Arduino\hardware\arduino\cores\arduino" /I"C:\Program Files\Arduino\hardware\arduino\variants\mega" /I"C:\Program Files\Arduino\libraries" /I"C:\Program Files\Arduino\hardware\arduino\libraries" /I"C:\Program Files\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers" /IC:\Users\Johnny\Documents\Arduino\libraries /I"c:\program files\arduino\hardware\tools\avr\avr\include\\" /I"c:\program files\arduino\hardware\tools\avr\avr\include\avr\\" /I"c:\program files\arduino\hardware\tools\avr\avr\\" /I"c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D __AVR_ATmega2560__ /D ARDUINO=105 /D ARDUINO_MAIN /D __AVR__ /D __avr__ /D F_CPU=16000000L /D __cplusplus /D _MBCS /X /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /FI"Z:\Documenten\Arduino\Platfrom\Visual Micro\.Platfrom.vsarduino.h" /analyze- /errorReport:prompt LimitSwitch.cpp WaterSensorOneSensor.cpp WaterSensorTwoSensors.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino" /I"C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega" /I"C:\Program Files (x86)\Arduino\libraries\SPI" /I"C:\Program Files (x86)\Arduino\libraries\SPI\utility" /I"C:\Program Files (x86)\Arduino\libraries" /I"C:\Program Files (x86)\Arduino\hardware\arduino\libraries" /I"C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers" /ID:\Documents\Arduino\libraries /I"c:\program files (x86)\arduino\hardware\tools\avr\avr\include\\" /I"c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\\" /I"c:\program files (x86)\arduino\hardware\tools\avr\avr\\" /I"c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D __AVR_ATmega2560__ /D ARDUINO=105 /D ARDUINO_MAIN /D __AVR__ /D __avr__ /D F_CPU=16000000L /D __cplusplus /D _MBCS /X /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /FI"D:\Documents\GitHub\Arduino Projects\Platfrom\Visual Micro\.Platfrom.vsarduino.h" /analyze- /errorReport:prompt ClickButton.cpp MCP4921.cpp Motor.cpp LimitSwitch.cpp MotorWithBrake.cpp WaterMeasurer.cpp WaterSensorOneSensor.cpp WaterSensorTwoSensors.cpp
          WaterSensorTwoSensors.cpp
      1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
                  command-line arguments :  see previous definition of '__AVR_ATmega2560__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
                  command-line arguments :  see previous definition of 'ARDUINO_MAIN'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
                  command-line arguments :  see previous definition of '__AVR__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
                  command-line arguments :  see previous definition of '__avr__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
-                 z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
-     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
-                 z:\documenten\arduino\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
                  There are no conversions to function types, although there are conversions to references or pointers to functions
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
                  There are no conversions to function types, although there are conversions to references or pointers to functions
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
-     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>z:\documenten\arduino\platfrom\limitswitch.cpp(10): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>z:\documenten\arduino\platfrom\watersensoronesensor.cpp(9): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>z:\documenten\arduino\platfrom\watersensortwosensors.cpp(4): error C2084: function 'WaterSensorTwoSensors::WaterSensorTwoSensors(int,int)' already has a body
-                 z:\documenten\arduino\platfrom\watersensortwosensors.h(11) : see previous definition of '{ctor}'
-     1>z:\documenten\arduino\platfrom\watersensortwosensors.cpp(10): error C2084: function 'bool WaterSensorTwoSensors::is_water_rising(void)' already has a body
-                 z:\documenten\arduino\platfrom\watersensortwosensors.h(12) : see previous definition of 'is_water_rising'
-     1>z:\documenten\arduino\platfrom\watersensortwosensors.cpp(14): error C2084: function 'bool WaterSensorTwoSensors::is_water_dropping(void)' already has a body
-                 z:\documenten\arduino\platfrom\watersensortwosensors.h(13) : see previous definition of 'is_water_dropping'
-     1>z:\documenten\arduino\platfrom\watersensortwosensors.cpp(18): error C2084: function 'bool WaterSensorTwoSensors::is_water_steady(void)' already has a body
-                 z:\documenten\arduino\platfrom\watersensortwosensors.h(14) : see previous definition of 'is_water_steady'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
          WaterSensorOneSensor.cpp
      1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
                  command-line arguments :  see previous definition of '__AVR_ATmega2560__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
                  command-line arguments :  see previous definition of 'ARDUINO_MAIN'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
                  command-line arguments :  see previous definition of '__AVR__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
                  command-line arguments :  see previous definition of '__avr__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
-                 z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
-     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
-                 z:\documenten\arduino\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
                  There are no conversions to function types, although there are conversions to references or pointers to functions
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
                  There are no conversions to function types, although there are conversions to references or pointers to functions
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
-     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>z:\documenten\arduino\platfrom\limitswitch.cpp(10): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>z:\documenten\arduino\platfrom\watersensoronesensor.cpp(9): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>z:\documenten\arduino\platfrom\watersensoronesensor.cpp(4): error C2084: function 'WaterSensorOneSensor::WaterSensorOneSensor(int)' already has a body
-                 z:\documenten\arduino\platfrom\watersensoronesensor.h(11) : see previous definition of '{ctor}'
-     1>z:\documenten\arduino\platfrom\watersensoronesensor.cpp(8): error C2084: function 'bool WaterSensorOneSensor::is_water_rising(void)' already has a body
-                 z:\documenten\arduino\platfrom\watersensoronesensor.h(12) : see previous definition of 'is_water_rising'
-     1>z:\documenten\arduino\platfrom\watersensoronesensor.cpp(12): error C2084: function 'bool WaterSensorOneSensor::is_water_dropping(void)' already has a body
-                 z:\documenten\arduino\platfrom\watersensoronesensor.h(13) : see previous definition of 'is_water_dropping'
-     1>z:\documenten\arduino\platfrom\watersensoronesensor.cpp(16): error C2084: function 'bool WaterSensorOneSensor::is_water_steady(void)' already has a body
-                 z:\documenten\arduino\platfrom\watersensoronesensor.h(14) : see previous definition of 'is_water_steady'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
+         WaterMeasurer.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
+         MotorWithBrake.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
          LimitSwitch.cpp
      1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
                  command-line arguments :  see previous definition of '__AVR_ATmega2560__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
                  command-line arguments :  see previous definition of 'ARDUINO_MAIN'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
                  command-line arguments :  see previous definition of '__AVR__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
                  command-line arguments :  see previous definition of '__avr__'
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
-     1>z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
-                 z:\documenten\arduino\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
-     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
-                 z:\documenten\arduino\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
                  There are no conversions to function types, although there are conversions to references or pointers to functions
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
                  There are no conversions to function types, although there are conversions to references or pointers to functions
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
-     1>c:\program files\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
-     1>c:\program files\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>z:\documenten\arduino\platfrom\limitswitch.cpp(10): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>z:\documenten\arduino\platfrom\watersensoronesensor.cpp(9): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>z:\documenten\arduino\platfrom\limitswitch.cpp(4): error C2084: function 'LimitSwitch::LimitSwitch(int)' already has a body
-                 z:\documenten\arduino\platfrom\limitswitch.h(10) : see previous definition of '{ctor}'
-     1>z:\documenten\arduino\platfrom\limitswitch.cpp(8): error C2084: function 'bool LimitSwitch::has_reached_limit(void)' already has a body
-                 z:\documenten\arduino\platfrom\limitswitch.h(11) : see previous definition of 'has_reached_limit'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
+         Motor.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
+         MCP4921.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
+         ClickButton.cpp
+     1>c1xx : warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(13): warning C4005: '__AVR_ATmega2560__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR_ATmega2560__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(15): warning C4005: 'ARDUINO_MAIN' : macro redefinition
+                 command-line arguments :  see previous definition of 'ARDUINO_MAIN'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(16): warning C4005: '__AVR__' : macro redefinition
+                 command-line arguments :  see previous definition of '__AVR__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(17): warning C4005: '__avr__' : macro redefinition
+                 command-line arguments :  see previous definition of '__avr__'
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(19): warning C4117: macro name '__cplusplus' is reserved, '#define' ignored
+     1>d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(26): warning C4005: '__asm__' : macro redefinition
+                 d:\documents\github\arduino projects\platfrom\visual micro\.platfrom.vsarduino.h(21) : see previous definition of '__asm__'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stddef.h(214): error C2371: 'size_t' : redefinition; different basic types
+                 d:\documents\github\arduino projects\platfrom\predefined c++ types (compiler internal)(19) : see declaration of 'size_t'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(106): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2072: 'div' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(152): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'div_t (int,int)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2072: 'ldiv' : initialization of a function
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(158): error C2440: 'initializing' : cannot convert from 'const char [12]' to 'ldiv_t (long,long)'
+                 There are no conversions to function types, although there are conversions to references or pointers to functions
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(278): error C3646: '__ATTR_NORETURN__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(290): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(319): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\stdlib.h(338): error C3646: '__ATTR_MALLOC__' : unknown override specifier
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(336): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(337): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(413): error C2143: syntax error : missing ')' before ':'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\math.h(414): error C2059: syntax error : ')'
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\pgmspace.h(123): warning C4091: 'typedef ' : ignored on left of 'void' when no variable is declared
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: '[' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\interrupt.h(110): error C2010: ']' : unexpected in macro formal parameter list
+     1>c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\stdarg.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(134): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\platfrom.ino(140): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>d:\documents\github\arduino projects\platfrom\limitswitch.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(92): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\motor.cpp(138): warning C4018: '>=' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(13): error C2086: 'vlonder_moving_states Vlonder::_moving_state' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(13) : see declaration of 'Vlonder::_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(15): error C2086: 'LimitSwitch *Vlonder::_upper_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(15) : see declaration of 'Vlonder::_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(16): error C2086: 'LimitSwitch *Vlonder::_lower_limit_switch' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(16) : see declaration of 'Vlonder::_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(18): error C2086: 'Motor *Vlonder::_left_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(18) : see declaration of 'Vlonder::_left_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(19): error C2086: 'Motor *Vlonder::_right_motor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(19) : see declaration of 'Vlonder::_right_motor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(21): error C2086: 'WaterSensor *Vlonder::active_water_sensor' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(21) : see declaration of 'Vlonder::active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(23): error C2086: 'WaterMeasurer Vlonder::water_measurer' : redefinition
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(23) : see declaration of 'Vlonder::water_measurer'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(27): error C2084: function 'void Vlonder::Begin(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(27) : see previous definition of 'Begin'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(41): error C2084: function 'void Vlonder::stop(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(41) : see previous definition of 'stop'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(52): error C2084: function 'void Vlonder::up(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(52) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(59): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(67): error C2084: function 'void Vlonder::up(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(67) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(73): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(77): error C2084: function 'void Vlonder::up(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(77) : see previous definition of 'up'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(82): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(85): error C2084: function 'void Vlonder::up_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(85) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(87): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(95): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(100): error C2084: function 'void Vlonder::up_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(100) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(101): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(104): error C2084: function 'void Vlonder::up_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(104) : see previous definition of 'up_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(105): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(108): error C2084: function 'void Vlonder::down(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(108) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(115): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(123): error C2084: function 'void Vlonder::down(Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(123) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(129): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(132): error C2084: function 'void Vlonder::down(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(132) : see previous definition of 'down'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(137): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(140): error C2084: function 'void Vlonder::down_with_time(int,int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(140) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(142): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(150): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(156): error C2084: function 'void Vlonder::down_with_time(int,Motor::speed)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(156) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(157): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(160): error C2084: function 'void Vlonder::down_with_time(int)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(160) : see previous definition of 'down_with_time'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(161): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(165): error C2084: function 'vlonder_moving_states Vlonder::get_moving_state(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(165) : see previous definition of 'get_moving_state'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(174): error C2084: function 'bool Vlonder::reach_upper_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(174) : see previous definition of 'reach_upper_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(175): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(179): error C2084: function 'bool Vlonder::reach_lower_limit_switch(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(179) : see previous definition of 'reach_lower_limit_switch'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(180): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(184): error C2084: function 'bool Vlonder::reach_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(184) : see previous definition of 'reach_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(193): error C2264: 'Vlonder::up' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(195): error C2264: 'Vlonder::down' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(201): error C3861: 'stop': identifier not found
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(207): error C2084: function 'void Vlonder::set_active_water_sensor(WaterSensor *)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(207) : see previous definition of 'set_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(212): error C2084: function 'void Vlonder::control_at_active_water_sensor(void)' already has a body
+                 d:\documents\github\arduino projects\platfrom\vlonder.h(212) : see previous definition of 'control_at_active_water_sensor'
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(221): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(225): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(236): error C2264: 'Vlonder::up_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\vlonder.h(240): error C2264: 'Vlonder::down_with_time' : error in function definition or declaration; function not called
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(83): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watermeasurer.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\github\arduino projects\platfrom\watersensoronesensor.cpp(14): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\documents\github\arduino projects\platfrom\webserver.h(31): fatal error C1083: Cannot open include file: 'EthernetClient.h': No such file or directory
          Generating Code...
-     1>Done Building Project "Z:\Documenten\Arduino\Platfrom\Platfrom.vcxproj" (Build target(s)) -- FAILED.
+     1>Done Building Project "D:\Documents\GitHub\Arduino Projects\Platfrom\Platfrom.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:01.59
+Time Elapsed 00:00:00.90
