@@ -14,8 +14,8 @@
 #define LIMIT_SWITCH_INTERRUPT_NUMBER 4 // dont know which interrupt number yet
 #define REMOTE_CONTROL_INTERRUPT_NUMBER 3 // dont know which interrupt number yet 
 
-#define HIGH_BOAT_UPPER_PIN 10 // dont know
-#define HIGH_BOAT_LOWER_PIN 11 // dont know
+#define HIGH_BOAT_UPPER_PIN 5 // dont know
+#define HIGH_BOAT_LOWER_PIN 6 // dont know
 				
 #pragma endregion All defines are declared here
 
@@ -84,7 +84,7 @@ void setup() {
 	Ethernet.begin(mac, ip);
 	setup_WebServer_Commands();
 
-	program_state = none;// reach_and_control_vlonder_on_active_water_sensor;
+	program_state = control_vlonder_on_active_water_sensor;
 	Vlonder::Begin();
 
 	//setup_ISRs();
@@ -176,6 +176,9 @@ void handle_remote_control(void) {
 	if (buttons[0].clicks == 3)
 		Vlonder::set_active_water_sensor(&under_water_sensor);
 
+	if (buttons[1].clicks == 3)
+		program_state = control_vlonder_on_active_water_sensor;
+
 }
 
 
@@ -224,10 +227,30 @@ void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, 
 	root.printTo(server);
 }
 
+void water_measurer_cmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, bool tail_complete) {
+	if (type == WebServer::POST) {
+		server.httpFail();
+		return;
+	}
+
+	server.httpSuccess("application/json");
+
+	if (type == WebServer::HEAD)
+		return;
+
+	using namespace ArduinoJson::Generator;
+
+	JsonObject<11> root = Vlonder::water_measurer.get_json_status();
+
+	root.printTo(server);
+
+}
+
 void setup_WebServer_Commands() {
 	webserver.setDefaultCommand(&welcomePage);
 	webserver.addCommand("index.html", &welcomePage);
 	webserver.addCommand("json", &jsonCmd);
+	webserver.addCommand("water_measurer", &water_measurer_cmd);
 
 }
 

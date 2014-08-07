@@ -149,3 +149,10 @@ void Motor::stop() {
 
 	move(stop_moving, zero_speed);
 }
+
+ArduinoJson::Generator::JsonObject<1> Motor::get_json_status() {
+	ArduinoJson::Generator::JsonObject<1> root;
+	root["is_moving"] = _is_moving;
+
+	return root;
+}

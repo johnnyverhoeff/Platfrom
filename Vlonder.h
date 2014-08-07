@@ -40,13 +40,16 @@ namespace Vlonder {
 		_moving_state = vlonder_stopped;
 	}
 
-	JsonObject<4> get_json_status() {
-		JsonObject<4> vlonder;
+	JsonObject<7> get_json_status() {
+		JsonObject<7> vlonder;
 
 		vlonder["moving_state"] = _moving_state;
 		vlonder["upper_limit_switch"] = _upper_limit_switch->has_reached_limit();
 		vlonder["lower_limit_switch"] = _lower_limit_switch->has_reached_limit();
 		vlonder["active_water_sensor"] = active_water_sensor->get_name();
+		//vlonder["water_measurer"] = water_measurer.get_json_status();
+		//vlonder["left_motor"] = _left_motor->get_json_status();
+		//vlonder["right_motor"] = _right_motor->get_json_status();
 
 		return vlonder;
 	}
