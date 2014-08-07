@@ -5,6 +5,7 @@
 #include "Vlonder_enums.h"
 #include "HardwareSerial.h"
 #include "Arduino.h"
+#include "JsonGenerator.h"
 
 namespace Vlonder {
 
@@ -22,6 +23,7 @@ namespace Vlonder {
 
 	WaterMeasurer water_measurer;
 
+	using namespace ArduinoJson::Generator;
 
 
 	void Begin() {
@@ -36,6 +38,17 @@ namespace Vlonder {
 		_right_motor = new Motor(43, 44, 45);
 		
 		_moving_state = vlonder_stopped;
+	}
+
+	JsonObject<4> get_json_status() {
+		JsonObject<4> vlonder;
+
+		vlonder["moving_state"] = _moving_state;
+		vlonder["upper_limit_switch"] = _upper_limit_switch->has_reached_limit();
+		vlonder["lower_limit_switch"] = _lower_limit_switch->has_reached_limit();
+		vlonder["active_water_sensor"] = active_water_sensor->get_name();
+
+		return vlonder;
 	}
 
 	void stop() {
