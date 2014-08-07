@@ -16,6 +16,8 @@ public:
 	bool is_water_steady();
 
 	bool has_reached_position(vlonder_moving_states moving_state);
+
+	const char* get_name();
 };
 
 #endif

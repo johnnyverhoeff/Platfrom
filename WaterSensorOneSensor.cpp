@@ -58,3 +58,7 @@ bool WaterSensorOneSensor::has_reached_position(vlonder_moving_states moving_sta
 
 	return result;
 }
+
+const char* WaterSensorOneSensor::get_name() {
+	return _name;
+}
