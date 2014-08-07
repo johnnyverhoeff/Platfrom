@@ -103,3 +103,27 @@ WaterMeasurer::measure_results WaterMeasurer::get_measure_results() {
 int WaterMeasurer::get_motor_on_time() {
 	return _motor_on_time;
 }
+
+using namespace ArduinoJson::Generator;
+
+JsonObject<11> WaterMeasurer::get_json_status() {
+	JsonObject<11> root;
+
+	root["total_samples"] = _total_samples_needed;
+
+	root["water_rising_hits"] = _water_rising_hits;
+	root["water_dropping_hits"] = _water_dropping_hits;
+
+	root["sample_period"] = _sample_period;
+	root["sample_time"] = _sample_time;
+	root["motor_on_time"] = _motor_on_time;
+
+	root["lower_threshold"] = _lower_threshold;
+	root["uppper_theshold"] = _upper_threshold;
+
+	root["sample_in_progress"] = _sample_in_progress;
+
+	root["current_sample"] = _sample_counter;
+
+	return root;
+}
