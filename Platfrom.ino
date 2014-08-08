@@ -188,10 +188,6 @@ bool remote_control_is_being_used() {
 	return program_state == remote_control_manual_down || program_state == remote_control_manual_up;
 }
 
-bool is_valid_state(program_states state) {
-	return state >= none && state <= remote_control_manual_down;
-}
-
 
 void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool) {
 
@@ -272,10 +268,9 @@ void web_control_cmd(WebServer &server, WebServer::ConnectionType type, char *ur
 		repeat = server.readPOSTparam(name, BUFFER_LENGTH, value, BUFFER_LENGTH);
 
 		if (!strcmp(name, "program_state"))
-			if (remote_control_is_being_used()) {
+			if (remote_control_is_being_used) {
 				program_states desired_state = (program_states)atoi(value);
-
-				if (is_valid_state(desired_state))
+				if (desired_state >= none && desired_state <= remote_control_manual_down)
 					program_state = desired_state;
 				else
 					server.httpFail();
@@ -285,7 +280,6 @@ void web_control_cmd(WebServer &server, WebServer::ConnectionType type, char *ur
 
 		else if (!strcmp(name, "water_sensor")) {
 			int desired_sensor = atoi(value);
-
 			if (desired_sensor >= 0 && desired_sensor < NUM_OF_WATER_SENSORS)
 				Vlonder::set_active_water_sensor(&water_sensors[desired_sensor]);
 			else
