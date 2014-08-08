@@ -62,8 +62,6 @@ enum program_states {
 
 	remote_control_manual_up,
 	remote_control_manual_down,
-
-
 };
 
 program_states program_state;
@@ -103,6 +101,7 @@ void loop() {
 
 	char buff[64];
 	int len = 64;
+
 	webserver.processConnection(buff, &len);
 
 	handle_remote_control();
@@ -163,7 +162,6 @@ void handle_remote_control(void) {
 
 	if (program_state == remote_control_manual_down & !buttons[1].depressed)
 		program_state = none;
-
 
 
 	if (buttons[0].clicks == -2)
@@ -246,9 +244,38 @@ void water_measurer_cmd(WebServer &server, WebServer::ConnectionType type, char 
 
 }
 
+void web_control_cmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, bool tail_complete) {
+	if (type != WebServer::POST) {
+		server.httpFail();
+		return;
+	}
+	
+	bool repeat;
+	char name[16];
+	char value[16];
+	do {
+		repeat = server.readPOSTparam(name, 16, value, 16);
+		if (!strcmp(name, "program_state"))
+			if (program_state != remote_control_manual_down && program_state != remote_control_manual_up) {
+				program_states desired_state = (program_states)atoi(value);
+				if (desired_state >= none && desired_state <= remote_control_manual_down)
+					program_state = desired_state;
+				else
+					server.httpFail();
+			}
+			else
+				server.httpFail();
+	} while (repeat);
+
+	server.httpSuccess();
+}
+
 void setup_WebServer_Commands() {
 	webserver.setDefaultCommand(&welcomePage);
 	webserver.addCommand("index.html", &welcomePage);
+
+	webserver.addCommand("web_control", &web_control_cmd);
+
 	webserver.addCommand("json", &jsonCmd);
 	webserver.addCommand("water_measurer", &water_measurer_cmd);
 
