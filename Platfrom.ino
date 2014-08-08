@@ -32,8 +32,13 @@ volatile bool flag_remote_control_button_pressed = false;
 
 #pragma region WaterSensors
 
+#define NUM_OF_WATER_SENSORS 2
 WaterSensorTwoSensors high_boat_sensor(HIGH_BOAT_LOWER_PIN, HIGH_BOAT_UPPER_PIN, "High boat water sensor");
 WaterSensorOneSensor under_water_sensor(HIGH_BOAT_LOWER_PIN, "Under water sensor");
+
+WaterSensorOneSensor water_sensors[] = { high_boat_sensor, under_water_sensor };
+
+
 
 #pragma endregion All available water sensors are declared here
 
@@ -265,6 +270,14 @@ void web_control_cmd(WebServer &server, WebServer::ConnectionType type, char *ur
 			}
 			else
 				server.httpFail();
+
+		else if (!strcmp(name, "water_sensor")) {
+			int desired_sensor = atoi(value);
+			if (desired_sensor >= 0 && desired_sensor < NUM_OF_WATER_SENSORS)
+				Vlonder::set_active_water_sensor(&water_sensors[desired_sensor]);
+			else
+				server.httpFail();
+		}
 	} while (repeat);
 
 	server.httpSuccess();
