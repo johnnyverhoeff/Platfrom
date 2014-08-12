@@ -205,10 +205,6 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 	if (type == WebServer::HEAD)
 		return;
 
-	
-	
-
-
 	P(htmlHead) =
 		"<html>"
 		"<head>"
@@ -222,11 +218,11 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 		"<script>"
 
 		"function sendProgramStatePost(state) {"
-			"$.post('http://192.168.215.177/web_control', 'program_state=state', '', '');"
+			"$.post('http://192.168.215.177/web_control', 'program_state=' + state, '', '');"
 		"}"
 
 		"function sendWaterSensorPost(sensor) {"
-			"$.post('http://192.168.215.177/web_control', 'water_sensor=sensor', '', '');"
+			"$.post('http://192.168.215.177/web_control', 'water_sensor=' + sensor, '', '');"
 		"}"
 
 		"function reachActiveWaterSensor() {"
@@ -282,8 +278,6 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 	server.printP(htmlHead);
 
-
-
 	P(reach_upper_ls_button) = 
 		"<button type='button' class='btn btn-success btn-lg' onclick='moveToUpperLimitSwitch();'>"
 			"Reach upper limit switch <span class='glyphicon glyphicon-chevron-up'></span>"
@@ -296,17 +290,17 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 	P(reach_active_water_sensor_button) =
 		"<button type='button' class='btn btn-warning btn-lg' onclick='reachActiveWaterSensor();'>"
-		"Reach active water sensor"
+			"Reach active water sensor"
 		"</button>";
 
 	P(control_at_active_water_sensor_button) =
 		"<button type='button' class='btn btn-warning btn-lg' onclick='controlVlonderOnActiveWaterSensor();'>"
-		"Control vlonder at active water sensor"
+			"Control vlonder at active water sensor"
 		"</button>";
 
 	P(reach_and_control_at_active_water_sensor_button) =
 		"<button type='button' class='btn btn-warning btn-lg' onclick='reachAndControlVlonderOnActiveWaterSensor();'>"
-		"Reah and control vlonder at active water sensor"
+			"Reah and control vlonder at active water sensor"
 		"</button>";
 
 
@@ -340,11 +334,7 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 	server << F("</div>");
 
-	
-
-
 	server << "</div></body></html>";
-
 }
 
 void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, bool tail_complete) {
