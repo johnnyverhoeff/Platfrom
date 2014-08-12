@@ -6,6 +6,12 @@
 #include "WebServer.h"
 #include "JsonGenerator.h"
 
+template<class T>
+inline Print &operator <<(Print &obj, T arg)
+{
+	obj.print(arg); return obj;
+}
+
 
 #pragma region Defines
 
@@ -16,6 +22,11 @@
 
 #define HIGH_BOAT_UPPER_PIN 5 // dont know
 #define HIGH_BOAT_LOWER_PIN 6 // dont know
+
+#define LOW_BOAT_UPPER_PIN 5 // dont know
+#define LOW_BOAT_LOWER_PIN 6 // dont know
+
+#define UNDER_WATER_PIN 6 // dont know
 				
 #pragma endregion All defines are declared here
 
@@ -32,11 +43,12 @@ volatile bool flag_remote_control_button_pressed = false;
 
 #pragma region WaterSensors
 
-#define NUM_OF_WATER_SENSORS 2
+#define NUM_OF_WATER_SENSORS 3
 WaterSensorTwoSensors high_boat_sensor(HIGH_BOAT_LOWER_PIN, HIGH_BOAT_UPPER_PIN, "High boat water sensor");
-WaterSensorOneSensor under_water_sensor(HIGH_BOAT_LOWER_PIN, "Under water sensor");
+WaterSensorTwoSensors low_boat_sensor(LOW_BOAT_LOWER_PIN, LOW_BOAT_UPPER_PIN, "Low boat water sensor");
+WaterSensorOneSensor under_water_sensor(UNDER_WATER_PIN, "Under water sensor");
 
-WaterSensorOneSensor water_sensors[] = { high_boat_sensor, under_water_sensor };
+WaterSensorOneSensor water_sensors[] = { high_boat_sensor, low_boat_sensor, under_water_sensor };
 
 
 
@@ -85,6 +97,8 @@ void setup() {
 	#endif
 
 	Ethernet.begin(mac, ip);
+	Ethernet.localIP().printTo(Serial);
+
 	setup_WebServer_Commands();
 
 	program_state = control_vlonder_on_active_water_sensor;
@@ -184,24 +198,144 @@ void handle_remote_control(void) {
 
 }
 
-bool remote_control_is_being_used() {
-	return program_state == remote_control_manual_down || program_state == remote_control_manual_up;
-}
-
-
 void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool) {
 
 	server.httpSuccess();
 
-	if (type != WebServer::HEAD) {
-		P(helloMsg) = "<h1>Arduino platform controller</h1>";
-		server.printP(helloMsg);
+	if (type == WebServer::HEAD)
+		return;
 
-		server.print(F("<p>Current program state is : ")); server.print(program_state); server.println(F("</p>"));
+	
+	
 
-		server.print(F("<p>Upper Limit Switch: ")); server.print(Vlonder::_upper_limit_switch->has_reached_limit()); server.print(F("</p>"));
-		server.print(F("<p>Lower Limit Switch: ")); server.print(Vlonder::_lower_limit_switch->has_reached_limit()); server.print(F("</p>"));
-	}
+
+	P(htmlHead) =
+		"<html>"
+		"<head>"
+		"<meta name = 'viewport' content = 'width=device-width, initial-scale=1'/>"
+		"<title>Arduino platform web control</title>"
+		"<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>"
+		"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\"/>"
+		"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\"/>"
+		"<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>"
+
+		"<script>"
+
+		"function reachActiveWaterSensor() {"
+		"$.post('http://192.168.215.177/web_control', 'program_state=1', '', '');"
+		"}"
+
+		"function reachAndControlVlonderOnActiveWaterSensor() {"
+		"$.post('http://192.168.215.177/web_control', 'program_state=2', '', '');"
+		"}"
+
+		"function controlVlonderOnActiveWaterSensor() {"
+		"$.post('http://192.168.215.177/web_control', 'program_state=3', '', '');"
+		"}"
+
+		"function moveToUpperLimitSwitch() {"
+		"$.post('http://192.168.215.177/web_control', 'program_state=4', '', '');"
+		"}"
+
+		"function moveToLowerLimitSwitch() {"
+		"$.post('http://192.168.215.177/web_control', 'program_state=5', '', '');"
+		"}"
+
+		"function stop() {"
+		"$.post('http://192.168.215.177/web_control', 'program_state=0', '', '');"
+		"}"
+
+		"document.onkeydown = checkKey;"
+
+		"function checkKey(e) {"
+		"e = e || window.event;"
+		"if (e.keyCode == '38')			moveToUpperLimitSwitch();"
+		"else if (e.keyCode == '40')	moveToLowerLimitSwitch();"
+		"else if (e.keyCode == '27')	stop();"
+		"}"
+
+		"function highBoatSensor() {"
+		"$.post('http://192.168.215.177/web_control', 'water_sensor=0', '', '');"
+		"}"
+
+		"function lowBoatSensor() {"
+		"$.post('http://192.168.215.177/web_control', 'water_sensor=1', '', '');"
+		"}"
+
+		"function underWaterSensor() {"
+		"$.post('http://192.168.215.177/web_control', 'water_sensor=2', '', '');"
+		"}"
+		
+
+		"</script>"
+		"</head>"
+		"<body>"
+		"<div class='container'>";
+
+	server.printP(htmlHead);
+
+
+
+	P(reach_upper_ls_button) = 
+		"<button type='button' class='btn btn-success btn-lg' onclick='moveToUpperLimitSwitch();'>"
+			"Reach upper limit switch <span class='glyphicon glyphicon-chevron-up'></span>"
+		"</button>";
+
+	P(reach_lower_ls_button) = 
+		"<button type='button' class='btn btn-success btn-lg' onclick='moveToLowerLimitSwitch();'>"
+			"Reach lower limit switch <span class='glyphicon glyphicon-chevron-down'></span>"
+		"</button>";
+
+	P(reach_active_water_sensor_button) =
+		"<button type='button' class='btn btn-warning btn-lg' onclick='reachActiveWaterSensor();'>"
+		"Reach active water sensor"
+		"</button>";
+
+	P(control_at_active_water_sensor_button) =
+		"<button type='button' class='btn btn-warning btn-lg' onclick='controlVlonderOnActiveWaterSensor();'>"
+		"Control vlonder at active water sensor"
+		"</button>";
+
+	P(reach_and_control_at_active_water_sensor_button) =
+		"<button type='button' class='btn btn-warning btn-lg' onclick='reachAndControlVlonderOnActiveWaterSensor();'>"
+		"Reah and control vlonder at active water sensor"
+		"</button>";
+
+
+	P(stop_button) = 
+		"<button type='button' class='btn btn-danger btn-lg' onclick='stop();'>"
+			"STOP"
+		"</button>";
+
+	P(water_sensor_dropdown_button) =
+		"<div class='btn-group'>"
+			"<button type = 'button' class = 'btn btn-info btn-lg dropdown-toggle' data-toggle = 'dropdown'>"
+				"Select water sensor <span class = 'caret'></span>"
+			"</button>"
+			"<ul class = 'dropdown-menu' role = 'menu'>"
+				"<li><a onclick='highBoatSensor();'>High boat sensor</a></li>"
+				"<li><a onclick='lowBoatSensor();'>Low boat sensor</a></li>"
+				"<li class = 'divider'></li>"
+				"<li><a onclick='underWaterSensor();'>Under water sensor</a></li>"
+			"</ul>"
+		"</div>";
+	
+	server << F("<div class='btn-group-vertical'>");
+
+	server.printP(reach_upper_ls_button);
+	server.printP(reach_lower_ls_button);
+	server.printP(reach_and_control_at_active_water_sensor_button);
+	server.printP(reach_active_water_sensor_button);
+	server.printP(control_at_active_water_sensor_button);
+	server.printP(water_sensor_dropdown_button);
+	server.printP(stop_button);
+
+	server << F("</div>");
+
+	
+
+
+	server << "</div></body></html>";
 
 }
 
@@ -258,7 +392,7 @@ void web_control_cmd(WebServer &server, WebServer::ConnectionType type, char *ur
 		server.httpFail();
 		return;
 	}
-	
+
 	#define BUFFER_LENGTH 16
 
 	bool repeat;
@@ -266,24 +400,32 @@ void web_control_cmd(WebServer &server, WebServer::ConnectionType type, char *ur
 
 	do {
 		repeat = server.readPOSTparam(name, BUFFER_LENGTH, value, BUFFER_LENGTH);
-
+		Serial.print(name); Serial.println(value);
 		if (!strcmp(name, "program_state"))
-			if (remote_control_is_being_used) {
+			if (program_state != remote_control_manual_down && program_state != remote_control_manual_up) {
 				program_states desired_state = (program_states)atoi(value);
 				if (desired_state >= none && desired_state <= remote_control_manual_down)
 					program_state = desired_state;
-				else
+				else {
 					server.httpFail();
-			}
-			else
+					return;
+				}
+			} 
+			else {
 				server.httpFail();
+				return;
+			}
+
 
 		else if (!strcmp(name, "water_sensor")) {
 			int desired_sensor = atoi(value);
 			if (desired_sensor >= 0 && desired_sensor < NUM_OF_WATER_SENSORS)
 				Vlonder::set_active_water_sensor(&water_sensors[desired_sensor]);
-			else
+			else {
 				server.httpFail();
+				return;
+			}
+				
 		}
 	} while (repeat);
 
@@ -298,7 +440,6 @@ void setup_WebServer_Commands() {
 
 	webserver.addCommand("json", &jsonCmd);
 	webserver.addCommand("water_measurer", &water_measurer_cmd);
-
 }
 
 void setup_ISRs(void) {
