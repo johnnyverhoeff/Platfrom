@@ -221,49 +221,57 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 		"<script>"
 
+		"function sendProgramStatePost(state) {"
+			"$.post('http://192.168.215.177/web_control', 'program_state=state', '', '');"
+		"}"
+
+		"function sendWaterSensorPost(sensor) {"
+			"$.post('http://192.168.215.177/web_control', 'water_sensor=sensor', '', '');"
+		"}"
+
 		"function reachActiveWaterSensor() {"
-		"$.post('http://192.168.215.177/web_control', 'program_state=1', '', '');"
+			"sendProgramStatePost(1);"
 		"}"
 
 		"function reachAndControlVlonderOnActiveWaterSensor() {"
-		"$.post('http://192.168.215.177/web_control', 'program_state=2', '', '');"
+			"sendProgramStatePost(2);"
 		"}"
 
 		"function controlVlonderOnActiveWaterSensor() {"
-		"$.post('http://192.168.215.177/web_control', 'program_state=3', '', '');"
+			"sendProgramStatePost(3);"
 		"}"
 
 		"function moveToUpperLimitSwitch() {"
-		"$.post('http://192.168.215.177/web_control', 'program_state=4', '', '');"
+			"sendProgramStatePost(4);"
 		"}"
 
 		"function moveToLowerLimitSwitch() {"
-		"$.post('http://192.168.215.177/web_control', 'program_state=5', '', '');"
+			"sendProgramStatePost(5);"
 		"}"
 
 		"function stop() {"
-		"$.post('http://192.168.215.177/web_control', 'program_state=0', '', '');"
+			"sendProgramStatePost(0);"
 		"}"
 
 		"document.onkeydown = checkKey;"
 
 		"function checkKey(e) {"
-		"e = e || window.event;"
-		"if (e.keyCode == '38')			moveToUpperLimitSwitch();"
-		"else if (e.keyCode == '40')	moveToLowerLimitSwitch();"
-		"else if (e.keyCode == '27')	stop();"
+			"e = e || window.event;"
+			"if (e.keyCode == '38')			moveToUpperLimitSwitch();"
+			"else if (e.keyCode == '40')	moveToLowerLimitSwitch();"
+			"else if (e.keyCode == '27')	stop();"
 		"}"
 
 		"function highBoatSensor() {"
-		"$.post('http://192.168.215.177/web_control', 'water_sensor=0', '', '');"
+			"sendWaterSensorPost(0);"
 		"}"
 
 		"function lowBoatSensor() {"
-		"$.post('http://192.168.215.177/web_control', 'water_sensor=1', '', '');"
+			"sendWaterSensorPost(1);"
 		"}"
 
 		"function underWaterSensor() {"
-		"$.post('http://192.168.215.177/web_control', 'water_sensor=2', '', '');"
+			"sendWaterSensorPost(2);"
 		"}"
 		
 
