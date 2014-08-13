@@ -41,6 +41,7 @@ extern "C" void __cxa_pure_virtual() {;}
 //
 //
 void handle_remote_control(void);
+WaterSensor* get_correct_water_sensor(int n);
 void setup_WebServer_Commands();
 void setup_ISRs(void);
 void ISR_limit_switch_reached(void);
