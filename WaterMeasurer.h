@@ -2,6 +2,7 @@
 #define WaterMeasurer_h
 
 #include "WaterSensor.h"
+#include "JsonGenerator.h"
 
 class WaterMeasurer {
 
@@ -44,6 +45,10 @@ public:
 	WaterSensor *active_water_sensor;
 
 	int get_motor_on_time();
+
+	
+
+	ArduinoJson::Generator::JsonObject<11> get_json_status();
 };
 
 #endif

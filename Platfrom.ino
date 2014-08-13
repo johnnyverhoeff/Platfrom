@@ -1,10 +1,10 @@
-#include <aJSON.h>
 #include "Vlonder.h"
 #include "WaterSensorTwoSensors.h"
 #include "SPI\SPI.h"
 #include "ClickButton.h"
 #include "Ethernet\Ethernet.h"
 #include "WebServer.h"
+#include "JsonGenerator.h"
 
 template<class T>
 inline Print &operator <<(Print &obj, T arg)
@@ -358,7 +358,7 @@ void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, 
 	if (type == WebServer::HEAD)
 		return;
 
-	/*
+	
 	using namespace ArduinoJson::Generator;
 
 	JsonObject<2> button_states;
@@ -373,7 +373,7 @@ void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, 
 	root["buttons"] = button_states;
 	root["vlonder"] = Vlonder::get_json_status();
 
-	root.printTo(server);*/
+	root.printTo(server);
 }
 
 void water_measurer_cmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, bool tail_complete) {
@@ -387,7 +387,11 @@ void water_measurer_cmd(WebServer &server, WebServer::ConnectionType type, char 
 	if (type == WebServer::HEAD)
 		return;
 
-	/*some json ...........*/
+	using namespace ArduinoJson::Generator;
+
+	JsonObject<11> root = Vlonder::water_measurer.get_json_status();
+
+	root.printTo(server);
 
 }
 

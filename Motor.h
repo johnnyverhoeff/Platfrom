@@ -2,6 +2,7 @@
 #define Motor_h
 
 #include "MCP4921.h"
+#include "JsonGenerator.h"
 
 class Motor {
 public:
@@ -47,6 +48,10 @@ public:
 	virtual bool down_with_time(int on_time, int speed);
 
 	virtual void stop();
+
+	ArduinoJson::Generator::JsonObject<1> get_json_status();
+
+	
 };
 
 #endif
