@@ -73,31 +73,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aJSON.h" />
     <ClInclude Include="ClickButton.h">
       <FileType>CppCode</FileType>
     </ClInclude>
-    <ClInclude Include="JsonGenerator.h" />
-    <ClInclude Include="EscapedString.h" />
-    <ClInclude Include="JsonArray.h" />
-    <ClInclude Include="JsonArrayBase.h" />
-    <ClInclude Include="JsonObject.h" />
-    <ClInclude Include="JsonObjectBase.h" />
-    <ClInclude Include="JsonPrintable.h" />
-    <ClInclude Include="JsonValue.h" />
-    <ClInclude Include="Print.h" />
-    <ClInclude Include="Printable.h" />
-    <ClInclude Include="StringBuilder.h" />
-    <ClInclude Include="JsonParser.h" />
-    <ClInclude Include="JsonParser\jsmn.h" />
-    <ClInclude Include="JsonParser\JsonArray.h" />
-    <ClInclude Include="JsonParser\JsonArrayIterator.h" />
-    <ClInclude Include="JsonParser\JsonObject.h" />
-    <ClInclude Include="JsonParser\JsonObjectIterator.h" />
-    <ClInclude Include="JsonParser\JsonPair.h" />
-    <ClInclude Include="JsonParser\JsonParser.h" />
-    <ClInclude Include="JsonParser\JsonParserBase.h" />
-    <ClInclude Include="JsonParser\JsonToken.h" />
-    <ClInclude Include="JsonParser\JsonValue.h" />
+    <ClInclude Include="stringbuffer.h" />
     <ClInclude Include="Vlonder.h" />
     <ClInclude Include="LimitSwitch.h" />
     <ClInclude Include="MCP4921.h" />
@@ -118,25 +98,13 @@
     <ClInclude Include="WebServer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="aJSON.cpp" />
     <ClCompile Include="ClickButton.cpp" />
-    <ClCompile Include="JsonGenerator.cpp" />
-    <ClCompile Include="EscapedString.cpp" />
-    <ClCompile Include="JsonArrayBase.cpp" />
-    <ClCompile Include="JsonObjectBase.cpp" />
-    <ClCompile Include="JsonValue.cpp" />
-    <ClCompile Include="Print.cpp" />
-    <ClCompile Include="StringBuilder.cpp" />
-    <ClCompile Include="JsonParser.cpp" />
-    <ClCompile Include="JsonParser\jsmn.cpp" />
-    <ClCompile Include="JsonParser\JsonArray.cpp" />
-    <ClCompile Include="JsonParser\JsonObject.cpp" />
-    <ClCompile Include="JsonParser\JsonParserBase.cpp" />
-    <ClCompile Include="JsonParser\JsonToken.cpp" />
-    <ClCompile Include="JsonParser\JsonValue.cpp" />
     <ClCompile Include="MCP4921.cpp" />
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
     <ClCompile Include="MotorWithBrake.cpp" />
+    <ClCompile Include="stringbuffer.c" />
     <ClCompile Include="WaterMeasurer.cpp" />
     <ClCompile Include="WaterSensorOneSensor.cpp" />
     <ClCompile Include="WaterSensorTwoSensors.cpp" />
