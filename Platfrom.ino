@@ -1,3 +1,4 @@
+#include <JsonParser.h>
 #include "Vlonder.h"
 #include "WaterSensorTwoSensors.h"
 #include "SPI\SPI.h"
@@ -284,9 +285,12 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 		"</script>"
 		"</head>"
 		"<body>"
-		"<div class='container'>";
+		"<div class='container-fluid'>";
 
 	server.printP(htmlHead);
+
+	
+
 
 	P(reach_upper_ls_button) = 
 		"<button type='button' class='btn btn-success btn-lg' onclick='moveToUpperLimitSwitch();'>"
@@ -305,12 +309,12 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 	P(control_at_active_water_sensor_button) =
 		"<button type='button' class='btn btn-warning btn-lg' onclick='controlVlonderOnActiveWaterSensor();'>"
-			"Control vlonder at active water sensor"
+			"Control vlonder"
 		"</button>";
 
 	P(reach_and_control_at_active_water_sensor_button) =
 		"<button type='button' class='btn btn-warning btn-lg' onclick='reachAndControlVlonderOnActiveWaterSensor();'>"
-			"Reah and control vlonder at active water sensor"
+			"Reach and control vlonder"
 		"</button>";
 
 
@@ -331,18 +335,50 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 				"<li><a onclick='underWaterSensor();'>Under water sensor</a></li>"
 			"</ul>"
 		"</div>";
+
+
+
+	P(tabs_part1) =
+		"<div class='tabbable'>"
+			"<ul class='nav nav-tabs'>"
+				"<li class='active'><a data-toggle='tab' href='#Tab-RemoteControl'>Remote Control</a></li>"
+				"<li><a data-toggle='tab' href='#Tab-Information'>Information</a></li>"
+			"</ul>"
+
+			"<div class='tab-content'>"
+				"<div class='tab-pane active' id='Tab-RemoteControl'>";
+	P(tabs_part2) =
+				"</div>"
+
+				"<div class='tab-pane' id='Tab-Information'>";
+	P(tabs_part3) =
+				"</div>"
+				
+
+			"</div>"
+
+		"</div>"
+		;
 	
+	server.printP(tabs_part1);
+
 	server << F("<div class='btn-group-vertical'>");
-
-	server.printP(reach_upper_ls_button);
-	server.printP(reach_lower_ls_button);
-	server.printP(reach_and_control_at_active_water_sensor_button);
-	server.printP(reach_active_water_sensor_button);
-	server.printP(control_at_active_water_sensor_button);
-	server.printP(water_sensor_dropdown_button);
-	server.printP(stop_button);
-
+		server.printP(reach_upper_ls_button);
+		server.printP(reach_lower_ls_button);
+		server.printP(reach_and_control_at_active_water_sensor_button);
+		server.printP(reach_active_water_sensor_button);
+		server.printP(control_at_active_water_sensor_button);
+		server.printP(water_sensor_dropdown_button);
+		server.printP(stop_button);
 	server << F("</div>");
+
+
+	server.printP(tabs_part2);
+	server << F("other information");
+	server.printP(tabs_part3);
+
+
+
 
 	server << "</div></body></html>";
 }
@@ -367,7 +403,7 @@ void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, 
 	button_states["Button1"] = (bool)buttons[1].depressed;
 
 	
-	JsonObject<3> root;
+	JsonObject<10> root;
 
 	root["program_state"] = program_state;
 	root["buttons"] = button_states;
@@ -389,7 +425,7 @@ void water_measurer_cmd(WebServer &server, WebServer::ConnectionType type, char 
 
 	using namespace ArduinoJson::Generator;
 
-	JsonObject<11> root = Vlonder::water_measurer.get_json_status();
+	JsonObject<15> root = Vlonder::water_measurer.get_json_status();
 
 	root.printTo(server);
 
