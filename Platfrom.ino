@@ -337,6 +337,29 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 		"</div>";
 
 
+	P(nav_bar) =
+		"<nav class='navbar navbar-inverse navbar-default' role='navigation'>"
+			"<div class='container-fluid'>"
+				"<div class='navbar-header'>"
+					"<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>"
+						"<span class = 'sr-only'>Toggle navigation</span>"
+						"<span class = 'icon-bar'></span>"
+						"<span class = 'icon-bar'></span>"
+						"<span class = 'icon-bar'></span>"
+					"</button>"
+					"<a class='navbar-brand' href='#'>Platform</a>"
+				"</div>"
+
+				"<div class = 'collapse navbar-collapse' id = 'bs-example-navbar-collapse-1'>"
+					"<ul class = 'nav navbar-nav'>"
+						"<li class='active'><a data-toggle='tab' href = '#Tab-RemoteControl'>Remote Control</a></li>" // maybe do somethin with class='active'
+						"<li><a data-toggle='tab' href = '#Tab-Information'>Information</a></li>"
+					"</ul>"
+				"</div><!-- / .navbar - collapse-->"
+			"</div><!-- / .container - fluid-->"
+		"</nav>"
+		;
+
 
 	P(tabs_part1) =
 		"<div class='tabbable'>"
@@ -360,22 +383,29 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 		"</div>"
 		;
 	
-	server.printP(tabs_part1);
 
-	server << F("<div class='btn-group-vertical'>");
-		server.printP(reach_upper_ls_button);
-		server.printP(reach_lower_ls_button);
-		server.printP(reach_and_control_at_active_water_sensor_button);
-		server.printP(reach_active_water_sensor_button);
-		server.printP(control_at_active_water_sensor_button);
-		server.printP(water_sensor_dropdown_button);
-		server.printP(stop_button);
+	server.printP(nav_bar);
+	//server.printP(tabs_part1);
+
+	server << F("<div class='tab-content'>");
+		server << F("<div class='tab-pane active' id='Tab-RemoteControl'> ");
+			server << F("<div class='btn-group-vertical'>");
+				server.printP(reach_upper_ls_button);
+				server.printP(reach_lower_ls_button);
+				server.printP(reach_and_control_at_active_water_sensor_button);
+				server.printP(reach_active_water_sensor_button);
+				server.printP(control_at_active_water_sensor_button);
+				server.printP(water_sensor_dropdown_button);
+				server.printP(stop_button);
+			server << F("</div>");
+		server << F("</div>");
+
+		server << F("<div class='tab-pane' id='Tab-Information'>Other stuffff</div>");
 	server << F("</div>");
 
-
-	server.printP(tabs_part2);
-	server << F("other information");
-	server.printP(tabs_part3);
+	//server.printP(tabs_part2);
+	//server << F("other information");
+	//server.printP(tabs_part3);
 
 
 
