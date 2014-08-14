@@ -6,6 +6,7 @@
 #include "Ethernet\Ethernet.h"
 #include "WebServer.h"
 #include "JsonGenerator.h"
+#include "Html_PROGRMEM.h"
 
 template<class T>
 inline Print &operator <<(Print &obj, T arg)
@@ -209,6 +210,51 @@ WaterSensor* get_correct_water_sensor(int n) {
 	}
 }
 
+
+void print_Tab_Remote_Control(WebServer &server) {
+	server << F("<div class='tab-pane active' id='Tab-RemoteControl'> ");
+		server << F("<div class='btn-group-vertical'>");
+			server.printP(reach_upper_ls_button);
+			server.printP(reach_lower_ls_button);
+			server.printP(reach_and_control_at_active_water_sensor_button);
+			server.printP(reach_active_water_sensor_button);
+			server.printP(control_at_active_water_sensor_button);
+			server.printP(water_sensor_dropdown_button);
+			server.printP(stop_button);
+		server << F("</div>");
+	server << F("</div>");
+}
+
+void print_vlonder_moving_icon(WebServer &server) {
+	switch (Vlonder::get_moving_state())
+	{
+		case vlonder_moving_up:
+			server << F("<span class='pull-right glyphicon glyphicon-chevron-up'></span>");
+			break;
+		case vlonder_moving_down:
+			server << F("<span class='pull-right glyphicon glyphicon-chevron-down'></span>");
+			break;
+		case vlonder_stopped:
+		default:	
+			server << F("<span class='pull-right glyphicon glyphicon-minus'></span>");
+			break;
+	}
+}
+
+void print_Tab_Information(WebServer &server) {
+	server << F("<div class='tab-pane' id='Tab-Information'>");
+		server << F("<div class='panel panel-primary'>");
+			server << F("<div class='panel-heading'>");	server << F("<h3 class='panel-title'>Information about the vlonder</h3>"); server << F("</div>");
+			server << F("<div class='panel-body'>");
+				server << F("<ul class='list-group'>");
+					server << F("<li class='list-group-item'><a>Vlonder moving state: "); print_vlonder_moving_icon(server); server << F("</a></li>");
+					server << F("<li class='list-group-item'><a>Active water sensor: "); server << Vlonder::active_water_sensor->get_name(); server << F("</a></li>");
+				server << F("</ul>");
+			server << F("</div>");
+		server << F("</div>");
+	server << F("</div>");
+}
+
 void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool) {
 
 	server.httpSuccess();
@@ -216,177 +262,24 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 	if (type == WebServer::HEAD)
 		return;
 
-	P(htmlHead) =
-		"<html>"
-			"<head>"
-				"<meta name = 'viewport' content = 'width=device-width, initial-scale=1'/>"
+		server.printP(htmlHead);
+			server.printP(nav_bar);
 
-				"<title>Arduino platform web control</title>"
+			server << F("<div class='container-fluid'>");
+				server << F("<div class='row'>");
+					server << F("<div class='col-sm-2 col-sm-offset-5 col-xs-12 col-xs-offset-1'-->");
 
-				"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\"/>"
-				"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\"/>"
-				
-				"<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>"
-				"<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>"
+						server << F("<div class='tab-content'>");
+							
+							print_Tab_Remote_Control(server);
 
-				"<script>"
-
-					"function sendProgramStatePost(state) {"
-						"$.post('http://192.168.215.177/web_control', 'program_state=' + state, '', '');"
-					"}"
-
-					"function sendWaterSensorPost(sensor) {"
-						"$.post('http://192.168.215.177/web_control', 'water_sensor=' + sensor, '', '');"
-					"}"
-
-					"function reachActiveWaterSensor() {"
-						"sendProgramStatePost(1);"
-					"}"
-
-					"function reachAndControlVlonderOnActiveWaterSensor() {"
-						"sendProgramStatePost(2);"
-					"}"
-
-					"function controlVlonderOnActiveWaterSensor() {"
-						"sendProgramStatePost(3);"
-					"}"
-
-					"function moveToUpperLimitSwitch() {"
-						"sendProgramStatePost(4);"
-					"}"
-
-					"function moveToLowerLimitSwitch() {"
-						"sendProgramStatePost(5);"
-					"}"
-
-					"function stop() {"
-						"sendProgramStatePost(0);"
-					"}"
-
-					"document.onkeydown = checkKey;"
-
-					"function checkKey(e) {"
-						"e = e || window.event;"
-						"if (e.keyCode == '38')			moveToUpperLimitSwitch();"
-						"else if (e.keyCode == '40')	moveToLowerLimitSwitch();"
-						"else if (e.keyCode == '27')	stop();"
-					"}"
-
-					"function highBoatSensor() {"
-						"sendWaterSensorPost(0);"
-					"}"
-
-					"function lowBoatSensor() {"
-						"sendWaterSensorPost(1);"
-					"}"
-
-					"function underWaterSensor() {"
-						"sendWaterSensorPost(2);"
-					"}"
-		
-				"</script>"
-			"</head>"
-		"<body>"
-			"<div class='container-fluid'>";
-
-	
-
-	
-
-
-	P(reach_upper_ls_button) = 
-		"<button type='button' class='btn btn-success btn-lg' onclick='moveToUpperLimitSwitch();'>"
-			"Reach upper limit switch <span class='glyphicon glyphicon-chevron-up'></span>"
-		"</button>";
-
-	P(reach_lower_ls_button) = 
-		"<button type='button' class='btn btn-success btn-lg' onclick='moveToLowerLimitSwitch();'>"
-			"Reach lower limit switch <span class='glyphicon glyphicon-chevron-down'></span>"
-		"</button>";
-
-	P(reach_active_water_sensor_button) =
-		"<button type='button' class='btn btn-warning btn-lg' onclick='reachActiveWaterSensor();'>"
-			"Reach active water sensor"
-		"</button>";
-
-	P(control_at_active_water_sensor_button) =
-		"<button type='button' class='btn btn-warning btn-lg' onclick='controlVlonderOnActiveWaterSensor();'>"
-			"Control vlonder"
-		"</button>";
-
-	P(reach_and_control_at_active_water_sensor_button) =
-		"<button type='button' class='btn btn-warning btn-lg' onclick='reachAndControlVlonderOnActiveWaterSensor();'>"
-			"Reach and control vlonder"
-		"</button>";
-
-
-	P(stop_button) = 
-		"<button type='button' class='btn btn-danger btn-lg' onclick='stop();'>"
-			"STOP"
-		"</button>";
-
-	P(water_sensor_dropdown_button) =
-		"<div class='btn-group'>"
-			"<button type = 'button' class = 'btn btn-info btn-lg dropdown-toggle' data-toggle = 'dropdown'>"
-				"Select water sensor <span class = 'caret'></span>"
-			"</button>"
-			"<ul class = 'dropdown-menu' role = 'menu'>"
-				"<li><a onclick='highBoatSensor();'>High boat sensor</a></li>"
-				"<li><a onclick='lowBoatSensor();'>Low boat sensor</a></li>"
-				"<li class = 'divider'></li>"
-				"<li><a onclick='underWaterSensor();'>Under water sensor</a></li>"
-			"</ul>"
-		"</div>";
-
-
-	P(nav_bar) =
-		"<nav class='navbar navbar-inverse navbar-default' role='navigation'>"
-			"<div class='container-fluid'>"
-				"<div class='navbar-header'>"
-					"<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>"
-						"<span class = 'sr-only'>Toggle navigation</span>"
-						"<span class = 'icon-bar'></span>"
-						"<span class = 'icon-bar'></span>"
-						"<span class = 'icon-bar'></span>"
-					"</button>"
-					"<a class='navbar-brand' href='#'>Platform</a>"
-				"</div>"
-
-				"<div class = 'collapse navbar-collapse' id = 'bs-example-navbar-collapse-1'>"
-					"<ul class = 'nav navbar-nav'>"
-						"<li class='active'><a data-toggle='tab' href = '#Tab-RemoteControl'>Remote Control</a></li>"
-						"<li><a data-toggle='tab' href = '#Tab-Information'>Information</a></li>"
-					"</ul>"
-				"</div>"
-			"</div>"
-		"</nav>"
-		;
-
-
-	
-	
-			server.printP(htmlHead);
-				server.printP(nav_bar);
-
-				server << F("<div class='tab-content'>");
-					server << F("<div class='tab-pane active' id='Tab-RemoteControl'> ");
-						server << F("<div class='btn-group-vertical'>");
-							server.printP(reach_upper_ls_button);
-							server.printP(reach_lower_ls_button);
-							server.printP(reach_and_control_at_active_water_sensor_button);
-							server.printP(reach_active_water_sensor_button);
-							server.printP(control_at_active_water_sensor_button);
-							server.printP(water_sensor_dropdown_button);
-							server.printP(stop_button);
+							print_Tab_Information(server);
+					
 						server << F("</div>");
-					server << F("</div>");
 
-					server << F("<div class='tab-pane' id='Tab-Information'>");
-						server << F("Other stuffff");
 					server << F("</div>");
-
 				server << F("</div>");
-			server << "</div>";
+			server << F("</div>");
 		server << "</body>";
 	server << "</html>";
 }

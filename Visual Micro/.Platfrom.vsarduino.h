@@ -42,6 +42,9 @@ extern "C" void __cxa_pure_virtual() {;}
 //
 void handle_remote_control(void);
 WaterSensor* get_correct_water_sensor(int n);
+void print_Tab_Remote_Control(WebServer &server);
+void print_vlonder_moving_icon(WebServer &server);
+void print_Tab_Information(WebServer &server);
 void setup_WebServer_Commands();
 void setup_ISRs(void);
 void ISR_limit_switch_reached(void);
@@ -52,6 +55,7 @@ void ISR_remote_control(void);
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\Platfrom.ino"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\ClickButton.cpp"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\ClickButton.h"
+#include "D:\Documents\GitHub\Arduino Projects\Platfrom\Html_PROGRMEM.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\LimitSwitch.cpp"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\LimitSwitch.h"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\MCP4921.cpp"
