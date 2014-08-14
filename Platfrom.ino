@@ -218,76 +218,78 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 	P(htmlHead) =
 		"<html>"
-		"<head>"
-		"<meta name = 'viewport' content = 'width=device-width, initial-scale=1'/>"
-		"<title>Arduino platform web control</title>"
-		"<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>"
-		"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\"/>"
-		"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\"/>"
-		"<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>"
+			"<head>"
+				"<meta name = 'viewport' content = 'width=device-width, initial-scale=1'/>"
 
-		"<script>"
+				"<title>Arduino platform web control</title>"
 
-		"function sendProgramStatePost(state) {"
-			"$.post('http://192.168.215.177/web_control', 'program_state=' + state, '', '');"
-		"}"
+				"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\"/>"
+				"<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\"/>"
+				
+				"<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>"
+				"<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>"
 
-		"function sendWaterSensorPost(sensor) {"
-			"$.post('http://192.168.215.177/web_control', 'water_sensor=' + sensor, '', '');"
-		"}"
+				"<script>"
 
-		"function reachActiveWaterSensor() {"
-			"sendProgramStatePost(1);"
-		"}"
+					"function sendProgramStatePost(state) {"
+						"$.post('http://192.168.215.177/web_control', 'program_state=' + state, '', '');"
+					"}"
 
-		"function reachAndControlVlonderOnActiveWaterSensor() {"
-			"sendProgramStatePost(2);"
-		"}"
+					"function sendWaterSensorPost(sensor) {"
+						"$.post('http://192.168.215.177/web_control', 'water_sensor=' + sensor, '', '');"
+					"}"
 
-		"function controlVlonderOnActiveWaterSensor() {"
-			"sendProgramStatePost(3);"
-		"}"
+					"function reachActiveWaterSensor() {"
+						"sendProgramStatePost(1);"
+					"}"
 
-		"function moveToUpperLimitSwitch() {"
-			"sendProgramStatePost(4);"
-		"}"
+					"function reachAndControlVlonderOnActiveWaterSensor() {"
+						"sendProgramStatePost(2);"
+					"}"
 
-		"function moveToLowerLimitSwitch() {"
-			"sendProgramStatePost(5);"
-		"}"
+					"function controlVlonderOnActiveWaterSensor() {"
+						"sendProgramStatePost(3);"
+					"}"
 
-		"function stop() {"
-			"sendProgramStatePost(0);"
-		"}"
+					"function moveToUpperLimitSwitch() {"
+						"sendProgramStatePost(4);"
+					"}"
 
-		"document.onkeydown = checkKey;"
+					"function moveToLowerLimitSwitch() {"
+						"sendProgramStatePost(5);"
+					"}"
 
-		"function checkKey(e) {"
-			"e = e || window.event;"
-			"if (e.keyCode == '38')			moveToUpperLimitSwitch();"
-			"else if (e.keyCode == '40')	moveToLowerLimitSwitch();"
-			"else if (e.keyCode == '27')	stop();"
-		"}"
+					"function stop() {"
+						"sendProgramStatePost(0);"
+					"}"
 
-		"function highBoatSensor() {"
-			"sendWaterSensorPost(0);"
-		"}"
+					"document.onkeydown = checkKey;"
 
-		"function lowBoatSensor() {"
-			"sendWaterSensorPost(1);"
-		"}"
+					"function checkKey(e) {"
+						"e = e || window.event;"
+						"if (e.keyCode == '38')			moveToUpperLimitSwitch();"
+						"else if (e.keyCode == '40')	moveToLowerLimitSwitch();"
+						"else if (e.keyCode == '27')	stop();"
+					"}"
 
-		"function underWaterSensor() {"
-			"sendWaterSensorPost(2);"
-		"}"
+					"function highBoatSensor() {"
+						"sendWaterSensorPost(0);"
+					"}"
+
+					"function lowBoatSensor() {"
+						"sendWaterSensorPost(1);"
+					"}"
+
+					"function underWaterSensor() {"
+						"sendWaterSensorPost(2);"
+					"}"
 		
-
-		"</script>"
-		"</head>"
+				"</script>"
+			"</head>"
 		"<body>"
-		"<div class='container-fluid'>";
+			"<div class='container-fluid'>";
 
-	server.printP(htmlHead);
+	
 
 	
 
@@ -352,65 +354,41 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 				"<div class = 'collapse navbar-collapse' id = 'bs-example-navbar-collapse-1'>"
 					"<ul class = 'nav navbar-nav'>"
-						"<li class='active'><a data-toggle='tab' href = '#Tab-RemoteControl'>Remote Control</a></li>" // maybe do somethin with class='active'
+						"<li class='active'><a data-toggle='tab' href = '#Tab-RemoteControl'>Remote Control</a></li>"
 						"<li><a data-toggle='tab' href = '#Tab-Information'>Information</a></li>"
 					"</ul>"
-				"</div><!-- / .navbar - collapse-->"
-			"</div><!-- / .container - fluid-->"
+				"</div>"
+			"</div>"
 		"</nav>"
 		;
 
 
-	P(tabs_part1) =
-		"<div class='tabbable'>"
-			"<ul class='nav nav-tabs'>"
-				"<li class='active'><a data-toggle='tab' href='#Tab-RemoteControl'>Remote Control</a></li>"
-				"<li><a data-toggle='tab' href='#Tab-Information'>Information</a></li>"
-			"</ul>"
-
-			"<div class='tab-content'>"
-				"<div class='tab-pane active' id='Tab-RemoteControl'>";
-	P(tabs_part2) =
-				"</div>"
-
-				"<div class='tab-pane' id='Tab-Information'>";
-	P(tabs_part3) =
-				"</div>"
-				
-
-			"</div>"
-
-		"</div>"
-		;
 	
+	
+			server.printP(htmlHead);
+				server.printP(nav_bar);
 
-	server.printP(nav_bar);
-	//server.printP(tabs_part1);
+				server << F("<div class='tab-content'>");
+					server << F("<div class='tab-pane active' id='Tab-RemoteControl'> ");
+						server << F("<div class='btn-group-vertical'>");
+							server.printP(reach_upper_ls_button);
+							server.printP(reach_lower_ls_button);
+							server.printP(reach_and_control_at_active_water_sensor_button);
+							server.printP(reach_active_water_sensor_button);
+							server.printP(control_at_active_water_sensor_button);
+							server.printP(water_sensor_dropdown_button);
+							server.printP(stop_button);
+						server << F("</div>");
+					server << F("</div>");
 
-	server << F("<div class='tab-content'>");
-		server << F("<div class='tab-pane active' id='Tab-RemoteControl'> ");
-			server << F("<div class='btn-group-vertical'>");
-				server.printP(reach_upper_ls_button);
-				server.printP(reach_lower_ls_button);
-				server.printP(reach_and_control_at_active_water_sensor_button);
-				server.printP(reach_active_water_sensor_button);
-				server.printP(control_at_active_water_sensor_button);
-				server.printP(water_sensor_dropdown_button);
-				server.printP(stop_button);
-			server << F("</div>");
-		server << F("</div>");
+					server << F("<div class='tab-pane' id='Tab-Information'>");
+						server << F("Other stuffff");
+					server << F("</div>");
 
-		server << F("<div class='tab-pane' id='Tab-Information'>Other stuffff</div>");
-	server << F("</div>");
-
-	//server.printP(tabs_part2);
-	//server << F("other information");
-	//server.printP(tabs_part3);
-
-
-
-
-	server << "</div></body></html>";
+				server << F("</div>");
+			server << "</div>";
+		server << "</body>";
+	server << "</html>";
 }
 
 void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, bool tail_complete) {
