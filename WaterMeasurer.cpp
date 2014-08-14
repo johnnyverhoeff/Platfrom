@@ -106,8 +106,8 @@ int WaterMeasurer::get_motor_on_time() {
 
 using namespace ArduinoJson::Generator;
 
-JsonObject<11> WaterMeasurer::get_json_status() {
-	JsonObject<11> root;
+JsonObject<15> WaterMeasurer::get_json_status() {
+	JsonObject<15> root;
 
 	root["total_samples"] = _total_samples_needed;
 

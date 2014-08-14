@@ -48,7 +48,8 @@ public:
 
 	
 
-	ArduinoJson::Generator::JsonObject<11> get_json_status();
+	ArduinoJson::Generator::JsonObject<15> get_json_status();
+
 };
 
 #endif

@@ -44,7 +44,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega;C:\Program Files (x86)\Arduino\libraries\SPI;C:\Program Files (x86)\Arduino\libraries\SPI\utility;C:\Program Files (x86)\Arduino\libraries\Ethernet;C:\Program Files (x86)\Arduino\libraries\Ethernet\utility;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\libraries;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers;D:\Documents\Arduino\libraries;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\;c:\program files (x86)\arduino\hardware\tools\avr\avr\;c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega;C:\Program Files (x86)\Arduino\libraries\SPI;C:\Program Files (x86)\Arduino\libraries\SPI\utility;C:\Program Files (x86)\Arduino\libraries\Ethernet;C:\Program Files (x86)\Arduino\libraries\Ethernet\utility;C:\Program Files (x86)\Arduino\libraries\ArduinoJson;C:\Program Files (x86)\Arduino\libraries\ArduinoJson\utility;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\libraries;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers;D:\Documents\Arduino\libraries;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\;c:\program files (x86)\arduino\hardware\tools\avr\avr\;c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>D:\Documents\GitHub\Arduino Projects\Platfrom\Visual Micro\.Platfrom.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega2560__;ARDUINO=105;ARDUINO_MAIN;__AVR__;__avr__;F_CPU=16000000L;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -76,28 +76,6 @@
     <ClInclude Include="ClickButton.h">
       <FileType>CppCode</FileType>
     </ClInclude>
-    <ClInclude Include="JsonGenerator.h" />
-    <ClInclude Include="EscapedString.h" />
-    <ClInclude Include="JsonArray.h" />
-    <ClInclude Include="JsonArrayBase.h" />
-    <ClInclude Include="JsonObject.h" />
-    <ClInclude Include="JsonObjectBase.h" />
-    <ClInclude Include="JsonPrintable.h" />
-    <ClInclude Include="JsonValue.h" />
-    <ClInclude Include="Print.h" />
-    <ClInclude Include="Printable.h" />
-    <ClInclude Include="StringBuilder.h" />
-    <ClInclude Include="JsonParser.h" />
-    <ClInclude Include="JsonParser\jsmn.h" />
-    <ClInclude Include="JsonParser\JsonArray.h" />
-    <ClInclude Include="JsonParser\JsonArrayIterator.h" />
-    <ClInclude Include="JsonParser\JsonObject.h" />
-    <ClInclude Include="JsonParser\JsonObjectIterator.h" />
-    <ClInclude Include="JsonParser\JsonPair.h" />
-    <ClInclude Include="JsonParser\JsonParser.h" />
-    <ClInclude Include="JsonParser\JsonParserBase.h" />
-    <ClInclude Include="JsonParser\JsonToken.h" />
-    <ClInclude Include="JsonParser\JsonValue.h" />
     <ClInclude Include="Vlonder.h" />
     <ClInclude Include="LimitSwitch.h" />
     <ClInclude Include="MCP4921.h" />
@@ -119,20 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClickButton.cpp" />
-    <ClCompile Include="JsonGenerator.cpp" />
-    <ClCompile Include="EscapedString.cpp" />
-    <ClCompile Include="JsonArrayBase.cpp" />
-    <ClCompile Include="JsonObjectBase.cpp" />
-    <ClCompile Include="JsonValue.cpp" />
-    <ClCompile Include="Print.cpp" />
-    <ClCompile Include="StringBuilder.cpp" />
-    <ClCompile Include="JsonParser.cpp" />
-    <ClCompile Include="JsonParser\jsmn.cpp" />
-    <ClCompile Include="JsonParser\JsonArray.cpp" />
-    <ClCompile Include="JsonParser\JsonObject.cpp" />
-    <ClCompile Include="JsonParser\JsonParserBase.cpp" />
-    <ClCompile Include="JsonParser\JsonToken.cpp" />
-    <ClCompile Include="JsonParser\JsonValue.cpp" />
     <ClCompile Include="MCP4921.cpp" />
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="LimitSwitch.cpp" />
