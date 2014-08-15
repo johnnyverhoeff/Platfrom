@@ -77,6 +77,11 @@ P(nav_bar) =
 	"</nav>"
 ;
 
+P(alert) = 
+	"<div id='testAlert' class='hide alert alert-danger' role='alert'>"
+		"<strong>Warning!</strong> Better check yourself, you're not looking too good."
+	"</div>"
+	;
 
 // html head and scripts
 
@@ -102,13 +107,14 @@ P(htmlHead) =
 						"url: 'http://192.168.215.177/json',"
 
 						"success:function(data, textStatus, jqXHR) {"
+							"$('#testAlert').hide();"
 							"var json = $.parseJSON(jqXHR.responseText);"
 							"updateVlonderMovingIcon(json.vlonder.moving_state);"
 							"updateActiveWaterSensor(json.vlonder.active_water_sensor);"
 						"},"
 
 						"error:function() {"
-							"alert('ERROROROROROR');"
+							"$('#testAlert').removeClass('hide').show();"
 						"}"
 					
 					
@@ -195,5 +201,6 @@ P(htmlHead) =
 			"</script>"
 		"</head>"
 	"<body>"
-	"<button onclick='updateInformation()'>updateInformation</button>"
+		"<button onclick='updateInformation()'>updateInformation</button>"
+		
 ;

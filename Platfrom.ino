@@ -264,6 +264,7 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 		server.printP(htmlHead);
 			server.printP(nav_bar);
+			server.printP(alert);
 
 			server << F("<div class='container-fluid'>");
 				server << F("<div class='row'>");
