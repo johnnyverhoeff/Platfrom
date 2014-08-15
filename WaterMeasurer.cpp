@@ -11,7 +11,7 @@ WaterMeasurer::WaterMeasurer() {
 
 	_reset();
 
-	_sample_period = 6;
+	_sample_period = 60;
 	_sample_time = 1;
 	_motor_on_time = 50;
 

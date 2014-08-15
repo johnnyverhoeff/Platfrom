@@ -229,14 +229,14 @@ void print_vlonder_moving_icon(WebServer &server) {
 	switch (Vlonder::get_moving_state())
 	{
 		case vlonder_moving_up:
-			server << F("<span id='vlonder_moving_icon' class='pull-right glyphicon glyphicon-chevron-up'></span>");
+			server << F("<span id='vlonder_moving_icon' class='glyphicon glyphicon-chevron-up'></span>");
 			break;
 		case vlonder_moving_down:
-			server << F("<span id='vlonder_moving_icon' class='pull-right glyphicon glyphicon-chevron-down'></span>");
+			server << F("<span id='vlonder_moving_icon' class='glyphicon glyphicon-chevron-down'></span>");
 			break;
 		case vlonder_stopped:
 		default:	
-			server << F("<span id='vlonder_moving_icon' class='pull-right glyphicon glyphicon-minus'></span>");
+			server << F("<span id='vlonder_moving_icon' class='glyphicon glyphicon-minus'></span>");
 			break;
 	}
 }
@@ -270,11 +270,15 @@ void print_Tab_Information(WebServer &server) {
 			server << F("<div class='panel-heading'>");	server << F("<h3 class='panel-title'>Information about the water measurements</h3>"); server << F("</div>");
 
 			server << F("<div class='panel-body'>");
-				server << F("<ul class='list-group'>");
-					server << F("<div class='progress'>");
-						server << F("<div id='sampleProgressBar' class='progress-bar progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
-					server << F("</div>");
 
+				server << F("<div class='progress'>");
+					server << F("<div id='sampleProgressBar1' class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
+					server << F("<div id='sampleProgressBar2' class='progress-bar progress-bar-warning progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
+					server << F("<div id='sampleProgressBar3' class='progress-bar progress-bar-danger progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
+				server << F("</div>");
+
+				server << F("<ul class='list-group'>");
+					
 					server << F("<li class='list-group-item'><a>Current decision: <span id='currentDecisionSpan' class='glyphicon glyphicon-minus'></span></a></li>");
 					server << F("<li class='list-group-item'><a>Remaining time: <span id='remainingTimeSpan'>0</span></a></li>");
 					server << F("<li class='list-group-item'><a>Total samples: <span id='totalSamplesSpan'>0</span></a></li>");

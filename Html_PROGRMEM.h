@@ -58,7 +58,7 @@ P(table_remote_control_buttons) =
 		"<tr>"
 			"<th>Button</th>"
 			"<th>Status "
-				"<button onclick='tableCollapseButtonIcon()' class='btn btn-info btn-xs collapsed pull-right' data-toggle='collapse' data-target='.collapse-able'>"
+				"<button onclick='tableCollapseButtonIcon()' class='btn btn-primary btn-xs collapsed pull-right' data-toggle='collapse' data-target='.collapse-able'>"
 					"<span id='collapse_able_table_icon' class='glypicon glyphicon-plus'></span>"
 				"</button>"
 			"</th>"
@@ -231,7 +231,9 @@ P(htmlHead) =
 							"$('#droppingHitsSpan').text(json.water_dropping_hits);"
 							"$('#risingHitsSpan').text(json.water_rising_hits);"
 
-							"$('#sampleProgressBar').attr('style', 'width: ' + 100 * json.current_sample / json.total_samples + '%') ;"
+							"var percentage = 100 * json.current_sample / json.total_samples;"
+							"updateProgressBars(percentage);"
+							
 						"},"
 
 						"error: function(jqXHR, textStatus, errorThrown) {"
@@ -239,6 +241,27 @@ P(htmlHead) =
 							"$('#AjaxWaterAlert').removeClass('hide').show();"
 						"}"
 					"});"
+				"}"
+
+				"function updateProgressBar(n, p) {"
+					"var pbId = '#sampleProgressBar' + n;"
+					"$(pbId).attr('style', 'width: ' + p + '%') ;"
+				"}"
+
+				"function updateProgressBars(percentage) {"
+					"if (percentage <= 50) {"
+						"updateProgressBar(1, percentage);"
+						"updateProgressBar(2, 0);"
+						"updateProgressBar(3, 0);"
+					"} else if (percentage > 50 && percentage <= 75) {"
+						"updateProgressBar(1, 50);"
+						"updateProgressBar(2, percentage - 50);"
+						"updateProgressBar(3, 0);"
+					"} else if (percentage > 75) {"
+					"updateProgressBar(1, 50);"
+					"updateProgressBar(2, 25);"
+					"updateProgressBar(3, percentage - 75);"
+					"}"
 				"}"
 
 				"function updateCurrentDecision(json) {\n"
