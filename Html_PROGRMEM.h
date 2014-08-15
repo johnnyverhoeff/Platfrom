@@ -101,6 +101,7 @@ P(htmlHead) =
 			"<script>"
 
 				"setInterval(updateInformation, 2000);"
+
 				"function updateInformation() {"
 					"$.ajax({"
 						"type: 'GET',"

@@ -264,12 +264,12 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 		server.printP(htmlHead);
 			server.printP(nav_bar);
-			server.printP(alert);
+			
 
 			server << F("<div class='container-fluid'>");
+			server.printP(alert);
 				server << F("<div class='row'>");
-					server << F("<div class='col-sm-2 col-sm-offset-5 col-xs-12 col-xs-offset-1'>");
-
+					server << F("<div class='col-sm-8 col-sm-offset-2  col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4'>");
 						server << F("<div class='tab-content'>");
 							
 							print_Tab_Remote_Control(server);
@@ -277,8 +277,8 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 							print_Tab_Information(server);
 					
 						server << F("</div>");
-
 					server << F("</div>");
+
 				server << F("</div>");
 			server << F("</div>");
 		server << "</body>";
