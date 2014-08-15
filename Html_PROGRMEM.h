@@ -100,7 +100,25 @@ P(htmlHead) =
 
 			"<script>"
 
-				"setInterval(updateInformation, 2000);"
+				"var ajaxTimer = setInterval(updateInformation, 2000);"
+
+				"function stopTimer() {"
+					"clearInterval(ajaxTimer);"
+					"$('#stopstartTimerButton').removeAttr('onclick').attr('onclick', 'startTimer()');"
+					"$('#stopstartTimerButton').html('Start Ajax timer');"
+					"$('#stopstartTimerButton').removeClass('btn-danger').addClass('btn-success');"
+
+					"$('#manualUpdateButton').removeClass('hide');"
+				"}"
+
+				"function startTimer() {"
+					"ajaxTimer = setInterval(updateInformation, 2000);"
+					"$('#stopstartTimerButton').removeAttr('onclick').attr('onclick', 'stopTimer()');"
+					"$('#stopstartTimerButton').html('Stop Ajax timer');"
+					"$('#stopstartTimerButton').removeClass('btn-success').addClass('btn-danger');"
+
+					"$('#manualUpdateButton').addClass('hide');"
+				"}"
 
 				"function updateInformation() {"
 					"$.ajax({"
@@ -119,10 +137,7 @@ P(htmlHead) =
 							"$('#AjaxAlert').html('<strong>Warning!</strong>' + ' There was an error when requesting the json data: ' + errorThrown);"
 							"$('#AjaxAlert').removeClass('hide').show();"
 						"}"
-					
-					
 					"});"
-
 				"}"
 
 				"function updateActiveWaterSensor(water_sensor_name) {"
@@ -204,6 +219,9 @@ P(htmlHead) =
 			"</script>"
 		"</head>"
 	"<body>"
-		"<button onclick='updateInformation()'>updateInformation</button>"
+		
+
+
+		
 		
 ;
