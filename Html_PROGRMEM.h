@@ -78,7 +78,7 @@ P(nav_bar) =
 ;
 
 P(alert) = 
-	"<div id='testAlert' class='hide alert alert-danger' role='alert'>"
+	"<div id='AjaxAlert' class='hide alert alert-danger' role='alert'>"
 		"<strong>Warning!</strong> Better check yourself, you're not looking too good."
 	"</div>"
 	;
@@ -100,21 +100,23 @@ P(htmlHead) =
 
 			"<script>"
 
-				//"setInterval(updateInformation, 1000);"
+				"setInterval(updateInformation, 2000);"
 				"function updateInformation() {"
 					"$.ajax({"
 						"type: 'GET',"
 						"url: 'http://192.168.215.177/json',"
+						"timeout: 1000,"
 
-						"success:function(data, textStatus, jqXHR) {"
-							"$('#testAlert').hide();"
+						"success: function(data, textStatus, jqXHR) {"
+							"$('#AjaxAlert').hide();"
 							"var json = $.parseJSON(jqXHR.responseText);"
 							"updateVlonderMovingIcon(json.vlonder.moving_state);"
 							"updateActiveWaterSensor(json.vlonder.active_water_sensor);"
 						"},"
 
-						"error:function() {"
-							"$('#testAlert').removeClass('hide').show();"
+						"error: function(jqXHR, textStatus, errorThrown) {"
+							"$('#AjaxAlert').html('<strong>Warning!</strong>' + ' There was an error when requesting the json data: ' + errorThrown);"
+							"$('#AjaxAlert').removeClass('hide').show();"
 						"}"
 					
 					
