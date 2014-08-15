@@ -95,9 +95,53 @@ P(htmlHead) =
 
 			"<script>"
 
+				//"setInterval(updateInformation, 1000);"
+				"function updateInformation() {"
+					"$.ajax({"
+						"type: 'GET',"
+						"url: 'http://192.168.215.177/json',"
+
+						"success:function(data, textStatus, jqXHR) {"
+							"var json = $.parseJSON(jqXHR.responseText);"
+							"updateVlonderMovingIcon(json.vlonder.moving_state);"
+							"updateActiveWaterSensor(json.vlonder.active_water_sensor);"
+						"},"
+
+						"error:function() {"
+							"alert('ERROROROROROR');"
+						"}"
+					
+					
+					"});"
+
+				"}"
+
+				"function updateActiveWaterSensor(water_sensor_name) {"
+					"$('#active_water_sensor').text(water_sensor_name);"
+				"}"
+
+				"function updateVlonderMovingIcon(moving_state) {"
+					"$('#vlonder_moving_icon').removeClass('glyphicon-chevron-up').removeClass('glyphicon-chevron-down').removeClass('glyphicon-minus');"
+					"switch (moving_state) {"
+						"case 2:"// vlonder_moving_down
+							"$('#vlonder_moving_icon').addClass('glyphicon-chevron-down');"
+							"break;"
+						"case 1:"// vlonder_moving_up
+							"$('#vlonder_moving_icon').addClass('glyphicon-chevron-up');"
+							"break;"
+						"case 0:"// vlonder_stopped
+							"default:"
+							"$('#vlonder_moving_icon').addClass('glyphicon-minus');"
+					"}"
+				"}"
+
+
+
 				"function sendProgramStatePost(state) {"
 					"$.post('http://192.168.215.177/web_control', 'program_state=' + state, '', '');"
 				"}"
+
+				
 
 				"function sendWaterSensorPost(sensor) {"
 					"$.post('http://192.168.215.177/web_control', 'water_sensor=' + sensor, '', '');"
@@ -151,4 +195,5 @@ P(htmlHead) =
 			"</script>"
 		"</head>"
 	"<body>"
+	"<button onclick='updateInformation()'>updateInformation</button>"
 ;

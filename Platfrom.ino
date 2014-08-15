@@ -229,14 +229,14 @@ void print_vlonder_moving_icon(WebServer &server) {
 	switch (Vlonder::get_moving_state())
 	{
 		case vlonder_moving_up:
-			server << F("<span class='pull-right glyphicon glyphicon-chevron-up'></span>");
+			server << F("<span id='vlonder_moving_icon' class='pull-right glyphicon glyphicon-chevron-up'></span>");
 			break;
 		case vlonder_moving_down:
-			server << F("<span class='pull-right glyphicon glyphicon-chevron-down'></span>");
+			server << F("<span id='vlonder_moving_icon' class='pull-right glyphicon glyphicon-chevron-down'></span>");
 			break;
 		case vlonder_stopped:
 		default:	
-			server << F("<span class='pull-right glyphicon glyphicon-minus'></span>");
+			server << F("<span id='vlonder_moving_icon' class='pull-right glyphicon glyphicon-minus'></span>");
 			break;
 	}
 }
@@ -248,7 +248,7 @@ void print_Tab_Information(WebServer &server) {
 			server << F("<div class='panel-body'>");
 				server << F("<ul class='list-group'>");
 					server << F("<li class='list-group-item'><a>Vlonder moving state: "); print_vlonder_moving_icon(server); server << F("</a></li>");
-					server << F("<li class='list-group-item'><a>Active water sensor: "); server << Vlonder::active_water_sensor->get_name(); server << F("</a></li>");
+					server << F("<li class='list-group-item'><a>Active water sensor: <span id='active_water_sensor'>"); server << Vlonder::active_water_sensor->get_name(); server << F("</span></a></li>");
 				server << F("</ul>");
 			server << F("</div>");
 		server << F("</div>");
@@ -267,7 +267,7 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 			server << F("<div class='container-fluid'>");
 				server << F("<div class='row'>");
-					server << F("<div class='col-sm-2 col-sm-offset-5 col-xs-12 col-xs-offset-1'-->");
+					server << F("<div class='col-sm-2 col-sm-offset-5 col-xs-12 col-xs-offset-1'>");
 
 						server << F("<div class='tab-content'>");
 							
@@ -309,6 +309,25 @@ void jsonCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, 
 	root["program_state"] = program_state;
 	root["buttons"] = button_states;
 	root["vlonder"] = Vlonder::get_json_status();
+
+	root.printTo(server);
+}
+
+void testCmd(WebServer &server, WebServer::ConnectionType type, char *url_tail, bool tail_complete) {
+	if (type == WebServer::POST) {
+		server.httpFail();
+		return;
+	}
+
+	server.httpSuccess("application/json");
+
+	if (type == WebServer::HEAD)
+		return;
+
+	using namespace ArduinoJson::Generator;
+
+	JsonObject<1> root;
+	root["test"] = 1;
 
 	root.printTo(server);
 }
@@ -384,7 +403,9 @@ void setup_WebServer_Commands() {
 	webserver.addCommand("web_control", &web_control_cmd);
 
 	webserver.addCommand("json", &jsonCmd);
+	webserver.addCommand("test", &testCmd);
 	webserver.addCommand("water_measurer", &water_measurer_cmd);
+	
 }
 
 void setup_ISRs(void) {
