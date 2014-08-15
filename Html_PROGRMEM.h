@@ -51,6 +51,55 @@ P(water_sensor_dropdown_button) =
 	"</div>"
 ;
 
+// table remote control buttons
+
+P(table_remote_control_buttons) =
+	"<table class='table table-striped table-condensed'>"
+		"<tr>"
+			"<th>Button</th>"
+			"<th>Status "
+				"<button onclick='tableCollapseButtonIcon()' class='btn btn-info btn-xs collapsed pull-right' data-toggle='collapse' data-target='.collapse-able'>"
+					"<span id='collapse_able_table_icon' class='glypicon glyphicon-plus'></span>"
+				"</button>"
+			"</th>"
+		"</tr>"
+		
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 0</td>"
+			"<td id='button0_status'>false</td>"
+		"</tr>"
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 1</td>"
+			"<td id='button1_status'>false</td>"
+		"</tr>"
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 2</td>"
+			"<td id='button2_status'>false</td>"
+		"</tr>"
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 3</td>"
+			"<td id='button3_status'>false</td>"
+		"</tr>"
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 4</td>"
+			"<td id='button4_status'>false</td>"
+		"</tr>"
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 5</td>"
+			"<td id='button5_status'>false</td>"
+		"</tr>"
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 6</td>"
+			"<td id='button6_status'>false</td>"
+		"</tr>"
+		"<tr class='collapse out collapse-able'>"
+			"<td>Button 7</td>"
+			"<td id='button7_status'>false</td>"
+		"</tr>"
+	"</table>"
+
+;
+
 
 // nav bar
 
@@ -77,9 +126,20 @@ P(nav_bar) =
 	"</nav>"
 ;
 
-P(alert) = 
+
+// alerts
+
+P(alerts) = 
 	"<div id='AjaxAlert' class='hide alert alert-danger' role='alert'>"
 		"<strong>Warning!</strong> Better check yourself, you're not looking too good."
+	"</div>"
+
+	"<div id='upperLimitSwitchAlert' class='hide alert alert-info' role='alert'>"
+		"<strong>Heads up!</strong> Upper limit switch is reached."
+	"</div>"
+
+	"<div id='lowerLimitSwitchAlert' class='hide alert alert-info' role='alert'>"
+		"<strong>Heads up!</strong> Lower limit switch is reached."
 	"</div>"
 	;
 
@@ -104,6 +164,7 @@ P(htmlHead) =
 
 				"function stopTimer() {"
 					"clearInterval(ajaxTimer);"
+
 					"$('#stopstartTimerButton').removeAttr('onclick').attr('onclick', 'startTimer()');"
 					"$('#stopstartTimerButton').html('Start Ajax timer');"
 					"$('#stopstartTimerButton').removeClass('btn-danger').addClass('btn-success');"
@@ -113,6 +174,7 @@ P(htmlHead) =
 
 				"function startTimer() {"
 					"ajaxTimer = setInterval(updateInformation, 2000);"
+
 					"$('#stopstartTimerButton').removeAttr('onclick').attr('onclick', 'stopTimer()');"
 					"$('#stopstartTimerButton').html('Stop Ajax timer');"
 					"$('#stopstartTimerButton').removeClass('btn-success').addClass('btn-danger');"
@@ -128,9 +190,14 @@ P(htmlHead) =
 
 						"success: function(data, textStatus, jqXHR) {"
 							"$('#AjaxAlert').hide();"
+
 							"var json = $.parseJSON(jqXHR.responseText);"
+
 							"updateVlonderMovingIcon(json.vlonder.moving_state);"
 							"updateActiveWaterSensor(json.vlonder.active_water_sensor);"
+							"updateLimitSwitches(json.vlonder.upper_limit_switch, json.vlonder.lower_limit_switch);"
+							"updateProgramState(json.program_state);"
+							"updateButtonsTable(json.buttons);"
 						"},"
 
 						"error: function(jqXHR, textStatus, errorThrown) {"
@@ -138,6 +205,58 @@ P(htmlHead) =
 							"$('#AjaxAlert').removeClass('hide').show();"
 						"}"
 					"});"
+				"}"
+				"\n"
+
+
+				"function updateButtonsTable(buttons) {\n"
+					"for (var i = 0; i < 8; i++) {\n"
+						"var buttonId = '#button' + i + '_status';\n"
+						"var buttonState = buttons['Button' + i];\n"
+						"$(buttonId).text(buttonState);\n"
+					"}\n"
+				"}\n"
+
+				"function updateProgramState(state) {"
+					"switch (state) {"
+						"case 1:"
+							"$('#program_state').text('Reaching the active sensor');"
+							"break;"
+						"case 2:"
+							"$('#program_state').text('Reaching than controlling at active sensor');"
+							"break;"
+						"case 3:"
+							"$('#program_state').text('Controlling vlonder at active sensor');"
+							"break;"
+						"case 4:"
+							"$('#program_state').text('Reaching upper limit switch');"
+							"break;"
+						"case 5:"
+							"$('#program_state').text('Reaching lower limit switch');"
+							"break;"
+						"case 6:"
+							"$('#program_state').text('Remote control manual up');"
+							"break;"
+						"case 7:"
+							"$('#program_state').text('Remote control manual down');"
+							"break;"
+						"case 0:"
+						"default:"
+							"$('#program_state').text('none');"
+							"break;"
+					"}"
+				"}"
+
+				"function updateLimitSwitches(upper_ls, lower_ls) {"
+					"if (upper_ls) "
+						"$('#upperLimitSwitchAlert').removeClass('hide').show();"
+					"else " 
+						"$('#upperLimitSwitchAlert').hide();"
+
+					"if (lower_ls) "
+						"$('#lowerLimitSwitchAlert').removeClass('hide').show();"
+					"else "
+						"$('#lowerLimitSwitchAlert').hide();"
 				"}"
 
 				"function updateActiveWaterSensor(water_sensor_name) {"
@@ -159,13 +278,16 @@ P(htmlHead) =
 					"}"
 				"}"
 
-
+				"function tableCollapseButtonIcon() {"
+					"if ($('#collapse_able_table_icon').hasClass('glyphicon-plus')) "
+						"$('#collapse_able_table_icon').removeClass('glyphicon-plus').addClass('glyphicon-minus'); "
+					"else "
+						"$('#collapse_able_table_icon').removeClass('glyphicon-minus').addClass('glyphicon-plus');"
+				"}"
 
 				"function sendProgramStatePost(state) {"
 					"$.post('http://192.168.215.177/web_control', 'program_state=' + state, '', '');"
 				"}"
-
-				
 
 				"function sendWaterSensorPost(sensor) {"
 					"$.post('http://192.168.215.177/web_control', 'water_sensor=' + sensor, '', '');"

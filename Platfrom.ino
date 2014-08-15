@@ -243,16 +243,25 @@ void print_vlonder_moving_icon(WebServer &server) {
 
 void print_Tab_Information(WebServer &server) {
 	server << F("<div class='tab-pane' id='Tab-Information'>");
-		server << F("<p><button class='btn btn-danger' id='stopstartTimerButton' onclick='stopTimer()'>Stop Ajax timer</button>");
-		server << F("<button class='btn btn-info hide pull-right' id='manualUpdateButton' onclick='updateInformation()'>Manual Update</button></p>");
+		server << F("<p>");
+			server << F("<button class='btn btn-danger' id='stopstartTimerButton' onclick='stopTimer()'>Stop Ajax timer</button>");
+			server << F("<button class='btn btn-info hide pull-right' id='manualUpdateButton' onclick='updateInformation()'>Manual Update</button>");
+		server << F("</p>");
+
 		server << F("<div class='panel panel-primary'>");
 			server << F("<div class='panel-heading'>");	server << F("<h3 class='panel-title'>Information about the vlonder</h3>"); server << F("</div>");
+
 			server << F("<div class='panel-body'>");
 				server << F("<ul class='list-group'>");
+
+					server << F("<li class='list-group-item'><a>Program state: <span id='program_state'>"); server << program_state; server << F("</span></a></li>");
 					server << F("<li class='list-group-item'><a>Vlonder moving state: "); print_vlonder_moving_icon(server); server << F("</a></li>");
 					server << F("<li class='list-group-item'><a>Active water sensor: <span id='active_water_sensor'>"); server << Vlonder::active_water_sensor->get_name(); server << F("</span></a></li>");
+					
+					server << F("<li class='list-group-item'>"); server.printP(table_remote_control_buttons); server << F("</li>");
 				server << F("</ul>");
 			server << F("</div>");
+
 		server << F("</div>");
 	server << F("</div>");
 }
@@ -266,7 +275,7 @@ void welcomePage(WebServer &server, WebServer::ConnectionType type, char *, bool
 
 		server.printP(htmlHead);
 			server.printP(nav_bar);
-			server.printP(alert);
+			server.printP(alerts);
 
 			server << F("<div class='container-fluid'>");
 				server << F("<div class='row'>");
