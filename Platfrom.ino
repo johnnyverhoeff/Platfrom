@@ -258,7 +258,31 @@ void print_Tab_Information(WebServer &server) {
 					server << F("<li class='list-group-item'><a>Vlonder moving state: "); print_vlonder_moving_icon(server); server << F("</a></li>");
 					server << F("<li class='list-group-item'><a>Active water sensor: <span id='active_water_sensor'>"); server << Vlonder::active_water_sensor->get_name(); server << F("</span></a></li>");
 					
-					server << F("<li class='list-group-item'>"); server.printP(table_remote_control_buttons); server << F("</li>");
+					
+				server << F("</ul>");
+				server.printP(table_remote_control_buttons);
+			server << F("</div>");
+
+		server << F("</div>");
+
+
+		server << F("<div id='waterMeasurementPanel' class='hide panel panel-primary'>");
+			server << F("<div class='panel-heading'>");	server << F("<h3 class='panel-title'>Information about the water measurements</h3>"); server << F("</div>");
+
+			server << F("<div class='panel-body'>");
+				server << F("<ul class='list-group'>");
+					server << F("<div class='progress'>");
+						server << F("<div id='sampleProgressBar' class='progress-bar progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
+					server << F("</div>");
+
+					server << F("<li class='list-group-item'><a>Current decision: <span id='currentDecisionSpan' class='glyphicon glyphicon-minus'></span></a></li>");
+					server << F("<li class='list-group-item'><a>Remaining time: <span id='remainingTimeSpan'>0</span></a></li>");
+					server << F("<li class='list-group-item'><a>Total samples: <span id='totalSamplesSpan'>0</span></a></li>");
+					server << F("<li class='list-group-item'><a>Current sample: <span id='currentSampleSpan'>0</span></a></li>");
+					server << F("<li class='list-group-item'><a>Dropping hits: <span id='droppingHitsSpan'>0</span></a></li>");
+					server << F("<li class='list-group-item'><a>Rising hits: <span id='risingHitsSpan'>0</span></a></li>");
+
+		
 				server << F("</ul>");
 			server << F("</div>");
 

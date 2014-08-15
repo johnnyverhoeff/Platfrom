@@ -130,7 +130,11 @@ P(nav_bar) =
 // alerts
 
 P(alerts) = 
-	"<div id='AjaxAlert' class='hide alert alert-danger' role='alert'>"
+	"<div id='AjaxJsonAlert' class='hide alert alert-danger' role='alert'>"
+		"<strong>Warning!</strong> Better check yourself, you're not looking too good."
+	"</div>"
+
+	"<div id='AjaxWaterAlert' class='hide alert alert-danger' role='alert'>"
 		"<strong>Warning!</strong> Better check yourself, you're not looking too good."
 	"</div>"
 
@@ -182,11 +186,11 @@ P(htmlHead) =
 					"$('#manualUpdateButton').addClass('hide');"
 				"}"
 
-				"function updateInformation() {"
+				"function updateJSONInformation() { "
 					"$.ajax({"
 						"type: 'GET',"
 						"url: 'http://192.168.215.177/json',"
-						"timeout: 1000,"
+						"timeout: 2000,"
 
 						"success: function(data, textStatus, jqXHR) {"
 							"$('#AjaxAlert').hide();"
@@ -201,23 +205,76 @@ P(htmlHead) =
 						"},"
 
 						"error: function(jqXHR, textStatus, errorThrown) {"
-							"$('#AjaxAlert').html('<strong>Warning!</strong>' + ' There was an error when requesting the json data: ' + errorThrown);"
-							"$('#AjaxAlert').removeClass('hide').show();"
+							"$('#AjaxJsonAlert').html('<strong>Warning!</strong>' + ' There was an error when requesting the json data: ' + errorThrown);"
+							"$('#AjaxJsonAlert').removeClass('hide').show();"
 						"}"
 					"});"
 				"}"
-				"\n"
 
+				"function updateWaterMeasurerInformation() {"
+					"$.ajax({"
+						"type: 'GET',"
+						"url: 'http://192.168.215.177/water_measurer',"
+						"timeout: 5000,"
 
-				"function updateButtonsTable(buttons) {\n"
-					"for (var i = 0; i < 8; i++) {\n"
-						"var buttonId = '#button' + i + '_status';\n"
-						"var buttonState = buttons['Button' + i];\n"
-						"$(buttonId).text(buttonState);\n"
-					"}\n"
+						"success: function(data, textStatus, jqXHR) {"
+							"$('#AjaxWaterAlert').hide();"
+
+							"var json = $.parseJSON(jqXHR.responseText);"
+
+							"updateCurrentDecision(json);"
+							
+							"$('#remainingTimeSpan').text((json.total_samples - json.current_sample) * json.sample_time / 10 + ' s');"
+
+							"$('#totalSamplesSpan').text(json.total_samples);"
+							"$('#currentSampleSpan').text(json.current_sample);"
+							"$('#droppingHitsSpan').text(json.water_dropping_hits);"
+							"$('#risingHitsSpan').text(json.water_rising_hits);"
+
+							"$('#sampleProgressBar').attr('style', 'width: ' + 100 * json.current_sample / json.total_samples + '%') ;"
+						"},"
+
+						"error: function(jqXHR, textStatus, errorThrown) {"
+							"$('#AjaxWaterAlert').html('<strong>Warning!</strong>' + ' There was an error when requesting the water measurement data: ' + errorThrown);"
+							"$('#AjaxWaterAlert').removeClass('hide').show();"
+						"}"
+					"});"
+				"}"
+
+				"function updateCurrentDecision(json) {\n"
+					"var _total_samples_needed = 10 * json.sample_period / json.sample_time;\n"
+					"var water_rising_percentage = json.water_rising_hits * 100.0 / _total_samples_needed;\n"
+					"var water_dropping_percentage = json.water_dropping_hits * 100.0 / _total_samples_needed;\n"
+
+					"if (water_dropping_percentage <= json.lower_threshold && water_rising_percentage >= json.upper_threshold) \n" 
+						"$('#currentDecisionSpan').removeClass('glyphicon-chevron-down').removeClass('glyphicon-minus').addClass('glyphicon-chevron-up');\n"
+					
+					"else if (water_dropping_percentage >= json.upper_threshold && water_rising_percentage <= json.lower_threshold) \n"
+						"$('#currentDecisionSpan').removeClass('glyphicon-chevron-up').removeClass('glyphicon-minus').addClass('glyphicon-chevron-down');\n"
+
+					"else \n"
+						"$('#currentDecisionSpan').removeClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up').addClass('glyphicon-minus');\n"
 				"}\n"
 
+				"function updateInformation() {"
+					"updateJSONInformation();"
+					"updateWaterMeasurerInformation();"
+				"}"
+
+				"function updateButtonsTable(buttons) {"
+					"for (var i = 0; i < 8; i++) {"
+						"var buttonId = '#button' + i + '_status';"
+						"var buttonState = buttons['Button' + i];"
+						"$(buttonId).text(buttonState);"
+					"}"
+				"}"
+
 				"function updateProgramState(state) {"
+					"if (state === 3) "
+						"$('#waterMeasurementPanel').removeClass('hide').show();"
+					"else "
+						"$('#waterMeasurementPanel').hide();"
+
 					"switch (state) {"
 						"case 1:"
 							"$('#program_state').text('Reaching the active sensor');"

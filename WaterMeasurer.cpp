@@ -119,7 +119,7 @@ JsonObject<15> WaterMeasurer::get_json_status() {
 	root["motor_on_time"] = _motor_on_time;
 
 	root["lower_threshold"] = _lower_threshold;
-	root["uppper_theshold"] = _upper_threshold;
+	root["upper_threshold"] = _upper_threshold;
 
 	root["sample_in_progress"] = _sample_in_progress;
 
