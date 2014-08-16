@@ -76,6 +76,9 @@ enum program_states {
 	reach_upper_limit_switch,
 	reach_lower_limit_switch,
 
+	web_control_manual_up,
+	web_control_manual_down,
+
 	remote_control_manual_up,
 	remote_control_manual_down,
 };
@@ -151,10 +154,12 @@ void loop() {
 			break;
 
 		case remote_control_manual_up:
+		case web_control_manual_up:
 			Vlonder::up();
 			break;
 
 		case remote_control_manual_down:
+		case web_control_manual_down:
 			Vlonder::down();
 			break;
 
