@@ -193,7 +193,7 @@ P(htmlHead) =
 						"timeout: 2000,"
 
 						"success: function(data, textStatus, jqXHR) {"
-							"$('#AjaxAlert').hide();"
+							"$('#AjaxJsonAlert').hide();"
 
 							"var json = $.parseJSON(jqXHR.responseText);"
 
