@@ -264,10 +264,9 @@ P(htmlHead) =
 					"}"
 				"}"
 
-				"function updateCurrentDecision(json) {\n"
-					"var _total_samples_needed = 10 * json.sample_period / json.sample_time;\n"
-					"var water_rising_percentage = json.water_rising_hits * 100.0 / _total_samples_needed;\n"
-					"var water_dropping_percentage = json.water_dropping_hits * 100.0 / _total_samples_needed;\n"
+				"function updateCurrentDecision(json) {"
+					"var water_rising_percentage = json.water_rising_hits * 100.0 / json.current_sample;\n"
+					"var water_dropping_percentage = json.water_dropping_hits * 100.0 / json.current_sample;\n"
 
 					"if (water_dropping_percentage <= json.lower_threshold && water_rising_percentage >= json.upper_threshold) \n" 
 						"$('#currentDecisionSpan').removeClass('glyphicon-chevron-down').removeClass('glyphicon-minus').addClass('glyphicon-chevron-up');\n"
