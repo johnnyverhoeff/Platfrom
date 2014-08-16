@@ -218,6 +218,11 @@ WaterSensor* get_correct_water_sensor(int n) {
 
 void print_Tab_Remote_Control(WebServer &server) {
 	server << F("<div class='tab-pane active' id='Tab-RemoteControl'> ");
+
+		/*server << F("<div class='btn-group-vertical'>");
+			server << F("<button style='-webkit-user-select: none;' onmousedown='webControlManualUp()' onmouseup='stop()'>blabla</button>");
+		server << F("</div>");*/
+
 		server << F("<div class='btn-group-vertical'>");
 			server.printP(reach_upper_ls_button);
 			server.printP(reach_lower_ls_button);
