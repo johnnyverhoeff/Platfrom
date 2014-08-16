@@ -162,6 +162,8 @@ P(htmlHead) =
 			"<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>"
 			"<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>"
 
+			//"<style>*{-webkit-user-select: none;}</style>"
+
 			"<script>"
 
 				"var ajaxTimer = setInterval(updateInformation, 2000);"
@@ -296,6 +298,7 @@ P(htmlHead) =
 						"$('#waterMeasurementPanel').removeClass('hide').show();"
 					"else "
 						"$('#waterMeasurementPanel').hide();"
+
 					"var state_text = '';"
 
 					"switch (state) {"
@@ -331,6 +334,7 @@ P(htmlHead) =
 							"state_text = 'none';"
 							"break;"
 					"}"
+
 					"$('#program_state').text(state_text);"
 				"}"
 
@@ -458,9 +462,7 @@ P(htmlHead) =
 			"</script>"
 		"</head>"
 	"<body>"
-		
-
-
+	
 		
 		
 ;
