@@ -396,13 +396,35 @@ P(htmlHead) =
 					"sendProgramStatePost(0);"
 				"}"
 
-				"document.onkeydown = checkKey;"
+				"document.onkeydown = checkKeyDown;"
+				"document.onkeyup = checkKeyUp;"
+				
+				"var keyPressed = false;"
 
-				"function checkKey(e) {"
-					"e = e || window.event;"
-					"if (e.keyCode == '38')			moveToUpperLimitSwitch();"
-					"else if (e.keyCode == '40')	moveToLowerLimitSwitch();"
-					"else if (e.keyCode == '27')	stop();"
+				"function checkKeyUp(e) {"
+					"var key = e.keyCode ? e.keyCode : e.which;"
+					
+					"if (key == '38' || key == '40') "
+						"stop();"
+
+					"keyPressed = false;"
+				"}"
+				
+				"function checkKeyDown(e) {"
+					"var key = e.keyCode ? e.keyCode : e.which;"
+					
+					"if (key == '27') "
+						"stop();"
+
+					"if (keyPressed) return; "
+					
+					"keyPressed = true;"
+
+					"if (key == '38') "
+						"moveToUpperLimitSwitch();"
+					"else if (key == '40') "
+						"moveToLowerLimitSwitch();"
+					
 				"}"
 
 				"function highBoatSensor() {"
