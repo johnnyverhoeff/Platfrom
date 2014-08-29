@@ -5,6 +5,7 @@ MCP4921::MCP4921(int SS)
 {
 	_SLAVESELECT = SS;
 	pinMode(_SLAVESELECT, OUTPUT);
+	digitalWrite(_SLAVESELECT, HIGH);
 }
 
 void MCP4921::setValue(unsigned int Value) {
