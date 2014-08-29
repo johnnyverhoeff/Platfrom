@@ -1,7 +1,7 @@
 #include <JsonParser.h>
 #include "Vlonder.h"
 #include "WaterSensorTwoSensors.h"
-#include "SPI\SPI.h"
+#include <SPI\SPI.h>
 #include "ClickButton.h"
 #include "Ethernet\Ethernet.h"
 #include "WebServer.h"
@@ -98,13 +98,16 @@ void setup() {
 		Serial.println("DEBUG_VIA_SERIAL");
 	#endif
 
+
+	Vlonder::Begin();
+
 	Ethernet.begin(mac, ip);
 	Ethernet.localIP().printTo(Serial);
 
 	setup_WebServer_Commands();
 
 	program_state = control_vlonder_on_active_water_sensor;
-	Vlonder::Begin();
+	
 
 	//setup_ISRs();
 
@@ -112,6 +115,7 @@ void setup() {
 }
 
 void loop() {
+
 	#ifdef DEBUG_VIA_SERIAL
 		if (flag_interrupt) {
 			Serial.println(F("an interrupt"));
@@ -253,10 +257,7 @@ void print_vlonder_moving_icon(WebServer &server) {
 
 void print_Tab_Information(WebServer &server) {
 	server << F("<div class='tab-pane' id='Tab-Information'>");
-		server << F("<p>");
-			server << F("<button class='btn btn-danger' id='stopstartTimerButton' onclick='stopTimer()'>Stop Ajax timer</button>");
-			server << F("<button class='btn btn-info hide pull-right' id='manualUpdateButton' onclick='updateInformation()'>Manual Update</button>");
-		server << F("</p>");
+	server.printP(timer_buttons);
 
 		server << F("<div class='panel panel-primary'>");
 			server << F("<div class='panel-heading'>");	server << F("<h3 class='panel-title'>Information about the vlonder</h3>"); server << F("</div>");
@@ -268,7 +269,6 @@ void print_Tab_Information(WebServer &server) {
 					server << F("<li class='list-group-item'><a>Vlonder moving state: "); print_vlonder_moving_icon(server); server << F("</a></li>");
 					server << F("<li class='list-group-item'><a>Active water sensor: <span id='active_water_sensor'>"); server << Vlonder::active_water_sensor->get_name(); server << F("</span></a></li>");
 					
-					
 				server << F("</ul>");
 				server.printP(table_remote_control_buttons);
 			server << F("</div>");
@@ -276,31 +276,7 @@ void print_Tab_Information(WebServer &server) {
 		server << F("</div>");
 
 
-		server << F("<div id='waterMeasurementPanel' class='hide panel panel-primary'>");
-			server << F("<div class='panel-heading'>");	server << F("<h3 class='panel-title'>Information about the water measurements</h3>"); server << F("</div>");
-
-			server << F("<div class='panel-body'>");
-
-				server << F("<div class='progress'>");
-					server << F("<div id='sampleProgressBar1' class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
-					server << F("<div id='sampleProgressBar2' class='progress-bar progress-bar-warning progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
-					server << F("<div id='sampleProgressBar3' class='progress-bar progress-bar-danger progress-bar-striped active' role='progressbar' style='width: 0%'></div>");
-				server << F("</div>");
-
-				server << F("<ul class='list-group'>");
-					
-					server << F("<li class='list-group-item'><a>Current decision: <span id='currentDecisionSpan' class='glyphicon glyphicon-minus'></span></a></li>");
-					server << F("<li class='list-group-item'><a>Remaining time: <span id='remainingTimeSpan'>0</span></a></li>");
-					server << F("<li class='list-group-item'><a>Total samples: <span id='totalSamplesSpan'>0</span></a></li>");
-					server << F("<li class='list-group-item'><a>Current sample: <span id='currentSampleSpan'>0</span></a></li>");
-					server << F("<li class='list-group-item'><a>Dropping hits: <span id='droppingHitsSpan'>0</span></a></li>");
-					server << F("<li class='list-group-item'><a>Rising hits: <span id='risingHitsSpan'>0</span></a></li>");
-
-		
-				server << F("</ul>");
-			server << F("</div>");
-
-		server << F("</div>");
+		server.printP(water_measurements_panel);
 	server << F("</div>");
 }
 
@@ -415,7 +391,7 @@ void web_control_cmd(WebServer &server, WebServer::ConnectionType type, char *ur
 
 	do {
 		repeat = server.readPOSTparam(name, BUFFER_LENGTH, value, BUFFER_LENGTH);
-		Serial.print(name); Serial.println(value);
+		//Serial.print(name); Serial.println(value);
 		if (!strcmp(name, "program_state"))
 			if (program_state != remote_control_manual_down && program_state != remote_control_manual_up) {
 				program_states desired_state = (program_states)atoi(value);

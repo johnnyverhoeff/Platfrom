@@ -51,6 +51,14 @@ P(water_sensor_dropdown_button) =
 	"</div>"
 ;
 
+
+P(timer_buttons) =
+	"<p>"
+		"<button class='btn btn-danger' id='stopstartTimerButton' onclick='stopTimer()'>Stop Ajax timer</button>"
+		"<button class='btn btn-info hide pull-right' id='manualUpdateButton' onclick='updateInformation()'>Manual Update</button>"
+	"</p>"
+;
+
 // table remote control buttons
 
 P(table_remote_control_buttons) =
@@ -146,6 +154,41 @@ P(alerts) =
 		"<strong>Heads up!</strong> Lower limit switch is reached."
 	"</div>"
 	;
+
+
+
+
+
+//panels
+
+P(water_measurements_panel) = 
+	"<div id='waterMeasurementPanel' class='hide panel panel-primary'>"
+
+		"<div class='panel-heading'>" 
+			"<h3 class='panel-title'>Information about the water measurements</h3>"
+		"</div>"
+
+		"<div class='panel-body'>"
+
+			"<div class='progress'>"
+				"<div id='sampleProgressBar1' class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' style='width: 0%'></div>"
+				"<div id='sampleProgressBar2' class='progress-bar progress-bar-warning progress-bar-striped active' role='progressbar' style='width: 0%'></div>"
+				"<div id='sampleProgressBar3' class='progress-bar progress-bar-danger progress-bar-striped active' role='progressbar' style='width: 0%'></div>"
+			"</div>"
+
+			"<ul class='list-group'>"
+
+				"<li class='list-group-item'><a>Current decision: <span id='currentDecisionSpan' class='glyphicon glyphicon-minus'></span></a></li>"
+				"<li class='list-group-item'><a>Remaining time: <span id='remainingTimeSpan'>0</span></a></li>"
+				"<li class='list-group-item'><a>Total samples: <span id='totalSamplesSpan'>0</span></a></li>"
+				"<li class='list-group-item'><a>Current sample: <span id='currentSampleSpan'>0</span></a></li>"
+				"<li class='list-group-item'><a>Dropping hits: <span id='droppingHitsSpan'>0</span></a></li>"
+				"<li class='list-group-item'><a>Rising hits: <span id='risingHitsSpan'>0</span></a></li>"
+
+			"</ul>"
+		"</div>"
+	"</div>"
+;
 
 // html head and scripts
 

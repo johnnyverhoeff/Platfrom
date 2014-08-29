@@ -50,8 +50,8 @@ void setup_ISRs(void);
 void ISR_limit_switch_reached(void);
 void ISR_remote_control(void);
 
-#include "C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino\arduino.h"
-#include "C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega\pins_arduino.h" 
+#include "C:\Program Files (x86)\Arduino\arduino-1.0.5-r2\hardware\arduino\cores\arduino\arduino.h"
+#include "C:\Program Files (x86)\Arduino\arduino-1.0.5-r2\hardware\arduino\variants\mega\pins_arduino.h" 
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\Platfrom.ino"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\ClickButton.cpp"
 #include "D:\Documents\GitHub\Arduino Projects\Platfrom\ClickButton.h"

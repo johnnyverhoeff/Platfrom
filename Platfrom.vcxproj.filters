@@ -37,6 +37,9 @@
     <Filter Include="WebServer">
       <UniqueIdentifier>{60ff2bf0-1554-4ab7-a5bb-e9d3a12d3b0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Html">
+      <UniqueIdentifier>{ada70f80-7449-4ede-9aba-3e335abcb944}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Platfrom.ino" />
@@ -80,6 +83,9 @@
     </ClInclude>
     <ClInclude Include="WebServer.h">
       <Filter>WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="Html_PROGRMEM.h">
+      <Filter>Html</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
