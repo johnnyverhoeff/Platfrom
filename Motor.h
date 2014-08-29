@@ -7,7 +7,7 @@
 class Motor {
 public:
 	enum speed {
-		full_speed = 4096,
+		full_speed = 4095,
 		half_speed = 2048,
 		zero_speed = 0,
 	};
