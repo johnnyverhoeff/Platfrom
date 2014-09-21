@@ -27,3 +27,7 @@ Visual Micro/Upload.vmps.xml
 Platfrom.opensdf
 Platfrom.opensdf
 Platfrom.opensdf
+*.sdf
+*.sdf
+*.suo
+*.vcxproj

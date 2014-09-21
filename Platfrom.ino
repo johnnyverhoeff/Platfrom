@@ -85,7 +85,7 @@ enum program_states {
 
 program_states program_state;
 
-ClickButton buttons[] = { ClickButton(2, HIGH), ClickButton(3, HIGH) };
+ClickButton buttons[] = { ClickButton(33, HIGH), ClickButton(35, HIGH) };
 
 void setup() {
 	SPI.begin();
